@@ -1,0 +1,1 @@
+SELECT (SELECT TOP 1 DateHeureCreation FROM StatFolders WHERE NoAction=13 AND StatFolders.NoFolder=InfoFolders.NoFolder),* FROM InfoFolders WHERE NoFolder NOT IN (SELECT NoFolder FROM InfoVisites)

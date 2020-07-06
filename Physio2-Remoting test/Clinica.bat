@@ -1,0 +1,2 @@
+REM This copy ensured no useless update is done due to data version not synchronized via DropBox
+start Clinica.exe "/startserver:c:\ClinicaServerDemo\ClinicaServer.exe" "/aupassword:AdminUser147963Power" /askwhenonlyclientupdate %1 %2 %3 %4

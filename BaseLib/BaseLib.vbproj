@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E3A6FA5-AC4D-4851-B01C-DD1D43E6B737}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CI.Base</RootNamespace>
+    <AssemblyName>CI.BaseLib</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CI.BaseLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CI.BaseLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Temp|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Temp\</OutputPath>
+    <DocumentationFile>CI.BaseLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>CI.BaseLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>CI.BaseLib.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Temp|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Temp\</OutputPath>
+    <DocumentationFile>CI.BaseLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SHDocVw, Version=1.1.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Physio2-Remoting test\DLLs\AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="corapi, Version=2.1.0.0, Culture=neutral, PublicKeyToken=ebb8d478f63174c0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Physio2-Remoting test\DLLs\corapi.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw, Version=1.1.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Physio2-Remoting test\DLLs\Interop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Physio2-Remoting test\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="MsHtmHstInterop, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Physio2-Remoting test\MsHtmHstInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIs.vb" />
+    <Compile Include="Common.vb" />
+    <Compile Include="DateFormat.vb" />
+    <Compile Include="DefaultExternal.vb" />
+    <Compile Include="Files.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl\CrossFrameIE.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl\IDocHostShowUI.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl\IOleDocumentSite.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl\IWebTextInteract.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl\OleClientSite.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl\OleObjects.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl\WebControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\ConfigurationsPage.Designer.vb">
+      <DependentUpon>ConfigurationsPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\ConfigurationsPage.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\DataGridPlus.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\DataGridViewProgressCell.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\DataGridViewProgressColumn.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\ManagedCombo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\ManagedText.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowDialogs\Loading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\TasksManager.Designer.vb">
+      <DependentUpon>TasksManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\TasksManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\InputBoxPlus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\ConfigurationsManager.Designer.vb">
+      <DependentUpon>ConfigurationsManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\ConfigurationsManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\ConfigAdvancedBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\ConfigBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\ParametersBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\DBItemableBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\DBItemableData.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\DBItemableManagerBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\FolderBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\FoldersListBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\ItemableManagerBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\ItemablesBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\ManagerBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\Plugins\PluginBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\Plugins\PluginsManagerBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\Plugins\TaskBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Drawing\DrawingConverter.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\ObjectHelper.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\DB\DBCommands\DBCommand.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\DB\DBCommands\DBCommandFill.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\DB\DBCommands\DBCommandNonQuery.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\DB\DBCommands\DBCommandScalar.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\DB\DBHelper.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\DB\DBLinker.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Reflection\SymbolLocator.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Software\ConfigurationsManager.vb">
+    </Compile>
+    <Compile Include="Layer 3 - Basic functionnalities\Software\Lock.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Software\Plugin.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Basics\Plugins\PluginTaskBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Software\PluginTaskClient.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Software\PluginTasksManager.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Software\Software.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Software\TaskClient.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Software\TaskInfos.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\System\ClipboardHelper.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\System\Directory.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\System\Keyboard.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\PropertiesHelper.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Protocols\POP3\POP3.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Protocols\POP3\POP3ConnectionFailedException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Protocols\POP3\POP3DownloadingStatus.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Protocols\POP3\POP3MessageDownloaded.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Protocols\Protocol.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Reflection\cVBEvalProvider.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Reflection\MethodEvaluator.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Software\TaskTypeInfos.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\ConfigInfos.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\LocksManager.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\Configs.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\CanUpdate.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\LocksAnswer.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\LockAnswer.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\IsUpdated.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\Join.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\Pong.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\Rejoin.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\TaskInfo.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\TasksInfos.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\TasksTypesInfos.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\TCPAnswer.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\AskConfig.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\UpdateLock.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\SendToAll.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\SetLock.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\IsLocked.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\GetLocks.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\DelTask.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\CreateTask.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\GetTasksInfos.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\GetTasksTypesInfos.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\StopTask.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\SubscribeTasks.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\Thank.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\Time.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPAnswers\UpdateAnswer.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\Connect.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\Disconnect.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\IsUpdate.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\Ping.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\Reconnect.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\TCPCommand.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\Time.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\UnsubscribeTasks.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommands\Update.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPClient.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPCommunicationBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPHelper.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\TCPHost.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\DataToConsume\DataInternalUpdate.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\DataToConsume\DataTCP.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\DataToConsume\DataToConsume.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\TCP-Communications\InternalUpdatesManager.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\AlreadyLoggedException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\NoInternetException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\DBItemableInvalidPropertyValue.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\DBItemableUncopiable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\DBItemableUndeletable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\DBItemableUnsaveble.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\DBLinkerException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\DBLinkerSQLException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\ExceptionBase.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\SendingServerCmdException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\MissingConstructorException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\TCPConnectionFailedException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\TCPConnectionRefusedException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\TCPMessageMissingNameException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Exceptions\TCPMessageNameAlreadyExistsException.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IAgendaEntry.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\ICommand.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IControllable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\ICopiablePastable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IDataConsumable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IDataConsumer.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IDBItemable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IDBItemableManager.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IEmailsValidable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IHTMLGenerator.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IHTMLPageProducer.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IItemable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IItemableManager.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IItemables.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IListable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IManager.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IMovableObject.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IOpenable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IOpenableOptions.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IPlugin.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IPrintable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\IPropertiesManagable.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\§ Interfaces\ITcpWaiter.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="External.vb" />
+    <Compile Include="Strings.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl\WebControl.resx">
+      <DependentUpon>WebControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\ConfigurationsPage.resx">
+      <DependentUpon>ConfigurationsPage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\DataGridPlus.resx">
+      <DependentUpon>DataGridPlus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\ManagedCombo.resx">
+      <DependentUpon>ManagedCombo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\ManagedText.resx">
+      <DependentUpon>ManagedText.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowDialogs\Loading.resx">
+      <DependentUpon>Loading.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\TasksManager.resx">
+      <DependentUpon>TasksManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowObjects\InputBoxPlus.resx">
+      <DependentUpon>InputBoxPlus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\ConfigurationsManager.resx">
+      <DependentUpon>ConfigurationsManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectUpdates\ProjectUpdateLibrary\ProjectUpdateLibrary\ProjectUpdateLibrary.vbproj">
+      <Project>{8FBDD5E7-68D5-4F42-8B1A-50EDAD15E8A6}</Project>
+      <Name>ProjectUpdateLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

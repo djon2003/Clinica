@@ -1,0 +1,296 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CI.BaseLib
+</name>
+</assembly>
+<members>
+<member name="T:CI.Base.Windows.Forms.DataGridViewProgressCell">
+	<summary>
+	</summary>
+	<remarks>Class provided by http://www.codeproject.com/articles/117021/how-to-create-progressbar-column-in-datagridview</remarks>
+</member><member name="P:CI.Base.My.Resources.Resources.ResourceManager">
+	<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member><member name="P:CI.Base.My.Resources.Resources.Culture">
+	<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member><member name="T:CI.Base.My.Resources.Resources">
+	<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member><member name="T:CI.Base.Windows.Forms.DataGridViewProgressColumn">
+	<summary>
+	</summary>
+	<remarks>Class provided by http://www.codeproject.com/articles/117021/how-to-create-progressbar-column-in-datagridview</remarks>
+</member><member name="T:CI.Base.DBItemableManagerBase`2">
+	<summary>
+ Base to create a manager using IDBItemable object (Managed) providing basic functionnalities on lists. Automatically add the singleton pattern by the usage of Self. All child classes have to have a protected constructor.
+ </summary>
+	<typeparam name="Self">Same class name has the one inheriting the ManagerBase (for Singleton pattern)</typeparam>
+	<typeparam name="Managed">Any class implementing IItemable</typeparam>
+	<remarks></remarks>
+</member><member name="M:CI.Base.Protocols.POP3.#ctor(System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Constructeur Pop3
+ </summary>
+	<param name="Serveur">Serveur pop3 ex pop.free.fr</param>
+	<param name="login">login d'authentification au serveur </param>
+	<param name="Mdp">Mot de passe d'authentification au serveur</param>
+	<param name="port">port par defaut pour protocol pop3 = 110</param>
+	<remarks></remarks>
+</member><member name="M:CI.Base.Protocols.POP3.identification">
+	<summary>
+ Authentification des identifiants
+ </summary>
+</member><member name="M:CI.Base.PluginTaskBase.createTask">
+	<summary>
+ Create a new task that will run in a separate thread
+ </summary>
+	<returns></returns>
+	<remarks>This function returns nothing when the maximum concurrent tasks running have been reached</remarks>
+</member><member name="M:CI.Base.PluginTaskBase.addTask(CI.Base.TaskBase)">
+	<summary>
+ Add already created task (by another computer)
+ </summary>
+	<param name="task"></param>
+	<remarks></remarks>
+</member><member name="T:CI.Base.DataTCP">
+	<summary>
+ Data holder to transit across the software
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CI.Base.Protocols.Protocol.#ctor(System.String,System.Int32)">
+	<summary>
+ Ouvre la connexion avec l'hôte
+ </summary>
+	<param name="server"></param>
+	<param name="Port"></param>
+</member><member name="M:CI.Base.Windows.Forms.DataGridPlus.SuspendPaint">
+	<summary>
+ A stronger "SuspendLayout" completely holds the controls painting until ResumePaint is called
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CI.Base.Windows.Forms.DataGridPlus.ResumePaint">
+	<summary>
+ Resume from SuspendPaint method
+ </summary>
+	<remarks></remarks>
+</member><member name="P:CI.Base.ItemableManagerBase`2._items">
+	<summary>
+ Return the reference of the items list.
+ 
+ When used, shall ensure locking through changingItemablesLock variable.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>To use only in last resort.</remarks>
+</member><member name="P:CI.Base.ItemableManagerBase`2.count">
+	<summary>
+ Get the number of IItemable objects currently in the list
+ </summary>
+	<value>Integer</value>
+	<returns>The number of items in the list</returns>
+	<remarks></remarks>
+</member><member name="T:CI.Base.ItemableManagerBase`2">
+	<summary>
+ Base to create a manager using IItemable object (Managed) providing basic functionnalities on lists. Automatically add the singleton pattern by the usage of Self. All child classes have to have a protected constructor.
+ If the object are IDBItemable types, you should use DBItemableManagerBase instead.
+ </summary>
+	<typeparam name="Self">Same class name has the one inheriting the ManagerBase (for Singleton pattern)</typeparam>
+	<typeparam name="Managed">Any class implementing IItemable</typeparam>
+	<remarks></remarks>
+</member><member name="M:CI.Base.DrawingConverter.convertToBase64(System.Drawing.Bitmap)">
+	<summary>
+ Convert a bitmap to its base64 representation
+ </summary>
+	<param name="bmp"></param>
+	<returns></returns>
+	<remarks>Taken from : http://stackoverflow.com/a/30047647/214898</remarks>
+</member><member name="M:CI.Base.StackTraceSymbolProvider.#ctor(System.String)">
+	<summary>
+ Create a new instance with a specified policy for finding symbols
+ </summary>
+	<param name="searchPath">A semi-colon separated list of additional paths to check</param>
+</member><member name="M:CI.Base.StackTraceSymbolProvider.CreateSymbolReaderForFile(System.String)">
+	<summary>
+ Create a symbol reader object corresponding to the specified module (DLL/EXE)
+ </summary>
+	<param name="modulePath">Full path to the module of interest</param>
+	<returns>A symbol reader object, or null if no matching PDB symbols can located</returns>
+</member><member name="M:CI.Base.StackTraceSymbolProvider.GetSymbolReaderForFile(System.String)">
+	<summary>
+ Get or create a symbol reader for the specified module (caching the result)
+ </summary>
+	<param name="modulePath">Full path to the module of interest</param>
+	<returns>A symbol reader for the specified module or null if none could be found</returns>
+</member><member name="M:CI.Base.StackTraceSymbolProvider.StackTraceToStringWithSourceInfo(System.Diagnostics.StackTrace)">
+	<summary>
+ Get a texual representing of the supplied stack trace including source file names
+ and line numbers, using the PDB lookup options supplied at construction.
+ </summary>
+	<param name="stackTrace">The stack trace to convert to text</param>
+	<returns>A string in a format similar to StackTrace.ToString but whith file names and
+ line numbers even when they're not available to the built-in StackTrace class.</returns>
+</member><member name="M:CI.Base.StackTraceSymbolProvider.GetSourceLoc(System.Reflection.MethodBase,System.Int32)">
+	<summary>
+ Get a string representing the source location for the given IL offset and method
+ </summary>
+	<param name="method">The method of interest</param>
+	<param name="ilOffset">The offset into the IL</param>
+	<returns>Line number of method</returns>
+</member><member name="T:CI.Base.StackTraceSymbolProvider">
+	<summary>
+ A class for producing stack traces with file and line number information using custom PDB
+ lookup logic.
+ </summary>
+	<remarks>
+ The CLR's StackTrace class will only load PDBs that are next to their corresponding module (or
+ in a few other standard locations like the _NT_SYMBOL_PATH environment variable and system directory).
+ PDBs are considered a development-time-only scenario (not intended for use in production), and so usually 
+ are directly next to the image.  However, this is sometimes too restrictive for some development/testing 
+ scenarios.  Use this class to get stack traces with full source info when you want to find PDBs elsewhere, 
+ such as in specific paths or on a symbol server.
+ 
+ An alternate (often superior) approach that could be taken using the same basic code would be to
+ save the stack traces in a computer readable form (XML perhaps) with module names, method tokens
+ and IL offsets.  Then build a tool that takes this as input and after-the-fact loads PDBs to
+ create a full stack trace with source information.  The main benefit of this is that it avoids
+ having to make your PDBs available to all the test machines running your code.
+ 
+ For error-reporting and diagnosis scenarios in production, Microsoft suggests the use of Windows
+ Error Reporting (https://winqual.microsoft.com/).  
+  
+ Note that some of this code is adapted from http://blogs.msdn.com/jmstall/pages/sample-pdb2xml.aspx
+ </remarks>
+</member><member name="M:CI.Base.TCPClient.#ctor">
+	<summary>
+ Constructor used when using the class as a Singleton (For the client part)
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CI.Base.TCPClient.#ctor(System.Net.Sockets.TcpClient,System.Int32)">
+	<summary>
+ Constructor used by TCPHost to manage connected clients (For the server part)
+ </summary>
+	<param name="client"></param>
+	<remarks>Set usePing property to false by default</remarks>
+</member><member name="T:CI.Base.ManagerBase`1">
+	<summary>
+ Base class to create a manager.  Automatically add the singleton pattern by the usage of Self. All child classes have to have a protected constructor.
+ </summary>
+	<typeparam name="Self">Same class name has the one inheriting the ManagerBase (for Singleton pattern)</typeparam>
+	<remarks>Self usage allow the usage of the auto generate dropbox of the designer</remarks>
+</member><member name="M:CI.Base.InternalUpdatesManager.sendUpdate(System.String)">
+	<summary>
+ Send an update to all clients. This method can be used either from the client or the host. In the first the case it will be send to the host and internally and in the second one it will be send directly to all clients.
+ </summary>
+	<param name="update">Update string to send. It has to be : UpdateFunctionName([Param1[,Param2]])</param>
+	<remarks></remarks>
+</member><member name="M:CI.Base.TCPCommunicationBase.getClient">
+	<summary>
+ Get the TCPClient linked with this communication. 
+ </summary>
+	<returns>TCPClient linked with this communication</returns>
+	<remarks>Use only when the TCPClient method doesn't exist in the class</remarks>
+</member><member name="M:CI.Base.Strings.compressString(System.String)">
+ String to comressed
+
+</member><member name="M:CI.Base.Strings.decompressString(System.String)">
+ String to decompress
+
+</member><member name="M:CI.Base.Common.SuspendPaint(System.Windows.Forms.Control)">
+	<summary>
+ A stronger "SuspendLayout" completely holds the controls painting until ResumePaint is called
+ </summary>
+	<param name="ctrl"></param>
+	<remarks></remarks>
+</member><member name="M:CI.Base.Common.ResumePaint(System.Windows.Forms.Control)">
+	<summary>
+ Resume from SuspendPaint method
+ </summary>
+	<param name="ctrl"></param>
+	<remarks></remarks>
+</member><member name="M:CI.Base.DBLinker.executeSQLScriptFile(System.String,System.Boolean,System.Data.SqlClient.SqlConnection)">
+	<summary>
+ Read the file and use the executeScript method
+ </summary>
+	<param name="fileName">SQL filename to execute</param>
+	<remarks>See the executeScript remarks</remarks>
+</member><member name="M:CI.Base.DBLinker.executeSQLScript(System.String,System.Boolean,System.Data.SqlClient.SqlConnection,System.Boolean)">
+	<summary> 
+ Execute a SQL script on the main connection
+ </summary>
+	<param name="script">Script to execute</param>
+	<param name="useTransaction">Use a global transaction for the whole script</param>
+	<remarks>- Support RECONFIGURE commands<br/>- Remove USE commands<br/>- Split the script on GO command to be executed independantly</remarks>
+</member><member name="M:CI.Base.ClipboardHelper.save">
+	<summary>
+ Allow to save current clipboard content so it can be restored later using "restore"
+ </summary>
+	<remarks>Taken from : http://stackoverflow.com/a/6263468/214898</remarks>
+</member><member name="M:CI.Base.ClipboardHelper.restore">
+	<summary>
+ Restore the clipboard content from the last "save" call.
+ </summary>
+	<remarks>Taken from : http://stackoverflow.com/a/6263468/214898</remarks>
+</member><member name="M:CI.Base.TCPHost.sendToAllClients(CI.Base.TCPCommands.SendToAll)">
+	<summary>
+ This subroutine sends a message to all attached clients
+ </summary>
+	<param name="sendToAllCmd"></param>
+	<remarks></remarks>
+</member><member name="M:CI.Base.TCPHost.sendToAllClients(System.Int32,System.String)">
+	<summary>
+ This subroutine sends a message to all attached clients
+ </summary>
+	<param name="messageToSend"></param>
+	<remarks>This method should not be used !!! Exists for sending raw message</remarks>
+</member><member name="M:CI.Base.TCPHost.doListen(System.Int32)">
+	<summary>
+ This subroutine is used as a background listener thread to 
+ allow reading incoming messages without lagging the user interface.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CI.Base.TCPHost.waitForData(System.Type,System.Int32)">
+	<summary>
+ Wait for a TCPCommand or a TCPAnswer.
+ </summary>
+	<param name="commType">TCPCommand/TCPAnswer derived class type</param>
+	<param name="maximumMilliseconds">Maximum milliseconds to wait the data. If set to minus one, it means an infinite time.</param>
+	<returns>A TCPCommand or a TCPAnswer</returns>
+	<remarks></remarks>
+</member><member name="M:CI.Base.Windows.Forms.WebControl.getImageFromDocument(System.String)">
+	<summary>
+ Get a bitmap from the current loaded page
+ </summary>
+	<param name="imgUrl">Image url to locate the IMG tag</param>
+	<returns></returns>
+	<remarks>Inspired from : http://stackoverflow.com/a/2568019/214898</remarks>
+</member><member name="M:CI.Base.Windows.Forms.WebControl.getImageFromDocument(mshtml.IHTMLImgElement)">
+	<summary>
+ Get a bitmap from the current loaded page
+ </summary>
+	<param name="img">IMG tag to get image from</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CI.Base.Windows.Forms.WebControl.getGlobalCookies(System.String)">
+	<summary>
+ Return the all cookies of the current page
+ </summary>
+	<param name="uri"></param>
+	<returns></returns>
+	<remarks>Taken from : https://www.codeproject.com/tips/659004/download-of-file-with-open-save-dialog-box</remarks>
+</member><member name="M:CI.Base.Windows.Forms.WebControl.downloadFile(System.String)">
+	<summary>
+ Download file using the same cookie as current page (so potentially credentials are preserved)
+ </summary>
+	<param name="url"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

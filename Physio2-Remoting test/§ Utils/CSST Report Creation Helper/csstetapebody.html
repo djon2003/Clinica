@@ -1,0 +1,436 @@
+<html>
+<head>
+<title>Test</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script>
+$(document).ready(function() {
+
+/*
+var curElement = undefined;
+
+$('div').mousedown(function() {curElement = this;});
+$('div').mouseup(function() {curElement = undefined;});
+
+$('div').mousemove(function() {
+
+if (curElement != undefined) {
+
+}
+
+});
+
+*/
+
+$('div').draggable();
+
+
+});
+</script>
+</head>
+<body>
+
+<style>
+BODY {padding : 0; margin:0;width:100%;}
+
+IMG {
+position:absolute;
+top:0;
+left:0;
+z-index:1;
+}
+
+SPAN {
+position:absolute;
+left:0;
+}
+
+DIV {
+position:absolute;
+height:28px;
+font-size:24px;
+text-overflow:ellipsis;
+overflow:hidden;
+z-index:2;
+}
+
+.r {
+font-size:16px;
+}
+
+.s {
+letter-spacing:12px;
+font-family:monospace;
+}
+
+.n {
+padding-left:33px;
+}
+
+#ergo {
+left:180px;
+top:200px;
+}
+
+#physio {
+left:370px;
+top:200px;
+}
+
+#nocsst {
+left:840px;
+top:195px;
+}
+
+#clientname {
+left:80px;
+top:279px;
+}
+
+#clientphone {
+left:485px;
+top:279px;
+width:136px;
+}
+
+#nam1 {
+left:837px;
+top:275px;
+}
+
+#nam2 {
+left:954px;
+top:275px;
+}
+
+#nam3 {
+left:1068px;
+top:275px;
+}
+
+#clientaddress {
+left:80px;
+top:327px;
+width:550px;
+}
+
+#eventdate1 {
+left:840px;
+top:322px;
+}
+#eventdate2 {
+left:953px;
+top:322px;
+}
+#eventdate3 {
+left:1012px;
+top:322px;
+}
+
+#clientcity {
+left:80px;
+top:375px;
+width:210px;
+}
+
+#clientprovince {
+left:291px;
+top:375px;
+width:190px;
+}
+
+#clientpostalcode {
+left:485px;
+top:375px;
+width:140px;
+}
+
+#backdate1 {
+left:840px;
+top:371px;
+}
+#backdate2 {
+left:953px;
+top:371px;
+}
+#backdate3 {
+left:1012px;
+top:371px;
+}
+
+
+#clinicname {
+left:80px;
+top:425px;
+width:400px;
+}
+#clinicphone {
+left:485px;
+top:425px;
+width:136px;
+}
+#clinicid {
+left:660px;
+top:425px;
+}
+
+#firsttreatmentdate {
+left:892px;
+top:425px;
+width:150px;
+}
+
+
+#medecinname {
+left:80px;
+top:470px;
+width:540px;
+}
+#medecinid {
+left:660px;
+top:470px;
+}
+
+
+#refdate {
+left:892px;
+top:470px;
+width:150px;
+}
+#diagnostic {
+left:80px;
+top:517px;
+width:1100px;
+}
+#nostep {
+left:539px;
+top:560px;
+}
+#totaltreatments {
+left:985px;
+top:560px;
+}
+
+
+#frequency {
+left:74px;
+top:635px;
+}
+#frequencyreason1 {
+left:228px;
+top:616px;
+}
+#frequencyreason2 {
+left:228px;
+top:639px;
+}
+#frequencyreason3 {
+left:228px;
+top:663px;
+}
+#frequencyreason4 {
+left:334px;
+top:616px;
+}
+#frequencyreason5 {
+left:334px;
+top:639px;
+}
+
+#evolution1 {
+left:440px;
+top:618px;
+}
+#evolution2 {
+left:440px;
+top:641px;
+}
+#evolution3 {
+left:440px;
+top:664px;
+}
+
+#treamentsuspended1 {
+left:589px;
+top:630px;
+}
+#treamentsuspended2 {
+left:589px;
+top:653px;
+}
+
+#treamentsuspendeddate1 {
+left:748px;
+top:638px;
+}
+#treamentsuspendeddate2 {
+left:860px;
+top:638px;
+}
+#treamentsuspendeddate3 {
+left:920px;
+top:638px;
+}
+
+
+#soap {
+font-size:12px;
+left:80px;
+top:716px;
+height:94px;
+width:1100px;
+}
+
+
+
+#presencesyear1 {
+left:80px;
+top:1080px;
+}
+#presencesmonth1 {
+left:218px;
+top:1080px;
+}
+#presences1 {
+left:320px;
+top:1080px;
+letter-spacing:14px;
+}
+
+
+#presencesyear2 {
+left:80px;
+top:1106px;
+}
+#presencesmonth2 {
+left:218px;
+top:1106px;
+}
+#presences2 {
+left:320px;
+top:1106px;
+letter-spacing:14px;
+}
+
+#trpname {
+left:78px;
+top:862px;
+width:520px;
+border-top:solid 1px black;
+font-size:12px;
+height:16px;
+}
+
+#trpid {
+left:636px;
+top:844px;
+}
+
+#signingdate1 {
+left:957px;
+top:844px;
+}
+#signingdate2 {
+left:1069px;
+top:844px;
+}
+#signingdate3 {
+left:1129px;
+top:844px;
+}
+
+</style>
+
+<span>
+
+<img src=csst-etape.png>
+
+<div id=physio class=r>X</div>
+<div id=ergo class=r>X</div>
+
+<div id=nocsst class=s>123456789</div>
+
+
+<div id=clientname>LastName,FirstName</div>
+<div id=clientphone>514-555-5555</div>
+
+<div id=nam1 class=s>LASF</div>
+<div id=nam2 class=s>0000</div>
+<div id=nam3 class=s>0000</div>
+
+
+
+<div id=clientaddress>123 road MyStreet</div>
+
+<div id=eventdate1 class=s>2000</div>
+<div id=eventdate2 class=s>08</div>
+<div id=eventdate3 class=s>08</div>
+
+<div id=clientcity>MyCity</div>
+<div id=clientprovince>Québec</div>
+<div id=clientpostalcode>X0X0X0</div>
+
+<div id=backdate1 class=s>2000</div>
+<div id=backdate2 class=s>08</div>
+<div id=backdate3 class=s>08</div>
+
+
+<div id=clinicname>ClinicName</div>
+<div id=clinicphone>514-555-5551</div>
+<div id=clinicid>0000000</div>
+
+<div id=firsttreatmentdate>2010-05-05</div>
+
+
+<div id=medecinname>Médecin 1</div>
+<div id=medecinid>123456</div>
+
+
+<div id=refdate>2011-06-06</div>
+
+<div id=diagnostic>Diagnostic</div>
+
+<div id=nostep>5</div>
+<div id=totaltreatments>50</div>
+
+<div id=frequency>7</div>
+
+<div id=frequencyreason1 class=r>X</div>
+<div id=frequencyreason2 class=r>X</div>
+<div id=frequencyreason3 class=r>X</div>
+<div id=frequencyreason4 class=r>X</div>
+<div id=frequencyreason5 class=r>X</div>
+
+<div id=evolution1 class=r>X</div>
+<div id=evolution2 class=r>X</div>
+<div id=evolution3 class=r>X</div>
+
+<div id=treamentsuspended1 class=r>X</div>
+<div id=treamentsuspended2 class=r>X</div>
+<div id=treamentsuspendeddate1 class=s>2001</div>
+<div id=treamentsuspendeddate2 class=s>01</div>
+<div id=treamentsuspendeddate3 class=s>01</div>
+
+<div id=soap>SOAP<br>SOAP<br>SOAP<br>SOAP<br>SOAP<br>SOAP<br>SOAP<br>SOAP</div>
+
+
+<div id=presencesyear1>2013</div>
+<div id=presencesmonth1>01</div>
+<div id=presences1 class=s>&nbsp;&nbsp;&nbsp;I&nbsp;PPPPPPPPPPPPPPPPPPPPPPPPPP</div>
+
+
+<div id=presencesyear2>2012</div>
+<div id=presencesmonth2>12</div>
+<div id=presences2 class=s>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</div>
+
+<div id=trpname>###trpname###</div>
+<div id=trpid>###trpid###</div>
+
+<div id=signingdate1 class=s>2000</div>
+<div id=signingdate2 class=s>08</div>
+<div id=signingdate3 class=s>08</div>
+
+</span>
+
+</body>
+</html>

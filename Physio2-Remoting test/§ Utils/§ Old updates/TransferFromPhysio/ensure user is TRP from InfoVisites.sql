@@ -1,0 +1,1 @@
+UPDATE Utilisateurs SET IsTherapist=1, DroitAcces='3' + DroitAcces WHERE NoUser IN (SELECT NoUser FROM Utilisateurs WHERE NoUser IN (SELECT NoTRP FROM InfoVisites) AND IsTherapist=0)

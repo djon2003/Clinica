@@ -1,0 +1,662 @@
+## AIDE ##
+
+#
+Descriptions des "variables" utilisées :
+
+NAM = Numéro d'assurance maladie
+NoFolder = Numéro du dossier d'un compte client
+NoVisite = Numéro de visite d'un dossier
+NoFacture = Numéro d'une facture
+NoLigneInFile = Numéro de ligne de la donnée dans le fichier
+TRP=Nom du thérapeute (Nom,Prénom)
+
+AppPath = Chemin de l'application
+compte client = AppPath & "Clients\" & NAM
+Folders = compte client & "\Dossiers"
+Folder = Folders & "\" & NoFolder
+Visite = Folder & "\" & NoVisite
+
+#
+
+
+
+##########################################################################
+
+## Structure des updates sur le serveur d'update ##
+
+-current.off
+ Si le fichier existe et contient la date et l'heure à laquelle le serveur sera Online, alors le serveur d'update est à OFF.
+ Si le fichier n'existe pas ou il est vide, alors le serveur est à ON.
+
+-current.version
+ Numéro de la version de l'update la plus récente
+
+-client2/# (Où # signifie le numéro de l'update) (Optionel)
+	- /files.list (1 entrée par ligne séparé par §)
+	  Copie le fichier du serveur de MAJ vers le client (dossier du programme Clinica) et crée le dossier nouveau s'il n'existe pas
+	  Il doit donc avoir un fichier uploadé sur le serveur d'update par ligne
+	  0-Emplacement (<- ou)et nom du fichier (Ex: NewFile.bmp OU NewDossier/NewFile.bmp)
+	  1-Emplacement (<- ou)et nom du fichier (Ex: NewFile.bmp OU NewDossier\NewFile.bmp)
+	  2-Taille du fichier
+	  3-Fichier nécessitant l'updater (True|False) (ces fichiers sont habituellement déjà en cours d'utilisation, ex: Clinica.exe)
+	  4-Mode de téléchargement (Binary|ASCII)
+	
+	- /major.update
+	  Fichier "FLAG" indiquant que cette mise à jour nécessite un redémarrage
+
+-server2/# (Où # signifie le numéro de l'update) (Optionel)
+	- /files.list (1 entrée par ligne séparé par §)
+	  Copie le fichier du fichier vers le serveur (dossier des données) et crée le dossier nouveau s'il n'existe pas
+	  Il doit donc avoir un fichier uploadé sur le serveur d'update par ligne
+	  0-Emplacement (<- ou)et nom du fichier (Ex: NewFile.bmp OU NewDossier/NewFile.bmp)
+	  1-Emplacement (<- ou)et nom du fichier (Ex: NewFile.bmp OU NewDossier\NewFile.bmp)
+	  2-Taille du fichier
+	  3-Fichier nécessitant l'updater (True|False) (actuellement, toujours Faux)
+	  4-Mode de téléchargement (Binary|ASCII)
+
+	- /sqlupdates.sql   (Inclut dans files.list)
+	  Fichier contenant les mises à jour SQL à effectuer sur la base de données Clinica.
+	  Il peut y avoir plusieurs batch d'exécution séparés par des GO précédés et suivis de Enter.
+	
+	- /major.update
+	  Fichier "FLAG" indiquant que cette mise à jour nécessite un redémarrage
+
+	- /Updates/*.exe (Inclut dans files.list)
+	  Programme qui sera exécuté au prochain lancement de Clinica et sera supprimé immédiatement après.
+
+
+##########################################################################
+
+## Structure des données en mode fichiers ##
+
+-Fichiers Data ->
+	- pref.sav
+		Préférences cliniques
+
+	- GenWinModif
+		Contient les fichiers des fenêtres générales qui sont en cours de modification
+		1 fichier (Random) = 1:UserModifying,2:DateTemps de la modification
+
+	- Images
+		Contient toutes les images utilisées dans le logiciel
+
+	- Lists
+		- search.lst
+	 		Éléments pouvant être dans la recherche d'un compte client (Séparés par §)
+			0-Nom à affiché
+			1-Nom du champ dans la base de données
+			2-Nom de la table associée
+			3-Symbol of quotation EX: MaPhrase="Blabla" où les " = Symbol of quotation
+		- updates.lst
+			Liste de tous les updates à effectuer par le logiciel
+
+		- UniqueNoQueue
+			File d'attente pour avoir un numéro unique
+
+	- Mails (Contient les dossiers de tous les messages portant le numéro de message ds SQL)
+		Dans un dossier d'un message :
+		- attach
+			Ce dossier contient tous les fichiers attachés au message
+
+-Fichiers Users ->
+	- Connected (1 fichier nommé "USERNAME-COMPUTERNAME" = Indique que tel utilisateur est connecté sur tel machine)
+		0-List updates.lst LastLineRead
+	- Pref (1 fichier portant le nom de l'utilisateur = Préférences utilisateur)
+	- Temp
+		- Dossier portant le nom de l'utilisateur
+			Contient les fichiers temporaires nécessaires de l'utilisateur. Ces fichiers sont détruits lors de la fermeture du logiciel.
+
+-Fichiers DB ->
+	À CORRIGER
+
+############################################################################
+
+## Base de données - Structure des champs de différentes tables complexes ##
+
+- RapportFiltrages
+	1- NoRapportFiltrage
+	   Numéro du filtre
+	2- FiltrageName
+	   Nom de la classe de ce filtre (Le nom réel de la classe est précédé de Filtre) (FromTo|ListFieldData|NoFolder|User|RefererType|Month|Passif)
+	3- TableDotField
+	   Nom de la table et du champs séparé par un point. Il est utilisé pour construire le WhereStr.
+	4- FiltrageProperties
+	   Propriétés du filtre (De la forme §NOMPROPRIÉTÉ§=§VALEUR§)
+	   Noms des propriétés par classe:
+		- BasicFilter
+			- FilterOnRapportParts
+			  Choix dans quel WHEREGEN le filtre doit s'appliquer (ALL|HEADER|BODY|FOOTER)
+			  Une combinaison des choix est possible en les séparant avec des tirets. Ex : HEADER-BODY ou BODY-FOOTER		  
+		- FromTo
+		  Demande soit deux dates (début et fin) ou une semaine à filtrer.
+		  Remplace WHEREPART:DATES
+		  Remplace WHEREPART:DATE1
+		  Remplace WHEREPART:DATE2
+			- (Les Propriétés de BasicFilter sont incluses)
+			- WholeWeek
+			  Sélectionne une semaine au lieu d'une journée (Vrai|Faux)
+			- ShowTime
+			  Affiche l'heure sur la fenêtre de choix de date et demande l'heure de fin
+			- SwitchTitles
+			  Initialement, la fenêtre du from affiche 'Date depuis...' et la fenêtre du to affiche 'Date jusqu'à...'.
+			  Ici les titres sont inversés seulement.
+			- AcceptNull (Vrai|Faux)
+			  Accepte les dates NULL également (par défaut, ne les accepte pas)
+		- InputFieldData
+		  Demande d'entrer un choix dans une boîte de texte
+			- (Les Propriétés de BasicFilter sont incluses)
+			- All
+			  La génération du rapport poursuit sans ce filtrage si Vrai (Vrai|Faux)
+			- AcceptNumeric
+			  La boîte peut contenir des chiffres (Vrai|Faux)
+			- AcceptAlpha
+			  La boîte peut contenir de caractères autre que des chiffres (Vrai|Faux)
+			- OnlyAlphabet
+			  La boîte ne peut contenir que des lettres de l'alphabet (A-Z) (Vrai|Faux)
+			- RefuseAccents
+			  La boîte n'accepte pas les lettres avec des accents (Vrai|Faux)
+			- CurrencyBox
+			  La boîte peut contenir des nombres (Vrai|Faux)
+			- NbDecimals
+			  Si la boîte est en mode CurrencyBox (=Vrai), Nombre de décimal maximale accepté (0 pour aucune limite)
+			- CB_AcceptNegative
+			  Si la boîte est en mode CurrencyBox (=Vrai), Accepte les nombres négatifs (Vrai|Faux)
+			- WinTitle
+			  Nom de la fenêtre qui s'affiche
+			- PromptText
+			  Texte au dessus de la boîte de texte
+			- ShowFilterOnRapport
+			  Le filtre doit-il inclure une ligne de texte dans le rapport (Vrai|Faux)
+			- OneEntryName
+			  Nom que l'on donne au type d'entrée fait par l'usager.
+			- StartsWith
+			  Le filtre réduira la liste au élément du champ TableDotField débutant par l'entrée faite par l'utilisateur.
+			- EndsWith
+			  Le filtre réduira la liste au élément du champ TableDotField finissant par l'entrée faite par l'utilisateur.
+		- NoFacture
+		  Demande d'entrer un numéro de facture (permet de gérer le cas des factures unifées)
+			- (Les Propriétés de InputFieldData sont incluses)
+		- ListFieldData
+		  Demande de choisir parmis les choix présentés (Ex : Liste de villes).
+			- (Les Propriétés de BasicFilter sont incluses)
+			- All
+			  Affiche le choix "Tous" (Vrai|Faux)
+			- AcceptNulls
+			  Ajoute les valeurs nulls aux valeurs retournés en appliquant le filtre
+			- StartsWith
+			  La génération du Where contiendra un 'wild char' après le choix pour sélectionner tous les mots débutant par notre choix.
+			- EndsWith
+			  La génération du Where contiendra un 'wild char' avant le choix pour sélectionner tous les mots finissant par notre choix.
+			- ListTDF
+			  Nom complet : ListTableDotField
+			  Le nom de la table et du champs séparés d'un point. Les données de cette colonne seront utilisés pour générer la liste de choix.
+			- ValueTDF
+			  Nom complet : ValueTableDotField
+			  Le nom de la table et du champ séparés d'un point. Si spécifié, le logiciel fera une correspondance ligne à ligne avec les entrées de ListTDF et retourna cette valeur au lieu du choix sélectionné.
+			- WinTitle
+			  Nom de la fenêtre qui s'affiche
+			- OneEntryName
+			  Nom que l'on donne au type d'entrée fait par l'usager.
+		- NoClient
+		  Demande choisir le compte client à filtrer.
+			- (Les Propriétés de BasicFilter sont incluses)
+			- AskNoFolder
+			  Demande, également, de choisir le dossier du client (Vrai|Faux)
+			- ShowInactiveFolders
+			  Affiche également les dossiers inactifs (Vrai|Faux)
+			- All
+			  Lorsque la fenêtre de recherche d'un client est fermée sans sélection, on crée quand même le rapport en sélectionnant tous les clients ou dossiers.
+			  Affiche le choix "Tous" pour les dossiers : "FolderField" doit être rempli et "TableDotField" doit correspondre au champ du client (Vrai|Faux)
+			  Ne s'applique pas lorsque "AskFolderText=True"
+			- AllOnlyFolders
+			  Lorsque la fenêtre de recherche d'un client est fermée sans sélection, que "All=True" et que "AskNoFolder=True", la création est annulée. (Vrai|Faux)
+			- FolderField
+			  Nom du champs pour un dossier si "All=True" et "AskNoFolder=True". Il est utilisé pour construire le WhereStr.
+			- FolderTextTilteFilter
+			  Texte devant être contenu dans le titre du texte pour pouvoir être choisi (Vide = Tous les textes)
+			- AskFolderText
+			  Demande, également, de choisir le texte du dossier du client (Vrai|Faux)
+		- NoKP
+		  Demande de choisir le compte P/O à filtrer.
+			- (Les Propriétés de BasicFilter sont incluses)
+			- All
+			  Lorsque la fenêtre de recherche d'une P/O est fermée sans sélection, on crée quand même le rapport en sélectionnant tous les P/O
+		- User
+		  Demande de choisir l'utilisateur à filtrer. 
+			- (Les Propriétés de BasicFilter sont incluses)
+			- All
+			  Affiche le choix "Tous" (Vrai|Faux)
+			- AskTRPTraitantOrVisite
+			  Demande si le thérapeute choisit correspond au thérapeute de la visite ou le thérapeute traitant (Vrai|Faux)
+			- AskTRPTraitantOrVisiteOrDemanded
+			  Demande si le thérapeute choisit correspond au thérapeute de la visite ou le thérapeute traitant ou le thérapeute demandé
+			- AlternateTableDotField
+			  Nom de la table et du champs séparé par un point. Il sera utilisé si l'utilisateur choisit 'Thérapeute de la visite'.
+			- ThirdTableDotField
+			  Nom de la table et du champs séparé par un point. Il sera utilisé si l'utilisateur choisit 'Thérapeute demandé'.
+			- IsTRP
+			  Affiche uniquement les thérapeutes (Vrai|Faux)
+			- EmployeeType
+			  Filtre les utilisateurs selon le type d'employé (0=Tous|1=Employé|2=Travailleur autonome)
+		- RefererType
+		  Demande de choisir le type de référent à filtrer.
+			- (Les Propriétés de BasicFilter sont incluses)
+			- All
+			  Affiche le choix "Tous" (Vrai|Faux)
+		- Month
+		  Demande de choisir un mois et l'année à filtrer.
+		  Remplace WHEREPART:DATES
+		  Remplace WHEREPART:DATE1
+		  Remplace WHEREPART:DATE2
+			- (Les Propriétés de BasicFilter sont incluses)
+			- All
+			  Affiche le choix "Tous" (Vrai|Faux)
+			- Subquery
+			  Commande SQL qui représente une égalité où la variable WHEREGEN doit être incluse.
+			- SQLWhere
+			  Partie du WHERE général (ajoutée à WHEREGEN)
+		- Passif
+		  Ce filtre n'est pas utilisé pour filtrer la commande SQL, mais pour envoyer une chaîne au rapport.
+			- (Les Propriétés de BasicFilter sont incluses)
+			- Descriptive
+			  Nom qui permet de déterminer s'il s'agit du bon filtre pour en utiliser la chaîne
+			- PassiveValue
+			  Permet de définir une valeur par défaut si l'on ne la définit pas dynamiquement.
+	5- NoRapportType
+	   Numéro du rapport type auquel est associé ce filtre
+
+- RapportTypes
+	1- NoRapportType
+	   Numéro du rapport
+	2- RapportTitle
+	   Titre du rapport
+	3- RapportWidth
+	   Largeur du rapport
+	4- RapportWidthType
+	   Type de largeur (Inches|Pourcent)
+	5- RapportHeaderName
+	   Nom de la classe pour cet entête (Le nom réel de la classe est précédé de Rapport) (BasicHeader|HeaderSimple)
+	6- RapportHeaderProperties
+	   Propriétés de l'entête (De la forme §NOMPROPRIÉTÉ§=§VALEUR§)
+	   Noms des propriétés par classe:
+		- BasicHeader
+			- StyleFileName
+			  Chemin partiel ou complet d'un fichier CSS. Peut inclure la variable ###CLINICAPATH###.
+			- GeneralWhereStr
+			  Propriété chargée dynamiquement via les filtres du rapport
+			- ColsFormat
+			  Format spécifique pour certaines colonnes.
+			  {COLNAME=FORMAT£COLNAME=FORMAT£...}
+			  COLNAME signifie le nom de la colonne à formatter
+			  FORMAT peut prendre les valeurs suivantes : (INT|DATE|DATETIME|TIME|CURRENCY|CURRENCYNAME|STRING|POURCENT)
+		- HeaderSimple
+			- (Les Propriétés de BasicHeader sont incluses)
+			- SQLStatement
+			  Commande T-SQL pour afficher le rapport. Peut inclure la variable WHEREGEN qui sera remplacée par GeneralWhereStr & SQLWhere combinés.
+			- SQLWhere
+			  Partie 'WHERE' d'une commande TSQL pour SQLStatement. Ce 'WHERE' est général pour tous les rapports créés par ce type.
+			  Peut inclure les variables sous la forme ###VARIABLE### qui sont ajoutés via le code.
+			- HeaderFileName
+			  Chemin partiel ou complet d'un fichier CSS. Peut inclure la variable ###CLINICAPATH###.
+			  Le fichier HTML doit inclure les variables ###NOMDUCHAMPS###  et la variable ###ExtraField### (Définit par le filtre passif) à l'endroit où l'information doit apparaître.
+			  Le fichier HTML doit inclure les variables ###RapportTitle###,###RapportDate###,###RapportTime###,###RapportCreatorName###,###RapportFilters### à l'endroit où l'information doit apparaître.
+			- ExtraFieldType
+			  Façon dont le champs en extra sera rempli (NONE|FILTER|ASK)
+			  FILTER = FiltrePassif
+			- ExtraFieldQuestion
+			  Question à poser lors de la demande d'entrée pour le champs en extra (ExtraField)
+	7- RapportBodyName
+	   Nom de la classe pour ce corps de rapport (Le nom réel de classe est précédé de Rapport) (BasicBody|BodyAgenda|BodySimple|BodyTable|BodyStats)
+	8- RapportBodyProperties
+	   Propriétés du corps du rapport (De la forme §NOMPROPRIÉTÉ§=§VALEUR§)
+	   Noms des propriétés par classe:
+		- BasicBody
+			- SQLStatement
+			  Commande T-SQL pour afficher le rapport.
+			  Peut inclure la variable WHEREGEN qui sera remplacée par GeneralWhereStr.
+			  Peut inclure des variables WHEREPART:DATES qui seront remplacées par le WhereStr du filtre Month ou du filtre FromTo.
+			  Peut inclure des variables WHEREPART:DATE1 qui seront remplacées par la 1ère date du filtre Month ou du filtre FromTo.
+			  Peut inclure des variables WHEREPART:DATE2 qui seront remplacées par la 2e date du filtre Month ou du filtre FromTo.
+			  Peut inclure la variable ORDERGEN qui sera remplacée par les colonnes.
+			  Peut inclure les variables sous la forme ###VARIABLE### qui sont ajoutés via le code.
+			- StyleFileName
+			  Chemin partiel ou complet d'un fichier CSS. Peut inclure la variable ###CLINICAPATH###.
+			- GeneralWhereStr
+			  Propriété chargée dynamiquement via les filtres du rapport
+			- OrderDefaultColumn
+			  Nom de la colonne qui sera utilisé pour trier si l'utilisateur ne sélectionne pas de colonne à trier ou si aucune colonne à choisir n'a été spécifiées au rapport.
+			  Peut inclure DESC pour trier de façon décroissante.
+			- OrderColumnsName
+			  Noms des colonnes que l'utilisateur peut choisir pour trier.
+			  {COLNAME1 [DESC] [ASK]£COLNAME2 [DESC] [ASK]£...}
+			  COLNAME1 signifie le nom de la colonner à trier en premier. Peut inclure DESC pour trier de façon décroissante. Peut inclure ASK pour demande si l'on doit trier par ordre croissant ou décroissant.
+			  COLNAME2 signifie le nom de la colonner à trier en deuxième. Peut inclure DESC pour trier de façon décroissante. Peut inclure ASK pour demande si l'on doit trier par ordre croissant ou décroissant.
+			- ColsFormat
+			  Format spécifique pour certaines colonnes.
+			  {COLNAME=FORMAT£COLNAME=FORMAT£...}
+			  COLNAME signifie le nom de la colonne à formatter
+			  FORMAT peut prendre les valeurs suivantes : (INT|DATE|DATETIME|TIME|CURRENCY|CURRENCYNAME|STRING|POURCENT|DECIMAL)
+			  Lorsque le format String est spécifié, un comptage du nombre d'occurence sera affiché dans les sous-totaux.
+		- BodyAgenda
+			- (Les Propriétés de BodyTable sont incluses)
+			- StartingDateTime
+			  Date de début de la semaine de l'agenda
+			  Propriété chargée dynamiquement via les filtres du rapport
+			- EndingDateTime
+			  Date de fin de la semaine de l'agenda
+			  Propriété chargée dynamiquement via les filtres du rapport
+			- LoadHoraires
+			  Doit charger les horaires (Vrai|Faux)
+			- NoTRP
+			  Numéro du thérapeute à afficher l'horaire
+			  Propriété chargée dynamiquement via les filtres du rapport
+		- BodySimple
+			- (Les Propriétés de BasicBody sont incluses)
+			- BodyFileName
+			  Chemin partiel ou complet d'un fichier HTML. Peut inclure la variable ###CLINICAPATH###.
+			  Le fichier HTML doit inclure les variables ###NOMDUCHAMPS###  et la variable ###ExtraField### (Définit par le filtre passif) à l'endroit où l'information doit apparaître.
+			- ExtraFieldType
+			  Façon dont le champs en extra sera rempli (NONE|FILTER|ASK)
+			  FILTER = FiltrePassif
+			- ExtraFieldQuestion
+			  Question à poser lors de la demande d'entrée pour le champs en extra (ExtraField)
+		- BodyTable
+			- (Les Propriétés de BasicBody sont incluses)
+			- SQLStatement
+			  Commande T-SQL pour afficher le rapport. 
+			  Peut inclure la variable WHEREGEN qui sera remplacée par GeneralWhereStr & SQLWhere combinés.
+			  Peut inclure les variables sous la forme ###VARIABLE### qui sont ajoutés via le code.
+			- SQLWhere
+			  Partie 'WHERE' d'une commande TSQL pour SQLStatement. Ce 'WHERE' est spécifique à tous les rapports créés par ce type.
+			- NbGroupColumns
+			  Nombre de colonnes qui seront groupés, c-à-d les colonnes servant à regrouper les informations subséquentes.
+			- NbGroupColumnsSubTotal
+			  Nombre de sous-totaux des groupes qui seront affichés (Si ce paramètre n'existe pas, affiche tout par défaut)
+			- GroupColumnsAlias
+			  Les noms des titres des colonnes groupées. (Les noms sont séparés par £)
+			  {COLNAME£COLNAME£...}
+			- EndTable
+			  La terminaisation de la table doit-elle être effectuée (Vrai) ou laisser au Footer (Faux)
+			- IsGrouped
+			  La table a-t-elle des colonnes groupées (Vrai|Faux)
+			- NbColumns
+			  Nombre de colonnes à afficher (incluant les colonnes groupées)
+			- ShowSubTotalLine
+			  Affiche les totaux (Vrai|Faux). (On parle ici des chiffres et non de la ligne Sous-totaux en tant que tel)
+			- AddUpSubTotalLine
+			  Additionne tous les chiffres du sous-total (Vrai|Faux)
+			- ShowOnlySubTotals
+			  N'affiche que les sous-totaux (Vrai|Faux)
+			- AskShowOnlySubTotals
+			  Demande si le rapport ne doit inclure que les sous-totaux (Vrai|Faux)
+			- SubTotalColumnsName
+			  Les noms des colonnes dont le sous-total sera à afficher (Les noms sont séparés par £)
+			  {COLNAME=TYPE£COLNAME=TYPE£...}
+			- SubTotalColumnsType
+			  Type d'action définit pour les colonnes en sous-total (Les noms sont séparés par £)
+			  {COLNAME=TYPE£COLNAME=TYPE£...}
+			  COLNAME signifie le nom de la colonne à choisir le type d'action
+			  TYPE peut prendre les valeurs suivantes : (SUM|AVG)
+				SUM = Somme des éléments de la colonne (Par défaut)
+				AVG = Somme des éléments de la colonne diviser par le nombre d'éléments
+			- ColumnsHidingEqualNextData
+			  Les noms des colonnes qui n'affiche pas les données subséquentes équivalentes (Les noms sont séparés par £)
+			  {COLNAME£COLNAME£...}
+			- ColumnsCSS
+			  {COLNAME=CssClassName£COLNAME=CssClassName£...}
+			  COLNAME signifie le nom de la colonne à formatter via une classe CSS
+			  CssClassName signifie le nom de la classe CSS pour formater la colonne entière
+			- ColumnsLink
+			  Permet de créer un lien sur une colonne
+			  {COLNAME=LINK£...}
+			  COLNAME signifie le nom de la colonne où le lien apparaîtra
+			  LINK signifie le lien à utiliser. 
+			       Peut contenir les variables ###PARAMCOLNAME### qui seront remplacées par leur valeur provenant du champ PARAMCOLNAME.
+			       PARAMCOLNAME doit être remplacé par le nom d'une colonne dans le SELECT
+			       Ex : http://www.google.ca
+				    clinica://CLIENT|###NoClient###
+				    clinica://KP|###NoKP###
+			  			  
+		- BodyStats
+			- (Les Propriétés de BodyTable sont incluses)
+			- SQLStatement
+			  Commande T-SQL pour afficher le rapport. Peut inclure la variable WHEREGEN qui sera remplacée par GeneralWhereStr & SQLWhere combinés.
+			  La commande doit être du format :
+			  SELECT Colonne1 AS TitreColonne1, Colonne2, FUNCTION(Colonne3)
+			  FROM From
+			  GROUP BY Colonne1,Colonne2
+			  ORDER BY Colonne1,Colonne2
+			  Voici l'explication des variables ds la commande :
+				- Colonne1 : Nom de la colonne (peut être précéder du nom de la table et d'un point) qui contient les données de la première colonne des statistiques (Ex : noms des thérapeutes)
+					     Les résultats peuvent apparaître de multiple fois, mais seront réduit à une seule ligne.
+				- TitreColonne1 : Titre de la colonne #1.
+				- Colonne2 : Nom de la colonne (peut être précéder du nom de la table et d'un point) qui contient les données des titres de toutes les autres colonnes des statistiques (Ex : noms des codes de dossier)
+					     Les résultats ici ne peuvent pas avoir de doublons, car les nombres de la troisième colonne seront distribués sous chaque colonne
+				- FUNCTION : Une function d'agrégat SQL quelconque. (Ex : Count, Sum)
+				- Colonne3 : Nom de la colonne (peut être précéder du nom de la table et d'un point) qui sera utilisé pour créer les chiffres des statistiques
+					     Les résultats de cette colonne apparaîtront sur la ligne de la Colonne1 et dans la colonne de la Colonne2.
+				- From : Tout combinaison de table valide pour obtenir les statistiques souhaitées.
+			  En gros, BodyStats nécessite une table à trois colonnes dont les deux colonnes du bout seront inversés (colonne/ligne) et dont la première sera éliminée les doublons
+
+			  Peut inclure les variables sous la forme ###VARIABLE### qui sont ajoutés via le code.
+			- ExtraColumnsSQL
+			  Commande T-SQL servant à afficher des colonnes d'informations complémentaires aux statistiques affichées et elles seront situées à droite des statistiques
+			  Peut inclure la variable WHEREGEN qui sera remplacée par GeneralWhereStr & ExtraColumnsSQLWhere combinés.
+			  Peut inclure les variables sous la forme ###VARIABLE### qui sont ajoutés via le code.
+			- ExtraColumnsSQLWhere
+			  Partie 'WHERE' d'une commande TSQL pour ExtraColumnsSQLWhere. Ce 'WHERE' est spécifique à tous les rapports créés par ce type.
+			- TotalPosition
+			  Position du total, soit en colonne ou en rangée (COL|ROW|BOTH)
+			- ShowInPourcent
+			  Affiche les données en pourcentage sur le total soit de la colonne (Choisir TotalPosition=ROW) ou de la rangée (Choisir TotalPosition=COL).
+			  (Vrai|Faux)
+			- TotalsType
+			  Type d'action définit les totaux 
+			  Peut prendre les valeurs suivantes : (SUM|AVG)
+				SUM = Somme des éléments (Par défaut)
+				AVG = Somme des éléments diviser par le nombre d'éléments (non nul)
+		- BodyVisites
+			- (Les Propriétés de BodyTable sont incluses)
+			- NbColumnAfterVisites
+			  Nombre de colonnes à afficher après le tableau de statut des visites par jour
+			- FolderColName
+			  Nom de la colonne dans SQLStatement qui représente le numéro de dossier de la visite
+			- SQLVisitesStatuts
+			  Commande T-SQL pour obtenir le statut des visites demandées. Peut inclure la variable WHEREGEN qui sera remplacée par GeneralWhereStr & SQLWhere combinés.
+			  La commande doit être du format :
+			  SELECT Colonne1, Colonne2, Colonne3
+			  FROM From
+			  Voici l'explication des variables dans la commande :
+				- Colonne1 : Nom de la colonne qui contient la date de la visite
+				- Colonne2 : Nom de la colonne qui contient le statut de la visite
+				- Colonne3 : Nom de la colonne qui contient le numéro de dossier de la visite
+				- From : Nom de la table duquel les informations seront prises.
+	9- RapportFooterName
+	   Nom de la classe pour ce pied de rapport (Le nom réel de classe est précédé de Rapport) (BasicFooter|FooterTotal|FooterSimple)
+	10- RapportFooterProperties
+	   Propriétés du corps du rapport (De la forme §NOMPROPRIÉTÉ§=§VALEUR§)
+	   Noms des propriétés par classe:
+		- BasicFooter
+			- StyleFileName
+			  Chemin partiel ou complet d'un fichier CSS. Peut inclure la variable ###CLINICAPATH###.
+			- GeneralWhereStr
+			  Propriété chargée dynamiquement via les filtres du rapport
+			- ColsFormat
+			  Format spécifique pour certaines colonnes.
+			  {COLNAME=FORMAT£COLNAME=FORMAT£...}
+			  COLNAME signifie le nom de la colonne à formatter
+			  FORMAT peut prendre les valeurs suivantes : (INT|DATE|DATETIME|TIME|CURRENCY|CURRENCYNAME|STRING|POURCENT)
+			  Lorsque le format String est spécifié, un comptage du nombre d'occurence sera affiché dans les sous-totaux.
+		- FooterTotal
+			- (Les Propriétés de BasicFooter sont incluses)
+			- FooterFileName
+			  Chemin partiel ou complet d'un fichier HTML. Peut inclure la variable ###CLINICAPATH###.
+			  Le fichier HTML doit inclure les variables ###SUMTABLEFOOTER### et ###SUMOFLINES###.
+		- FooterSimple
+			- (Les Propriétés de BasicFooter sont incluses)
+			- SQLStatement
+			  Commande T-SQL pour afficher le rapport. Peut inclure la variable WHEREGEN qui sera remplacée par GeneralWhereStr & SQLWhere combinés.
+			- SQLWhere
+			  Partie 'WHERE' d'une commande TSQL pour SQLStatement. Ce 'WHERE' est spécifique à tous les rapports créés par ce type.
+			- FooterFileName
+			  Chemin partiel ou complet d'un fichier HTML. Peut inclure la variable ###CLINICAPATH###.
+			  Le fichier HTML doit inclure les variables ###NOMDUCHAMPS###  et la variable ###ExtraField### (Définit par le filtre passif) à l'endroit où l'information doit apparaître.
+			- ExtraFieldType
+			  Façon dont le champs en extra sera rempli (NONE|FILTER|ASK)
+			  FILTER = FiltrePassif
+			- ExtraFieldQuestion
+			  Question à poser lors de la demande d'entrée pour le champs en extra (ExtraField)
+	11- FiltrageSize
+
+- SettingsUser
+	1- DBStyle
+	  Style de la banque de données à sa fermeture (Séparé par §)
+		0-Hauteur
+		1-Largeur
+		2-Colonne à trier
+		3-Largeur de la colonne Titre
+		4-Largeur de la colonne Taille
+		5-Largeur de la colonne Mots-clés
+		6-Largeur de la colonne Description
+		7-Largeur de la colonne Modifié le...
+		8-Largeur de la colonne Caché
+		9-Type de tri (Ascendant, descendant)
+		10-Position du séparateur
+		11-Dernière catégorie affichée
+
+	2- SearchDBStyle
+	  Style de la recherche pour la banque de données à sa fermeture (Séparé par §)
+		0-Colonne à trier
+		1-Largeur de la colonne Titre
+		2-Largeur de la colonne Catégorie
+		3-Largeur de la colonne Taille
+		4-Largeur de la colonne Mots-clés
+		5-Largeur de la colonne Description
+		6-Largeur de la colonne Modifié le...
+		7-Largeur de la colonne Caché
+		8-Type de tri (Ascendant, descendant)
+		9-Éléments de recherche sélectionnés (Chaîne de caractères contenant les éléments à cocher séparés par des virgules)
+		10-Type de recherche brut sélectionné (Vrai|Faux)
+		11-Respecter la casse (Vrai|Faux)
+		12-Catégories sélectionnées (Chaînes de caractères contenant les chemins des catégories sélectionnées séparés par des points d'interrogation)
+
+	3- SearchAccountStyle
+	  Style de la recherche pour les comptes client à sa fermeture (Séparé par §)
+		0-Largeur de la colonne Nom Complet
+		1-Largeur de la colonne Adresse
+		2-Largeur de la colonne Téléphones
+		3-Largeur de la colonne NAM
+		4-Largeur de la colonne Numéro du compte
+		5-Recherche en texte brute (Vrai|Faux)
+		6-Colonne à trier et ordre de triage
+
+	4- NewRV
+	  Emplacement de l'objet des nouveaux RV (Séparé par §)
+		0-Position Top
+		1-Position Left
+		2-Déplacement bloqué (Vrai|Faux)
+		3-Joint à la bar de côté (Vrai|Faux)
+		4-Imprime les RV avec un message (Vrai|Faux)
+
+	5- LastOnglet
+	  Derniers onglets accédés dans le compte client (Séparé par §)
+		0-Onglet du compte
+		1-Onglet du dossier
+		2-Texte du dossier
+
+	6- SendMessage
+	  Paramètres de la fenêtre d'envoie d'un message (Séparé par §)
+		0-Dernier chemin utiliser pour ajouter un attachement
+		1-Hauteur de la liste avec crochets des utilisateurs
+
+	7- InstantMSG
+	  Emplacement de l'objet des messages instantannés (Séparé par §)
+		0-Position Top
+		1-Position Left
+		2-Déplacement bloqué (Vrai|Faux)
+		3-Joint à la bar de côté (Vrai|Faux)
+
+	8- SearchKPStyle
+	  Style de la recherche pour les comptes P/O à sa fermeture (Séparé par §)
+		0-Largeur de la colonne Nom Complet
+		1-Largeur de la colonne Adresse
+		2-Largeur de la colonne Téléphones
+		3-Largeur de la colonne NAM
+		4-Largeur de la colonne Numéro du compte
+		5-Recherche en texte brute (Vrai|Faux)
+		6-Colonne à trier et ordre de triage
+		7-Catégorie sélectionnée
+		8-Afficher les catégories dans la liste
+
+	9- MainWin
+	  Paramètres de la fenêtre principale (Séparé par §)
+		0-Afficher la barre de statut (Vrai|Faux)
+		1-Afficher la barre d'outils (Vrai|Faux)
+		2-Dernier statut de visibilité des rendez-vous futurs (Vrai|Faux)
+		3-Dernier statut de visibilité des messages instantannés (Vrai|Faux)
+		4-Dernier statut de visibilité du 'Punch' virtuel (Vrai|Faux)
+
+	10- AccountEquipmentStyle
+	  Style pour la liste des équipements prêtés ou vendus dans un compte client (Séparé par §)
+		0-Largeur de la colonne Date
+		1-Largeur de la colonne Item
+		2-Largeur de la colonne Thérapeute
+		3-Largeur de la colonne Numéro de la facture
+		4-Largeur de la colonne Numéro de la vente ou du prêt
+		5-Largeur de la colonne Type (Vente|Prêt)
+		6-Colonne à trier et ordre de triage
+
+	11- Publipostage
+	  Paramètres de la fenêtre de publipostage (Séparé par §)
+		0-
+
+	12- Punch
+	  Emplacement de l'objet du 'punch' virtuel (Séparé par §)
+		0-Position Top
+		1-Position Left
+		2-Déplacement bloqué (Vrai|Faux)
+		3-Joint à la bar de côté (Vrai|Faux)
+
+	13- GestionFactures
+	  Paramètres de la fenêtre Gestion des factures
+		0-Hauteur de la fenêtre
+
+	14- RapportGeneration
+	  Paramètres de la fenêtre Génération de rapport (Séparé par §)
+		0-Hauteur de la fenêtre de sélection d'un type de rapport
+		1-Largeur de la fenêtre de sélection d'un type de rapport
+	15- MailSystem
+	  Paramètres de la fenêtre Réception des messages (Séparé par §)
+		0-Hauteur de la fenêtre
+		1-Largeur de la fenêtre
+		2-Position Left du splitter vertical
+		3-Position Top du splitter horizontal
+		4-Dernier dossier sélectionné + Dernier numéro de message (PATH\NoMessage)
+
+##########################################################################
+
+-Le montant de la facture inclut la taxe.
+
+-Lorsqu'il n'y pas d'horaire thérapeute, l'agenda apparaît vide.
+
+-Lorsque le logiciel est démarré avec /admin Administrateur apparaît dans la liste indépendamment des préférences
+
+-Voir le fichier §§ Configuration.txt pour la configuration de l'objet FreeTextBox.
+
+-Dossiers nécessaires lors de l'installation :
+ -Clients
+ -Users
+ -Users\Connected
+ -Data
+ -Data\Images
+ -Data\Queues
+ -DB
+ -DB\DB
+ -DB\Content
+ -DB\Types
+
+-Fichiers nécessaires lors de l'installation :
+ -Data\Images\*.*
+ -Data\userfile.con
+ -Data\usersdel.path
+ -Data\empty.html

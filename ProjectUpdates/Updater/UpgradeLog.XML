@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Updater">
+</Property><Property Name="Fichier solution" Value="C:\Projects\Physio2-Remoting test\Updater\Updater.sln">
+</Property><Property Name="Date" Value="16 janvier 2012">
+</Property><Property Name="Time" Value="19:54">
+</Property></Properties><Event ErrorLevel="0" Project="Updater" Source="Updater\Updater.vbproj" Description="Projet correctement converti">
+</Event><Event ErrorLevel="3" Project="Updater" Source="Updater\Updater.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Updater.sln" Description="Solution correctement convertie">
+</Event><Event ErrorLevel="3" Project="" Source="Updater.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Updater" Source="Updater\Updater.vbproj" Description="Analyse terminée : la mise à niveau n'est pas requise pour les fichiers projet.">
+</Event></UpgradeLog>

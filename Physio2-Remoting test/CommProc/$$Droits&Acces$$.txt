@@ -1,0 +1,143 @@
+##################
+Description des termes utilisés
+##################
+GÉRER = Ajouter, modifier, renommer, supprimer, couper, copier, coller
+
+##################
+Droits & accès
+##################
+Dernier nom : _droitacces_111
+Free : 
+
+#Autres
+_droitacces_60=Accès aux options de l'administrateur (Activer cet accès uniquement pour avoir accès aux options spéciales)
+_droitacces_53=Droit d'ajouter des liens externes dans les boîtes de texte
+_droitacces_61=Droit d'ajouter un élément des listes déroulantes dans les formulaires
+_droitacces_54=Droit de supprimer les éléments des listes déroulantes dans les formulaires
+_droitacces_59=Droit de modifier le montant d'une facture lors de la prise du paiement
+_droitacces_84=Droit de créer une nouvelle facture via le menu en haut
+_droitacces_86=Droit de mettre à jour le logiciel
+_droitacces_64=Flagging
+_droitacces_90=Droit de choisir la date de l'ajustement pour une facture
+_droitacces_91=Droit de modifier le montant payé même si la facture a un reçu
+
+#Agenda
+_droitacces_0=Accès à tous les agendas
+_droitacces_73=Droit de gérer les plages réservées
+_droitacces_74=Droit de gérer les plages bloquées
+_droitacces_87=Droit de modifier l'horaire du thérapeute
+
+#Banque de données
+_droitacces_1=Accès à la banque de données
+_droitacces_2=Accès aux fichiers cachés
+_droitacces_97=Accès aux dossiers généraux
+_droitacces_3=Droit de gérer les items généraux (sauf ceux en lecture seule)
+_droitacces_4=Droit de gérer les items généraux en lecture seule
+_droitacces_5=Droit de gérer les dossiers généraux
+_droitacces_98=Accès à tous les espaces personnels
+_droitacces_94=Droit de gérer les items de tous les espaces personnels (sauf ceux en lecture seule)
+_droitacces_95=Droit de gérer les items de tous les espaces personnels en lecture seule
+_droitacces_96=Droit de gérer les dossiers de tous les espaces personnels
+_droitacces_6=Accès à la recherche
+_droitacces_7=Accès aux types de fichiers
+_droitacces_8=Droit de gérer les types de fichiers
+_droitacces_99=Droit de supprimer les mots-clés existant
+
+#Compte client & Dossier
+_droitacces_9=Droit d'ajouter de nouveaux clients
+_droitacces_25=Droit de supprimer un client
+_droitacces_10=Accès aux comptes clients
+_droitacces_111=Droit de désactiver des dossiers en lot
+_droitacces_110=Droit d'exporter un dossier
+_droitacces_11=Droit de modifier les informations de base du client
+_droitacces_12=Droit de modifier un dossier (excepté les informations de base du dossier)
+_droitacces_13=Droit de modifier les informations de base d'un dossier
+_droitacces_63=Droit de modifier le montant d'une vente
+_droitacces_14=Accès à la comptabilité
+_droitacces_15=Droit de modifier la comptabilité
+_droitacces_55=Droit de changer le statut d'un dossier
+_droitacces_56=Droit de modifier le bilan de santé
+_droitacces_57=Droit de modifier les communications
+_droitacces_67=Droit de modifier la demande d'autorisation d'un dossier
+_droitacces_76=Droit de créer une nouvelle facture
+_droitacces_89=Droit de transférer un dossier vers un autre compte client
+_droitacces_104=Accès à l'analyse des textes des dossiers
+
+#Rendez-vous & Liste d'attente
+_droitacces_16=Droit d'ajouter un nouveau rendez-vous à un dossier
+_droitacces_75=Droit de supprimer un rendez-vous
+_droitacces_17=Accès aux rendez-vous futurs
+_droitacces_18=Accès à la liste d'attente
+_droitacces_19=Droit de gérer la liste d'attente
+_droitacces_58=Droit de changer le statut d'un rendez-vous
+_droitacces_88=Droit de modifier le filtrage lors la liste d'attente apparaît automatiquement
+
+#Clinique
+_droitacces_27=Droit de gérer les informations de la clinique
+_droitacces_62=Droit de modifier l'horaire de la clinique
+_droitacces_82=Accès aux factures de la clinique
+_droitacces_83=Droit de gérer les factures de la clinique
+_droitacces_85=Droit de créer une nouvelle facture
+_droitacces_80=Droit d'effectuer les paiements
+
+#Compte personne / organisme clé
+_droitacces_20=Droit d'ajouter de nouvelles personnes / organismes clé
+_droitacces_52=Droit de supprimer une personne / organisme clé
+_droitacces_21=Accès aux comptes personnes / organismes clé
+_droitacces_22=Droit de modifier les informations de base
+_droitacces_23=Accès à la comptabilité
+_droitacces_24=Droit de modifier la comptabilité
+_droitacces_26=Droit de gérer la communication
+_droitacces_77=Droit de créer une nouvelle facture
+
+#Différentes gestions
+_droitacces_28=Accès aux codifications dossiers
+_droitacces_29=Droit de gérer les codifications dossiers
+_droitacces_105=Accès à la gestion des types d'alerte des dossiers des clients
+_droitacces_106=Accès à la gestion des types de texte des dossiers des clients
+_droitacces_30=Accès aux équipements
+_droitacces_32=Droit de gérer les équipements
+_droitacces_31=Droit de gérer les modèles de texte généraux
+_droitacces_33=Droit de gérer les préférences générales
+_droitacces_65=Accès à la gestion de la fin de mois
+_droitacces_66=Droit d'effectuer la fin de mois
+_droitacces_72=Droit d'enregistrer les options de fin de mois
+_droitacces_103=Droit de gérer les journées spéciales
+_droitacces_108=Accès à la gestion des tâches du serveur
+
+#Messagerie
+_droitacces_100=Accès au carnet d'adresses des clients
+_droitacces_101=Accès au carnet d'adresses des personnes/organismes clés
+_droitacces_102=Accès au carnet d'adresses des utilisateurs
+_droitacces_34=Accès au carnet d'adresses général
+_droitacces_35=Droit de gérer le carnet d'adresses général
+_droitacces_36=Accès au carnet d'adresses personnel de tous les utilisateurs
+_droitacces_37=Droit de gérer le carnet d'adresses personnel de tous les utilisateurs
+_droitacces_38=Droit d'envoyer des messages externes
+_droitacces_39=Accès à la réception des messages générale
+_droitacces_40=Droit de gérer la réception des messages générale
+_droitacces_107=Droit de télécharger les messages provenant d'un compte de messagerie externe
+_droitacces_41=Accès à la réception des messages personnel de tous les utilisateurs
+_droitacces_42=Droit de gérer la réception des messages personnel de tous les utilisateurs
+_droitacces_43=Accès au publipostage
+_droitacces_44=Droit de gérer les paramètres de comptes courriel
+_droitacces_68=Pour l'envoi d'un message, accès aux comptes de courriel non commun et dont les messages ne sont pas transférés dans le dossier de cet utilisateur
+
+#Rapport
+_droitacces_69=Accès au générateur de rapport
+_droitacces_70=Droit de générer un rapport via le générateur
+_droitacces_71=Droit d'enregistrer des rapports
+
+#Utilisateur
+_droitacces_45=Accès à la gestion des utilisateurs
+_droitacces_46=Droit de gérer les utilisateurs
+_droitacces_47=Droit de gérer l'horaire de tous les utilisateurs
+_droitacces_48=Droit de gérer sa propre horaire
+_droitacces_81=Accès aux paies/facturations de tous les utilisateurs
+_droitacces_49=Droit de gérer les paies / facturations de tous les utilisateurs
+_droitacces_50=Droit de gérer sa propre paie / facturation
+_droitacces_92=Droit de modifier les heures de travail d'une paie
+_droitacces_51=Droit de gérer les types d'utilisateur
+_droitacces_78=Droit de créer une nouvelle facture pour tous les travailleurs autonomes
+_droitacces_79=Droit de créer une nouvelle facture pour soi-même (travailleur autonome)
+_droitacces_93=Accès aux utilisateurs connectés

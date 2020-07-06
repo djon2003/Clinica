@@ -1,0 +1,33 @@
+﻿sp_configure 'show advanced options', 1
+GO
+reconfigure;
+
+sp_configure 'Ole Automation Procedures' , 1
+GO
+reconfigure;
+
+
+
+DECLARE @nextNoItem INT, @lastNoItem INT, @sameCounter INT, @minNoItem INT
+SET @sameCounter = 0
+SET @minNoItem = 0
+SELECT TOP 1 @nextNoItem = NoDBItem FROM DBItems  i inner join FileTypes ft on ft.NoFileType = i.NoFileType where (searchablecontent = '' AND SearchInContent=1 AND NoDBItem> @minNoItem) OR SearchableContent IS NULL ORDER BY NoDBItem
+WHILE @nextNoItem IS NOT NULL
+BEGIN
+	UPDATE DBItems SET SearchableContent = dbo.fnGetDBItemContent(@nextNoItem) WHERE NoDBItem = @nextNoItem
+	SET @lastNoItem = @nextNoItem
+	SET @nextNoItem = null
+	SELECT TOP 1 @nextNoItem = NoDBItem FROM DBItems  i inner join FileTypes ft on ft.NoFileType = i.NoFileType where (searchablecontent = '' AND SearchInContent=1 AND NoDBItem> @minNoItem) OR SearchableContent IS NULL ORDER BY NoDBItem
+	
+	IF @lastNoItem = @nextNoItem
+	BEGIN
+		SET @sameCounter += 1
+		IF @sameCounter = 20
+		BEGIN
+			SET @minNoItem = @nextNoItem
+			SET @sameCounter = 0
+		END
+	END
+	ELSE
+		SET @sameCounter = 0
+END

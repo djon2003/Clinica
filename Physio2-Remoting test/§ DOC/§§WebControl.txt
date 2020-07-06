@@ -1,0 +1,57 @@
+--------------------------------------------------------------------------------
+Adding HTML -->
+// create an IHTMLDocument2
+mshtml.IHTMLDocument2 doc = axWebBrowser1.Document as mshtml.IHTMLDocument2;
+
+// write to the doc
+doc.clear();
+doc.writeln("This is my text...");
+
+doc.close();
+
+--------------------------------------------------------------------------------
+Printing the Browser content with dialog -->
+mshtml.IHTMLDocument2 doc = axWebBrowser1.Document as mshtml.IHTMLDocument2;
+doc.execCommand("Print", true, 0);
+
+--------------------------------------------------------------------------------
+Printing the Browser content without dialog -->
+Private Sub PrintDocument(ByVal pDocument As String) 
+Dim o As Object = System.Reflection.Missing.Value 
+Dim url As String = "file:///" + pDocument.Replace("\", "/") 
+
+Me.AxWebBrowser1.Silent = True 
+Me.AxWebBrowser1.Navigate(url, o, o, o, o) 
+
+Me.AxWebBrowser1.ExecWB(SHDocVw.OLECMDID.OLECMDID_PRINT, SHDocVw.OLECMDEXECOPT.OLECMDEXECOPT_DONTPROMPTUSER) 
+
+End Sub 
+ 
+
+--------------------------------------------------------------------------------
+Preview, PageSetup, And Print -->
+Try 
+      wbHTMLViewer.ExecWB(SHDocVw.OLECMDID.OLECMDID_PRINTPREVIEW, SHDocVw.OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT) 
+    Catch ex As Exception 
+      MessageBox.Show(ex.ToString) 
+    End Try 
+
+For Page Set up 
+
+Try 
+      wbHTMLViewer.ExecWB(SHDocVw.OLECMDID.OLECMDID_PAGESETUP, SHDocVw.OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT) 
+    Catch ex As Exception 
+      MessageBox.Show(ex.ToString) 
+    End Try 
+
+For actual printing 
+Try 
+      wbHTMLViewer.ExecWB(SHDocVw.OLECMDID.OLECMDID_PRINT, SHDocVw.OLECMDEXECOPT.OLECMDEXECOPT_PROMPTUSER) 
+    Catch ex As Exception 
+      MessageBox.Show(ex.ToString) 
+    End Try 
+
+--------------------------------------------------------------------------------
+Reading HTML of the Browser content-->
+mshtml.IHTMLDocument2 doc = axWebBrowser1.Document as mshtml.IHTMLDocument2; 
+MessageBox.Show(doc.body.outerHTML); 

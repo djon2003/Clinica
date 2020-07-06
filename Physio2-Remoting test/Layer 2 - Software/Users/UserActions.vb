@@ -1,0 +1,35 @@
+Public Enum UserActions
+    RV_ChangeStatus_To_NotPresent_Billable = 1
+    RV_ChangeStatus_To_NotPresent_NotBillable = 2
+    RV_ChangeStatus_To_RV = 3
+    RV_ChangeStatus_To_Present = 4
+    Bill_RV_Create = 5
+    RV_Create = 6
+    Bill_ItemBorrowed_Create = 7
+    ItemBorrowed_Reconfirm = 8 ' REM ???
+    RV_Delete = 9 ' REM ??? Not used
+    Bill_ItemSold_Create = 10
+    Bill_Adjust = 11
+    Bill_Pay = 12
+    Folder_Create = 13
+    Folder_Activate = 14
+    Folder_Desactivate = 15
+    ItemBorrowed_Return = 16 'REM Also 18 in the SQL DB
+    Folder_Delete = 19
+    Bill_Delete = 20
+    Folder_ChangeMainTRP = 21
+    Folder_ChangeConfirmCreationExternally_NotTransmitted = 22
+    Folder_ChangeConfirmCreationExternally_Transmitted = 23
+    Folder_ChangeConfirmCreationExternally_Refused = 24
+    Folder_ChangeConfirmCreationExternally_Accepted = 25
+    Folder_ChangeFolderCode = 26
+    Folder_ChangeClient = 27
+    RV_ChangeFolder = 28
+    RV_Confirm = 29
+    RV_AddOnQueueList = 30
+    RV_ChangeService = 31
+    RV_RemoveOfQueueList = 32
+    RV_Moved = 33
+    RV_ChangeTRP = 34
+    RV_ChangePeriod = 35
+End Enum

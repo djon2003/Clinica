@@ -1,0 +1,256 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Clinica
+</name>
+</assembly>
+<members>
+<member name="T:CI.Clinica.Accounts.Clients.Folders.FoldersStatus.FolderStatusApplier">
+	<summary>
+ Change the status of a folder from inactive to active or vice-versa.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:CI.Clinica.My.Resources.Resources.ResourceManager">
+	<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member><member name="P:CI.Clinica.My.Resources.Resources.Culture">
+	<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member><member name="T:CI.Clinica.My.Resources.Resources">
+	<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member><member name="M:CI.Clinica.preferencesWin.tabs_DrawItem(System.Object,System.Windows.Forms.DrawItemEventArgs)">
+	<summary>
+ 
+ Ref : http://stackoverflow.com/questions/5338587/set-tabpage-header-color
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:CI.Clinica.ContextMenuItem.showDropDown(System.Boolean)">
+	<summary>
+ Shows the specified ContextMenuItem
+ </summary>
+	<param name="bContext">bContext=True - displays the context menu at the current screen co-ordinates</param>
+	<remarks></remarks>
+</member><member name="M:CI.Clinica.ContextMenuItem.showDropDown(System.Drawing.Point)">
+	<summary>
+ Shows the specified ContextMenuItem at the screen point specified
+ </summary>
+	<param name="pSpecificScreenPoint">The Point to display the menu at, if Nothing the MousePosition is used.</param>
+	<remarks></remarks>
+</member><member name="M:CI.Clinica.ContextMenuItem.showDropDown">
+	<summary>
+ Shows the specified ContextMenuItem at the default position in the menu.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CI.Clinica.ContextMenuItem.onMouseEnter(System.EventArgs)">
+	<summary>
+ Overriden to allow reset of the Context option that informas the control to display as context.
+ </summary>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="P:CI.Clinica.ContextMenuItem.dropDownLocation">
+	<summary>
+ Overriden to change the location of drawing the menu based on the developers request.
+ </summary>
+	<value></value>
+	<returns>The Point to draw the menu at</returns>
+	<remarks></remarks>
+</member><member name="T:CI.Clinica.EquipmentWin">
+	<summary>
+	</summary>
+	<remarks>From Default namespace renaming, from then, the designer is no more able to open the window unless we delete or set to thing the line Me.ListEquipement.items = XXXX within InitializeComponent</remarks>
+</member><member name="M:CI.Clinica.AgendaManager.loadEntries(System.Int32,System.DateTime,System.DateTime,System.Boolean)">
+	<summary>
+ Get all agenda entries for a specific user or all users within a specific date range
+ </summary>
+	<param name="noUser">User number or zero for all users</param>
+	<param name="from">Date starting the range</param>
+	<param name="to">Date ending the range</param>
+	<returns>A list of agenda entries that fits the specific parameters  (can be empty, but not null)</returns>
+	<remarks></remarks>
+</member><member name="M:CI.Clinica.Accounts.Clients.Folders.Codifications.FolderAlertType.delete">
+	<summary>
+ Mark the FolderAlertType as deleted. True deletion happens upon saveData call.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CI.Clinica.Accounts.Clients.Folders.Codifications.FolderCode.isEffective(System.DateTime)">
+	<summary>
+ Look if the FolderCode is effective ensuring that the applicationDate is between firstEffectiveTime and lastEffectiveTime
+ </summary>
+	<param name="applicationDate">date to verify if the FolderCode is effective</param>
+	<returns>true if the FolderCode is effective on the applicationDate</returns>
+	<remarks></remarks>
+</member><member name="T:CI.Clinica.Accounts.Clients.Folders.RVsStatus.RVStatusApplier">
+	<summary>
+ Change the status of a folder from inactive to active or vice-versa.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CI.Clinica.Accounts.Clients.Folders.Codifications.FolderTextType.delete">
+	<summary>
+ Mark the FolderTextType as deleted. True deletion happens upon saveData call.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:CI.Clinica.vbAccelerator.Components.Win32.windowStyleFlags">
+	<summary>
+ Window Style Flags
+ </summary>
+</member><member name="T:CI.Clinica.vbAccelerator.Components.Win32.extendedWindowStyleFlags">
+	<summary>
+ Extended Windows Style flags
+ </summary>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindows.items">
+	<summary>
+ Returns the collection of windows returned by
+ GetWindows
+ </summary>
+</member><member name="M:CI.Clinica.vbAccelerator.Components.Win32.EnumWindows.getWindows">
+	<summary>
+ Gets all top level windows on the system.
+ </summary>
+</member><member name="M:CI.Clinica.vbAccelerator.Components.Win32.EnumWindows.getWindows(System.IntPtr)">
+	<summary>
+ Gets all child windows of the specified window
+ </summary>
+	<param name="hWndParent">Window Handle to get children for</param>
+</member><member name="M:CI.Clinica.vbAccelerator.Components.Win32.EnumWindows.windowEnum(System.IntPtr,System.Int32)">
+	<summary>
+ The enum Windows callback.
+ </summary>
+	<param name="hWnd">Window Handle</param>
+	<param name="lParam">Application defined value</param>
+	<returns>1 to continue enumeration, 0 to stop</returns>
+</member><member name="M:CI.Clinica.vbAccelerator.Components.Win32.EnumWindows.onWindowEnum(System.IntPtr)">
+	<summary>
+ Called whenever a new window is about to be added
+ by the Window enumeration called from GetWindows.
+ If overriding this function, return true to continue
+ enumeration or false to stop.  If you do not call
+ the base implementation the Items collection will
+ be empty.
+ </summary>
+	<param name="hWnd">Window handle to add</param>
+	<returns>True to continue enumeration, False to stop</returns>
+</member><member name="T:CI.Clinica.vbAccelerator.Components.Win32.EnumWindows">
+	<summary>
+ EnumWindows wrapper for .NET
+ </summary>
+</member><member name="M:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsCollection.add(System.IntPtr)">
+	<summary>
+ Add a new Window to the collection.  Intended for
+ internal use by EnumWindows only.
+ </summary>
+	<param name="hWnd">Window handle to add</param>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsCollection.Item(System.Int32)">
+	<summary>
+ Gets the Window at the specified index
+ </summary>
+</member><member name="M:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsCollection.#ctor">
+	<summary>
+ Constructs a new EnumWindowsCollection object.
+ </summary>
+</member><member name="T:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsCollection">
+	<summary>
+ Holds a collection of Windows returned by GetWindows.
+ </summary>
+</member><member name="F:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.UnManagedMethods.flashw_stop">
+	<summary>
+ Stop flashing. The system restores the window to its original state.
+ </summary>
+</member><member name="F:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.UnManagedMethods.flashw_caption">
+	<summary>
+ Flash the window caption. 
+ </summary>
+</member><member name="F:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.UnManagedMethods.flashw_tray">
+	<summary>
+ Flash the taskbar button.
+ </summary>
+</member><member name="F:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.UnManagedMethods.flashw_all">
+	<summary>
+ Flash both the window caption and taskbar button.
+ </summary>
+</member><member name="F:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.UnManagedMethods.flashw_timer">
+	<summary>
+ Flash continuously, until the FLASHW_STOP flag is set.
+ </summary>
+</member><member name="F:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.UnManagedMethods.flashw_timernofg">
+	<summary>
+ Flash continuously until the window comes to the foreground. 
+ </summary>
+</member><member name="F:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.hWnd">
+	<summary>
+ The window handle.
+ </summary>
+</member><member name="M:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.getHashCode">
+	<summary>
+ To allow items to be compared, the hash code
+ is set to the Window handle, so two EnumWindowsItem
+ objects for the same Window will be equal.
+ </summary>
+	<returns>The Window Handle for this window</returns>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.handle">
+	<summary>
+ Gets the window's handle
+ </summary>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.text">
+	<summary>
+ Gets the window's title (caption)
+ </summary>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.className">
+	<summary>
+ Gets the window's class name.
+ </summary>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.iconic">
+	<summary>
+ Gets/Sets whether the window is iconic (mimimised) or not.
+ </summary>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.maximised">
+	<summary>
+ Gets/Sets whether the window is maximised or not.
+ </summary>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.visible">
+	<summary>
+ Gets whether the window is visible.
+ </summary>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.rectangle">
+	<summary>
+ Gets the bounding rectangle of the window
+ </summary>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.location">
+	<summary>
+ Gets the location of the window relative to the screen.
+ </summary>
+</member><member name="P:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.size">
+	<summary>
+ Gets the size of the window.
+ </summary>
+</member><member name="M:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.restore">
+	<summary>
+ Restores and Brings the window to the front, 
+ assuming it is a visible application window.
+ </summary>
+</member><member name="M:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem.#ctor(System.IntPtr)">
+	<summary>
+  Constructs a new instance of this class for
+  the specified Window Handle.
+ </summary>
+	<param name="hWnd">The Window Handle</param>
+</member><member name="T:CI.Clinica.vbAccelerator.Components.Win32.EnumWindowsItem">
+	<summary>
+ Provides details about a Window returned by the 
+ enumeration
+ </summary>
+</member><member name="M:CI.Clinica.viewmodifclients.setFolderText">
+	<summary>
+ Save current editing text and Set the folder text object text and position to the one currently selected
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

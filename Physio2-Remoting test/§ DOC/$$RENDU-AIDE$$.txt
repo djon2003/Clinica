@@ -1,0 +1,60 @@
+##################
+Aide Clinica :
+##################
+############
+À corriger :
+############
+-Vérifier l'article Ajout d’un utilisateur, car les boutons ont changés
+
+##################
+Travail en cours :
+##################
+
+
+#########
+Notes :
+#########
+- DANS CHAQUE FENÊTRE (Si il y a lieu, mais c'est presque tjs), il faut parler de la possibilité de quitter (annuler) la fonction ou fenêtre en appuyant sur Échap (ESC). Si des entrées à un formulaire ont été modifiées, alors un message de confirmation vous demandera si vous désirez enregistrer ou non.
+
+#########
+To DO :
+#########
+-Type d'entrée pour le formulaire X (ex : Info de base client pour Nouveau compte client) 
+ 4 colonnes : Nom du champ, description du champ, type d'entrée du champ, exemple d'entrée
+	- Formulaire...
+		- des informations de base du client
+		- des informations de base de la personne / organisme clé(e)
+		- des informations de base de l'utilisateur
+		- des codifications dossiers
+		- des informations de base de la clinique
+		- des équipements
+-Gestion de la clinique
+-Gestion des codifications dossiers
+	-> Ajouter une codification
+	-> Modifier une codification
+	-> Supprimer une codification
+	-> Enregistrer les codifications pour un thérapeute spécifique
+	-> Remettre le thérapeute aux codifications par défaut
+	-> Copier les codifications vers un autre thérapeute
+-Glossaire (Index des mots + 1 page de description du mot. Ex : Codification dossier, explique ce qu'est une codification et énumère les différentes interactions avec les autres sections du logiciel.)
+	- Tous les termes utilisés
+		- Équipement
+		- Barre d'outils
+		- Barre d'état
+		- Codification dossier (Parlez en plus du défaut et comment il fonctionne)
+		- Modèle de note
+		- Ancre
+		- Client
+		- Personne / organisme clé(e)
+		- Utilisateur
+-Gestion de l'équipement
+	-> Ajouter un équipement
+	-> Modifier un équipement
+	-> Supprimer un équipement
+-Gestion de l'affichage
+-Gestion des modèles de notes
+	->
+-Gestion des factures
+	->
+
+

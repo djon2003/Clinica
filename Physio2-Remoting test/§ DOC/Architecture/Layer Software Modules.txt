@@ -1,0 +1,24 @@
+- §Main
+- Agenda
+- Alerts
+- Accounts
+	- Client
+		- ClientFolder
+			- Pret / Vente
+			- Rendez-vous
+		- Communications
+		- QueueList
+	- Clinic
+	- KeyPeople
+	- User
+- Dates
+- Equipment
+- Facturation
+- Horaire
+- InternalDB
+- TypesOfFile
+- Mailing
+- ModelOfText
+- Preferences
+- Report
+- Windows ?? (Shouldn't it be in presentation layer ?)

@@ -1,0 +1,57 @@
+﻿- clinic :
+	- ClinicNoCSST
+	- ClinicName
+	- ClinicProvinceState
+	- ClinicPostalCode
+	- ClinicZipCode
+	- ClinicCountry
+
+- common for reports tables (initials,steps,finals)
+	- FolderService
+	- NoFolder
+	- ClientLastName
+	- ClientFirstName
+	- ClientProvinceState
+	- ClientPostalCode
+	- ClientZipCode
+	- ClientCountry
+	- ClientNAM
+	- FolderEventDate
+	- FolderOrdonnanceDate
+	- MedecinNoRef
+	- FolderDiagnostic
+	- UserNoRef
+	- SignatureDate
+
+- initials :
+	- FolderReceptionOfOrdonnanceDate
+	- TakenInChargeDate
+	- FirstTreamentDate
+	- GoalAndPlan
+	- FolderFrequency
+	- FolderFrequencyJustification
+	
+- steps :
+	- FirstTreamentDate
+	- TextNoStep
+	- FolderTotalTreaments
+	- Evolution
+	- TreamentsSuspended
+	- SOAP
+	- FolderFrequency
+	- FolderFrequencyJustification
+	
+- finals :
+	- LastTreamentDate
+	- ClientHealthOnClose
+	
+- presences :
+	- FolderService
+	- FirstPeriod
+	- LastPeriod
+	- ClientLastName
+	- ClientFirstName
+	- ClientNAM
+	- FolderEventDate
+	- FirstTreamentDate
+	- NoFolder

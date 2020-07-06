@@ -1,0 +1,17 @@
+<form action="https://www.pes.csst.qc.ca/CookieAuth.dll?Logon" method="post" id="logonForm" autocomplete="off" onSubmit="if (!ValidatorOnSubmit()) return false;">
+    <input type="hidden" id="curl" name="curl" value="Z2F" />
+    <input type="hidden" id="flags" name="flags" value="0" />
+    <input type="hidden" id="forcedownlevel" name="forcedownlevel" value="0" />
+    <input type="hidden" id="formdir" name="formdir" value="6" />
+<input class="ZUboiteEdition" id="username" name="username">
+<input class="ZUboiteEdition" id="password" onFocus="g_fFcs=0" name="password">
+<input id="ccMenCodeUtil" tabindex="5" type="checkbox" name="ccMenCodeUtil">
+
+
+-------------------------------
+UPLOAD
+------------------------------
+<FORM ACTION='https://www.ee.csst.qc.ca/cgi-bin/safileup/upload.asp' ENCTYPE='MULTIPART/FORM-DATA' METHOD='POST' onSubmit='return startupload()'>
+<INPUT TYPE=HIDDEN NAME='application' VALUE='sample'>
+<INPUT TYPE=HIDDEN NAME='post-transfer-cgi-script-url' VALUE='/cgi-bin/gf.cgi?ecran=rp'>
+<INPUT TYPE=FILE SIZE=30 NAME='client-file' VALUE=''>

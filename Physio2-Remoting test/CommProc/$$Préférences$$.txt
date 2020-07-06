@@ -1,0 +1,218 @@
+    '''''''''''''''''''''''''
+    'Préférences cliniques
+    '''''''''''''''''''''''''
+    '/=Sauf ; Unused = 105 ; Dernier=138
+ 
+    'Autres
+    '0  : Sauvegarder le dernier type d'utilisateur visualiser
+    '1  : Type d'utilisateur à afficher lors de l'ouverture de la fenêtre
+    '85 : Afficher Administrateur dans l'accès au logiciel
+    '86 : Ancre de toutes les boîtes de texte
+    '100: Sélectionner l'ancre automatiquement lors de l'enfoncement combiné des touches Contrôle (CTRL) et Majuscule (SHIFT, la touche au dessus de CTRL) 
+    '94 : Chemin pour l'éditeur FreeTextBox
+    '130: Interval pour le "ping" avec le serveur de Clinica (en secondes)
+    '9  : Cacher les dossiers des utilisateurs ayant une date de fin de travail
+    '105: Lors d'une mise à jour de Clinica côté client seulement (celle du début), prendre la nouvelle version à partir de l'emplacement local ci-dessous.
+    '136: Chemin réseau source d'où copier la nouvelle version de Clinica
+
+    'Utilisateur
+    '68 : Services
+    '69 : Respecter la casse pour le mot de passe
+	'84 : Sélection du dernier utilisateur entré
+	'117: Nombre d'évaluations par semaine pour atteindre 100% du taux d'autonomie
+	
+	'Pour les prochaines versions
+	'96 : Activer l'approbation des quarts de travail
+	'97 : Mode du 'punch' virtuel pour l'heure d'arrivée
+	'98 : Mode du 'punch' virtuel pour l'heure de départ
+
+	'Affichage
+	'Liste en général
+	'32 : Police
+	'33 : Grosseur de la police
+	'34 : Bordure
+	'35 : Marge
+	'36 : MouseSpeed
+	'37 : Couleur fond
+	'38 : Couleur case
+	'39 : Couleur bordure
+	'40 : Couleur barres
+	'41 : Couleur sélection
+	'42 : Couleur ForeBarre
+	'43 : Couleur Police
+	'44 : Gras
+	'45 : Italique
+	'46 : Barré
+	'47 : Souligné
+	'63 : 3D (Do3D)
+	'64 : 3D+ (MouseOver3D)
+	'Autres
+	'70 : Interval d'affichage du texte dans la barre de statut
+	'93 : Type d'affichage de la liste des fenêtres
+	'116: Couleur pour l'activation d'un objet par le logiciel
+	'124: Afficher les lettres une au-dessus de l'autre au lieu d'un texte tourné à 90° pour les objets principaux dans la barre de côté
+	'Rendez-vous
+	'88 : Type (Nom) d'écriture d'un rendez-vous non-confirmé
+	'89 : Type (Gras) d'écriture d'un rendez-vous non-confirmé
+	'90 : Type (Italique) d'écriture d'un rendez-vous non-confirmé
+	'91 : Type (Souligné) d'écriture d'un rendez-vous non-confirmé
+	'92 : Type (Barré) d'écriture d'un rendez-vous non-confirmé
+	'48 : Couleur pour Plage Clinique
+	'49 : Couleur pour Plage Rendez-vous
+	'50 : Couleur pour Plage Réservée
+	'51 : Couleur pour Plage Présence
+	'52 : Couleur pour Plage Absence non-motivée
+	'53 : Couleur pour Plage Libre
+	'54 : Couleur pour Plage Absence motivée
+	'103: Couleur pour Plage Bloquée
+	'104: Couleur pour Plage Présence payé
+	'Facturation
+	'112: Couleur des titres des factures en souffrance
+	'MsgInstant
+	'118 : Type (Nom) d'écriture d'une alerte non marqué comme étant fait
+	'119 : Type (Gras) d'écriture d'une alerte non marqué comme étant fait
+	'120 : Type (Italique) d'écriture d'une alerte non marqué comme étant fait
+	'121 : Type (Souligné) d'écriture d'une alerte non marqué comme étant fait
+	'122 : Type (Barré) d'écriture d'une alerte non marqué comme étant fait
+	'123 : Type (Taille) d'écriture d'une alerte non marqué comme étant fait
+	'132 : Afficher les journées spéciales dans le calendrier
+	'133 : Afficher les journées spéciales dans l'agenda
+	'134 : Couleur de fond (calendrier) ou d'écriture (agenda)
+	
+	'Agenda
+	'55 : Couleur pour Fond
+	'56 : Couleur pour ForeBarre
+	'57 : Couleur pour Barres
+	'58 : Couleur pour Sélection
+	'59 : Couleur pour Bordure
+	'60 : Couleur pour Police
+
+	'Facturation
+	'22 : Méthodes de paiement possibles
+	'61 : Taxe 1 - Provinciale
+	'62 : Taxe 2 - Fédérale
+	'65 : Choix de l'arrondissement de la cent pour le calcul de la taxe
+	'79 : Ordre de triage pour les Paiements
+	'80 : Ordre de triage pour les Factures dans le compte client
+	'95 : Autres types de facturation
+	'101: Texte situé à gauche de numéro de reçu d'une facture
+	'106: Le champs 'Commentaires' lors de l'ajustement d'une facture doit absolument être rempli
+	'107: L'historique du montant de la facture affiche le cumultatif des changements
+	'108: Nombre de rendez-vous maximal qui peuvent avoir un compte à recevoir pour un client
+	'109: Nombre de jour maximal d'un compte à recevoir
+	'115: Imprimer un reçu uniquement pour le client à partir de l'agenda et de la liste des rendez-vous du compte client
+	'99 : Afficher les codifications par défaut manquantes à un thérapeute spécifique
+	'137 : Nom de la taxe 1
+	'138 : Nom de la taxe 2
+
+	'Équipement
+	'78 : Type d'équipement par défaut
+    
+    'Impression
+    '111:Imprimante par défaut
+    '113:Entête de page lors de l'impression
+    '114:Pied de page lors de l'impression
+    '125:Espacement en pouces entre l'adresse du client et l'adresse de la clinique pour le publipostage
+    '135:Marge de haut de page pour le publipostage
+      
+	'Compte client
+	'2 à 19,72,73 / 8,9,15,17 : Champs obligatoires pour l'ajout d'un client
+	'74 : Confirmation d'entrer la date d'accident si le Plan de traitement n'est pas vide
+	'75 : Confirmation d'entrer la date de rechute si le Plan de traitement n'est pas vide
+	'87 : Référents prédéterminés
+	'110: Le commentaire est obligatoire lors d'un changement de statut d'une demande d'autorisation d'un dossier
+    
+	'Banque de données
+	'83 : Confirmation du glisser-déplacer
+	'131 : Lors de l'ajout d'un item, si le nom de l'item est déjà utilisé dans le dossier où l'ajout s'effectue, alors demander de remplacer l'item existant
+	
+	'Rendez-vous
+	'23 : Vérification de la fréquence lors d'un nouveau rendez-vous
+	'77 : Demander quoi faire lors d'un changement de statut et il n'existe aucun rendez-vous futur
+	'81 : Ordre de triage pour les RV dans le compte
+	'82 : Ordre de triage pour les RV futurs
+	'126: Réactiver le dossier automatiquement lors du changement de statut
+	'127: Réactiver le dossier automatiquement lors de l'ajout d'un rendez-vous
+	'128: Activer le questionnement lors d'une prise de rendez-vous lorsque le thérapeute traitant n'est pas le thérapeute réel
+	'Liste d'attente
+	'17 : Couleur un client en liste d'attente avec rendez-vous
+	'20 : Couleur un client en liste d'attente sans rendez-vous
+	'21 : Inscription automatique d'un rendez-vous sur la liste d'attente à partir du Xe jour.
+	'66 : Vérification de la liste d'attente lorsqu'une plage se libère.
+	'76 : Effacement automatique d'un client en liste d'attente sans rendez-vous lors de la prise d'un nouveau rendez-vous
+	'102: Texte à afficher pour une plage bloquée par la liste d'attente
+	
+	'Personnes/organismes clés
+	'8,15,24 à 31,71 : Champs obligatoires pour KeyPeople
+	'67 : Nom de la catégorie représentant les médecins.
+	'129: Nombre de rapport CSST futur à afficher dans le rapport "Analyse des rapports CSST"
+
+    '''''''''''''''''''''''''''''
+    'Préférences utilisateurs
+    '''''''''''''''''''''''''''''
+    '/=Sauf ; Unused = Aucun ; Dernier=51
+    'Autres
+    '13 : Action sur le fichier d'origine lors d'une importation dans la communication
+    '16 : Activation des messages de modification en cours
+    '17 : Nombre de fenêtre affichée dans la liste déroulante des fenêtres
+    '18 : Gère la visibilité dont Rendez-vous futur(s) a au démarrage
+    '19 : Gère la visibilité dont Message(s) instantané(s) a au démarrage
+    '20 : Défilement automatique des boîtes cachées
+    '21 : Gère la visibilité dont 'Punch' virtuel a au démarrage
+    '27 : Ouvrir automatiquement la barre de côté lorsqu'un objet principal y est transféré par l'utilisateur
+    '28 : Fermer automatiquement la barre de côté lorsqu'un objet principal y est sorti par l'utilisateur
+    '43 : Activer la touche "Verrouiller le clavier" ("Numlock") au démarrage de Clinica
+            
+    'Agenda
+    '0  : Agenda à ouvrir au démarrage
+    '1  : Thérapeute par défaut
+    '2  : Période par défaut
+    '3  : Première journée à l'agenda
+    '4  : Taille de la police pour l'agenda
+    '5  : Ne pas afficher l'info-bulle de la date
+    '6  : Ne pas afficher l'info-bulle du nom du client
+    '7  : Poser la question dernier ou nouveau lors du collage d'un RV dans l'agenda
+    '24 : Poser la question du choix du dossier lors du collage d'un RV dans l'agenda
+    
+    'Messagerie
+    '29 : Alerter le(s) utilisateur(s) par défaut lors de l'envoi d'un message
+    '30 : Marquer les messages lus après un affichage de X secondes
+    '31 : Recevoir un accusé de réception pour les messages envoyés
+    '38 : Insérer le message d'origine lors d'une réponse à un message
+    '39 : Recevoir les messages instantannés à propos des plages bloquées
+    '45 : Ajouter la signature au message à envoyer
+    '46 : Ajouter la signature au message à répondre
+    '47 : Signature d'un message
+    '48 : Rediriger les messages internes qui me sont destinés vers mon adresse de courriel
+    '49 : Garder une copie des messages envoyés dans...
+    '50 : Nom du dossier où enregistrer la copie des messages envoyés
+    '51 : Ordre de triage pour les messages instantanés et les notes
+    
+    'Rendez-vous
+    '8  : Ouverture automatique de la recherche d'un compte client si le champ NAM est vide lors de l'ouverture de la fenêtre d'ajout d'un rendez-vous
+    '9  : Ouverture automatique de l'ajout d'un rendez-vous après l'ouverture d'un nouveau compte client
+    '10 : Recherche les places disponibles jusqu'à 1-4 semaines
+    '11 : Action du dbl-click dans l'objet des RV futurs
+    
+    'Compte client
+    '14 : Sélection automatique de l'onglet du compte client
+    '15 : Sélection automatique de l'onglet du dossier
+    '44 : Sélection automatique du texte du dossier
+    '23 : Lors de la sélection d'un dossier dans l'onglet Dossiers, sélectionne automatique le filtre du dossier dans l'onglet Rendez-vous au même dossier
+    '40 : Ouvrir le compte client où l'on transfert on dossier automatiquement
+    '41 : Afficher les messages indiquant les informations manquante lors de l'enregistrement d'un dossier
+    '42 : Fermer la fenêtre de recherche automatiquement lors de l'ouverture du compte client
+    
+    'Rapport
+    '22 : Avertir l'utilisateur de la génération d'un rapport
+    '25 : Afficher la liste des types de rapport automatiquement à l'ouverture du générateur
+    '26 : Afficher les catégories lors de la sélection d'un type de rapport
+    '12 : Afficher les catégories dans la liste des types de rapport de la fin de mois
+    
+    'Sons
+    '32 : Son pour avertir l'arrivée d'un message instantanné en lien avec le compte client
+    '33 : Son pour avertir l'arrivée d'un message instantanné en lien avec le compte P/O clé
+    '34 : Son pour avertir l'arrivée d'un message instantanné en lien avec un message
+    '35 : Son pour avertir l'alarme d'une note personnelle
+    '36 : Son pour avertir l'arrivée d'un message instantanné en lien la liste d'attente
+    '37 : Son pour avertir l'arrivée d'un message instantanné en lien le générateur de rapport

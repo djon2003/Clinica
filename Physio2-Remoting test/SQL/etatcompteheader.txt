@@ -1,0 +1,1 @@
+§HeaderFileName§=§###CLINICAPATH###Data\Rapports\etatcompteheader.html§§StyleFileName§=§###CLINICAPATH###Data\Rapports\basicheader.css§§SQLStatement§=§SELECT Nom,Adresse,NomVille AS Ville,CodePostal FROM InfoClinique INNER JOIN Villes ON Villes.NoVille = InfoClinique.NoVille§

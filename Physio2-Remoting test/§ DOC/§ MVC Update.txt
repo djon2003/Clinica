@@ -1,0 +1,284 @@
+------------BUGS -----------------
+
+
+
+------------- TODO --------------------
+-Report->Liste des codifications dossiers : How do we handle multiple copies ? (Could first of all add the dates of application + a filter applied on interval)
+-Should we write "Codifications dossiers" or "Codification dossier" ?
+
+
+------------ CODE MODIF NOTES ---------
+
+List of reports affected by code modif :
+Charge de travail hebdomadaire
+Charge de travail journalière
+Compte client détaillé
+Liste des âges des comptes à recevoir
+Liste des âges des comptes à recevoir détaillée
+Liste des ajustements (détaillée)
+Liste des codifications dossiers
+Liste des comptes en souffrance
+Liste des dossiers
+Liste des dossiers ayant dépassés leur durée
+Liste des dossiers non-cédulés
+Liste des médecins référents
+Liste des paiements reçus
+Liste des revenus
+Liste des revenus avec les taxes
+Présences/absences d'un mois
+Statistiques des absences
+Statistiques des absences (% par codification)
+Statistiques des absences (% par thérapeute)
+Statistiques des absences motivées
+Statistiques des absences motivées (% par codification)
+Statistiques des absences motivées (% par thérapeute)
+Statistiques des absences non-motivées
+Statistiques des absences non-motivées (% par codification)
+Statistiques des absences non-motivées (% par thérapeute)
+Statistiques des dossiers
+Statistiques des dossiers (% par codification)
+Statistiques des dossiers (% par thérapeute)
+Statistiques des évaluations
+Statistiques des évaluations (% par codification)
+Statistiques des évaluations (% par thérapeute)
+Statistiques des présences
+Statistiques des présences (% par codification)
+Statistiques des présences (% par thérapeute)
+Statistiques des présences moyennes par semaine
+Statistiques des revenus
+Statistiques des revenus (% par codification)
+Statistiques des revenus (% par thérapeute)
+
+FolderCode..
+	TESTED : 
+		DONE (Except over network updates) :
+		 - Tested all below except what's related to FolderAlertType.
+		 - codifications all done : 
+			- Tested with empty database
+
+	FolderCode access :
+		By Folder = Folder.NoCodeUnique + Folder.NoCodeUser + Folder.NoCodeDate
+		By RV = Folder.NoCodeUnique + Folder.NoCodeUser + RV.Date
+		By NoCodification = FolderCode.NoCodification
+		By Bill = By RV
+
+	Files List :
+		- addvisite
+			If FolderCode is loaded it should be from Folder otherwise it is choosen by the user
+			
+			- adding_Click()
+			  Using FolderCode.MsgRef and FolderCode.MsgDiag loaded from FolderCodesManager with NoUser and FolderCode.Name
+			  Using FolderCode.GetFolderCodeAlerts() to check if a creation is based on a specific Folder date (so that this date is mandatory) + Later, create new FolderAlert
+			  Using FolderCode.NoCodification to store into Folder
+			  Using FolderCode.GetFolderTexteTypes() to create new FolderText
+			- Dossier_SelectedIndexChanged()
+			  Using FolderCode.Nom loaded from FolderCodesManager with NoCodification
+			  Using FolderCode.Periods loaded from FolderCodesManager with NoUser and FolderCode.Name
+			- checkNAMAndLoadFolders()
+			  Using FolderCode.Nom loaded from FolderCodesManager with NoCodification
+			  Using FolderCode.Periods loaded from FolderCodesManager with NoUser and FolderCode.Name (Could be also loaded with NoCodification later on)
+			- ChangeDefaultPeriode()
+			  Using FolderCode.Periods
+		- Agenda
+			FolderCode should be loaded from RV
+
+			- LoadAgenda()
+			  Using FolderCode.Confirm property to show special screen modification for each RV
+		- AgendaManager
+			FolderCode should be passed instead
+
+			- checkTimeConflict()
+			  Using FolderCode.NoCodification gotten from the RendezVous.getFolderCode() method.
+		- AlarmOfClientAccount
+			- DoAction()
+			  Using FolderAlert, FolderText and FolderTextType to determine if a new FolderText has to be created.
+		- clientSearch
+			FolderCode should be loaded from Folder
+
+			- viewFolders_Click()
+			  Using FolderCode.Nom loaded from FolderCodesManager with NoCodification
+		- codifications
+			- *
+		- Comptes
+			- AddingVisite()
+				FolderCode should be loaded from RV
+
+			  Using FolderCode.NotConfirmRVOnPasteOfDTRP loaded from FolderCodesManager with Folder.NoCodification
+			- OpenNewRv()
+				FolderCode should be loaded from Folder
+
+			  Using FolderCode.Nom loaded from FolderCodesManager with Folder.NoCodification
+
+		- FacturationBox
+			FolderCode should be loaded from Folder
+
+			- Loading()
+			  Using FolderCode.Nom loaded from FolderCodesManager with Folder.NoCodification
+		- Fenetres
+			- RedirectSearch()
+				FolderCode should be loaded from Folder
+
+			  Using FolderCode.Nom loaded from FolderCodesManager with Folder.NoCodification
+		- fenFolderAlerts
+			- curCode
+			  Class private member to stock current code passed by ShowForm method
+			- ShowForm()
+			  Store the FolderCode passed to the curCode variable of the class
+			- Loading()
+			  Load FolderCodeAlerts from curCode.GetFolderCodeAlerts()
+			- listFolderAlerts_SelectedChange()
+			  Using FolderCodeAlert.* to show its properties into the form
+			- modif_Click()
+			  Using FolderCodeAlert.* to save its properties from the form
+			- delete_Click()
+			  Using Me.curCode.GetFolderCodeAlerts.removeItemable()
+			- copy_Click()
+			  Copying a FolderCodeAlert
+			- TypeDateDebut_SelectedIndexChanged
+			  Using FolderCodeAlert.TypesDateDebut.OnPresenceX 
+		- fenFolderTexteTypes
+			- curCode
+			  Class private member to stock current code passed by ShowForm method
+			- ShowForm()
+			  Store the FolderCode passed to the curCode variable of the class
+			- Loading()
+			  Load FolderCodeTypes from curCode.GetFolderTexteTypes()
+			- Multiple_CheckedChanged()
+			  Using FolderTextType.CopyTextToOtherText to ensure good UI interaction
+			- listFolderTexteTypes_SelectedChange()
+			  Using FolderCodeAlert.* to show its properties into the form
+			- LoadCopyTo()
+			  Using FolderTexteType.Multiple
+			- modif_Click()
+			  Using FolderCodeAlert.* to save its properties from the form
+			- delete_Click()
+			  Using Me.curCode.GetFolderTexteTypes.removeItemable()
+			- copy_Click()
+			  Copying a FolderTexteType
+			- WhenToBeCreated_SelectedIndexChanged()
+			  Using FolderCodeText.[Some enumerations] to ensure good UI interaction
+			- TypeForMultiple_SelectedIndexChanged()
+			  Using FolderCodeText.[Some enumerations] to ensure good UI interaction
+			- WhenToBeStopped_SelectedIndexChanged
+			  Using FolderCodeText.WhenToBeStop.OnMaxReached
+			- setDefault_Click()
+			  Using FolderCodeText.IsDefault to change this property
+			- upTextType_Click() 
+			  Using FolderCodeText.Position to change this property
+			- downTextType_Click()
+			  Using FolderCodeText.Position to change this property
+		- FiltreNoClient
+			FolderCode should be loaded from Folder
+
+			- ChooseNoFolder()
+			  Using FolderCode.Nom loaded from FolderCodesManager with Folder.NoCodification
+		- Folder
+		  - changeStatus()
+		    Create/Remove folder texts & User alerts
+			  Using FolderCodeTexts loaded with Folder.NoCodification
+			  Using FolderCodeText for creation on Desactivation or deletion on Activation
+
+		- FolderAlert
+		- FolderCode
+		- FolderCodeAlert
+		- FolderCodeAlerts
+		- FolderCodesManager
+		- FolderCodeText
+		- FolderCodeTexts
+		- FolderInfos
+			FolderCode should be loaded from Folder
+
+			- DateDossier_MouseMove()
+			  Activate or not accident/rechute folder dates from a FolderCode loaded by NoUser and CodeName
+		- FolderText
+		- FutureVisites
+			FolderCode should be loaded from RV
+
+			- LoadVisites()
+			  Using FolderCode.Confirmation loaded from rv.getFolderCode
+		- ListeAttente
+			FolderCode should be loaded from RV if it has one OTHERWISE from NoCodeUnique + Real user selected + new RV date
+
+			- GetQueueListClientFitting()
+			  Using FolderCode.GetDefaultTemps loaded from FolderCodesManager with NoCodification
+		- paiement
+			FolderCode should be loaded from Bill
+
+			- Loading()
+			  Using FolderCode.Nom, FolderCode.DefaultPayment, FolderCode.Paiement loaded from FolderCodesManager by Folder.NoCodification
+			- accepter_Click()
+			  Using FolderCode.Recu loaded from Loading()
+		- QueueList
+			FolderCode should be loaded from RV if it has one OTHERWISE from NoCodeUnique + Real user selected + new RV date
+
+			- listeQueueList_SelectedChange()
+			  Using FolderCode.Nom loaded from FolderCodesManager with ListeAttente.NoCodification
+			- Selectionner_Click()
+			  Using FolderCode.GetDefaultTemps loaded from FolderCodesManager with ListeAttente.NoCodification
+		- RendezVous
+			FolderCode should be loaded from Folder
+
+			- chooseFolder()
+			  Using FolderCode.Nom loaded from FolderCodesManager with Folder.NoCodification
+			  Doesn't know why this method was commented, though, it should not be into that class, but Accounts.Clients.Folders.ClientFolder class
+			   --> In fact, it should be replaced by a global search client/folder function
+		- RVStatusApplier
+			FolderCode should be loaded from RV
+
+			- changeStatus()
+			  Using FolderCode.GetNoKP() loaded from RendezVous.getFolderCode()
+		- RVStatusNotPresentMotivated
+			FolderCode should be loaded from RV
+
+			- undoStatus()
+			  Using FolderCode.NoCodification to check time conflict loaded from RendezVous.getFolderCode()
+		- RVStatusNotPresentNotMotivated
+			FolderCode should be loaded from RV
+
+			- changeStatus()
+			  Using FolderCode.GetNoKP(), FolderCode.GetAbsence() and FolderCode.GetPrix() loaded from RendezVous.getFolderCode()
+			- undoStatus()
+			  Using FolderCode.NoCodification to check time conflict loaded from RendezVous.getFolderCode()
+		- RVStatusPresent
+			FolderCode should be loaded from RV
+
+			- changeStatus()
+			  Using FolderCode.GetNoKP(), FolderCode.GetAbsence(), FolderCode.GetPrix(), FolderCode.AutoPaiement loaded from RendezVous.getFolderCode()
+			  Using FolderTexteType and FolderTexte to create new FolderTextes if necessary
+			  Using FolderCodeAlert and FolderAlert to create new FolderAlerts if necessary
+			- undoStatus()
+			  Using FolderTexteType and FolderTexte to create new FolderTextes if necessary
+		- Software
+			- LoadManagers()
+			  Loading FolderCodesManager.
+		- User
+			- delete()
+			  Deleting from SQL DB FolderCodes related to the user in deletion.
+		- viewmodifclients
+			- LoadFolderText()
+			  Charge les FolderText et sélectionne le bon selon les préférences
+			- LoadFolderInfos()
+			  Loading OldFolderCode from FolderCodesManager using Folder.NoCodification
+			- ShowDossiers()
+			  Using FolderCode.Nom to load Folders lists from FolderCodesManager with Folder.NoCodification
+			- Loading()
+			  Sélectionne le bon FolderText
+			- SavingDossierInfos()
+			  Using some properties of FolderCode to ensure some field entered
+			  Using MyCode.NoCodification when updating SQL DB
+			- SavingDossierTextes()
+			  Using FolderText.* to save them to SQL DB
+			  Ask for FolderText completion
+			    If so, can copy text to another one in same folder. Can also reset text.
+			  Demultiply the text if FolderTextType is set to do so
+			  Using FolderText.Texte to reload content after save
+			- ActivateDossierTextes()
+			  Using FolderText.Texte and FolderText.TextePos to load content
+			- maximise_s_Click()
+			  Using FolderText.Texte and FolderText.TextePos to load content
+			- modelebtn1_Click()
+			  Using FolderText.GetFolderTexteType.NoModeleCategorie to create modele menu
+			- SetFolderText()
+			  Using FolderText.Texte and FolderText.TextePos to save current editing text and to load newly selected text
+			- ShowVisites()
+			  Using FolderCode.Confirmation to change display of the RV if not confirmed

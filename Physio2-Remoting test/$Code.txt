@@ -1,0 +1,18 @@
+TESTTESTTESTTESTTESTTESTTT
+
+WriteStats("StatFolders", "NoAction, NoFolder, NoClient", "19," & NoFolder & "," & NoClient)
+WriteStats("StatVisites", "NoAction, NoFolder, NoClient, NoVisite", "6," & NoFolder & "," & NoClient & "," & NoVisite)
+WriteStats("StatFactures", "NoAction, NoFolder, NoClient, NoFacture, MontantFacture, TypeFacture, Description, NoVisite, NoPret, NoFactureRef, NoVente, Taxe1, Taxe2, Commentaires", "5," & NoFolder & "," & NoClient & "," & NoFacture & "," & Replace(Amount, ",", ".") & ",'" & Replace(TypeFacturation, "'", "''") & "',''," & NoVisite & "," & NoPret & ",'" & NoFactureRef & "'," & NoVente & "," & Replace(Pref(61), ",", ".") & "," & Replace(Pref(62), ",", ".") & ",''")
+WriteStats("StatPaiements", "NoAction, NoFacture, MontantPaiement, DateTransaction, TypePaiement, Commentaires", "11," & NoFacture & "," & Replace(DiffP, ",", ".") & ",#" & MyFacture.DateFacture.Year & "/" & MyFacture.DateFacture.Month & "/" & MyFacture.DateFacture.Day & "#,''," & Comments.Text)
+
+SQL Code to restore a database
+RESTORE DATABASE TaxReconDB_Prod
+FROM DISK = 'D:\Tax\BackUp\TaxReconDB.dmp'
+WITH MOVE 'TaxReconDB_Data' TO
+'D:\Database\NJROS1D151DEV\MSSQL$NJROS1D151DEV\Data\TaxReconDB_Prod_Data.MDF
+'
+, MOVE 'TaxReconDB_Log' TO
+'D:\Database\NJROS1D151DEV\MSSQL$NJROS1D151DEV\Data\TaxReconDB_Prod_Log.LDF'
+, REPLACE
+
+----------------------------------------------------------------------------------------------

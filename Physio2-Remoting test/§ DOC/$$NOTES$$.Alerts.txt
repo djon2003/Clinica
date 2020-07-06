@@ -1,0 +1,26 @@
+-Client
+	- Dossier à transférer (Comptes.AskForTRPToTransfer .. near last line)
+	- Rapport CSST final (Comptes.ChangeFolderStatus)
+	- Rapport CSST d'étape (Comptes.ChangeFolderStatus)
+	- Rapport CSST d'étape (Comptes.ChangeVisiteStatus)
+	- Rapport CSST initial (Comptes.ChangeVisiteStatus)
+	- Rapport CSST d'étape (AlarmOfClientAccount.DoAction)
+	- Alarm for account (viewmodifclients.AddingAlert)
+	- Client arrivé (viewmodifclients.menuAnnonceClient_Click)
+	- Client arrivé (Agenda.menuAnnonceClient_Click)
+
+-QueueList
+	- Plage bloquée (for continuing QL) (ListeAttente.OpenRestraintQueueList)
+
+-PersoNote
+	- Adding (InstantMessages.menuAddNote_Click)
+
+-KeyPeople
+	- Alarm for account (viewmodifKeyPeople.AddingAlert)
+
+-Message
+	- New message (msgSending.InternalSending)
+	- Message read (msgSystem.SendFeedBack)
+
+-Rapport
+	- Rapport généré (RapportGeneration.RapportGenerated)

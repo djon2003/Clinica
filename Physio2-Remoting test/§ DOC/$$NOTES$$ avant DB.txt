@@ -1,0 +1,630 @@
+## AIDE ##
+
+#
+Descriptions des "variables" utilisées :
+
+NAM = Numéro d'assurance maladie
+NoFolder = Numéro du dossier d'un compte client
+NoVisite = Numéro de visite d'un dossier
+NoFacture = Numéro d'une facture
+NoLigneInFile = Numéro de ligne de la donnée dans le fichier
+TRP=Nom du thérapeute (Nom,Prénom)
+
+AppPath = Chemin de l'application
+compte client = AppPath & "Clients\" & NAM
+Folders = compte client & "\Dossiers"
+Folder = Folders & "\" & NoFolder
+Visite = Folder & "\" & NoVisite
+
+#
+
+#
+Tous les fichiers de statistiques sont séparés comme suit :
+ STAT§USER§DATE HEURE (yyyy-MM-dd hh:mm:ss)
+
+ La description des fichiers statistiques (Finissant par stats) ne sont décrit que pour la partie
+ STAT.
+#
+
+## Structure des données ##
+-Fichier IN ROOT
+	-stats
+		Contient les statistiques des clients ajoutés
+
+-Fichiers compte client ->
+	-antecedants.txt
+		Contient le texte pour les antécédents
+
+	-facture.stats (1 facture / ligne)
+		[NoFacture] - [MONTANT] a été facturé pour [(SERVICE|PRODUIT)] dans le dossier #[NoFolder]|[NoVisite]|[NoLigneInFile]|[Commentaires]
+		[NoFacture] a été supprimé
+
+	-paiement.stats (1 paiement / ligne)
+		[NoFacture] - [MONTANT]$ transigé avec [(SERVICE|PRODUIT)] dans le dossier #[NoFolder]|[NoVisite]|[NoLigneInFile] du depuis le [DateTransaction(dd-MM-YYYY)] payé [TYPEPAIEMENT]|[Commentaires]
+
+	-factures.index (1 facture / ligne séparée par |)
+		0-Date (yyyy/MM/dd)
+		1-NoFacture
+		2-Type
+		3-NoFolder
+		4-NoVisite
+		5-No Ligne dans le fichier
+
+	-dossiers.no
+		Numéro du dernier dossier
+
+	-visites.index (1 visite / ligne séparée par |)
+		0-Date (yyyy/MM/dd)
+		1-Numéros (NoFolder/NoVisite)
+
+	-absences.index (1 visite / ligne séparée par |)
+		0-Date (yyyy/MM/dd)
+		1-Numéros (NoFolder/NoVisite)
+		
+	-info
+		0-Nom,Prénom
+		1-Adresse
+		2-Ville
+		3-CodePostal
+		4-Tél-Domicile (###-###-####)
+		5-Tél-Travail (###-###-####)
+		6-Tél-Autre (###-###-####)
+		7-Autre Nom
+		8-Date de naissance (yyyy/MM/dd)
+		9-Sexe
+		10-Employeur
+		11-Métier
+		-VIDE
+		13-Numéro d'assurance maladie
+		14-Nom du référent (Les enters ont été remplacés par des <br>) (TYPE§REF) (TYPE = AUTRE,COMPTE,KP)
+		15-Courriel
+		16-Adresse du site internet
+		17-Nom du fichier de la photo
+		18-Description (Incluant les lignes subséquentes)
+
+	- factures.a.payer (1 Facture / ligne séparée par |)
+		0-Date (yyyy/MM/dd) (Service=Date Visite,Produit=Date Vente,Prêt)
+		1-NoFolder
+		2-NAM
+		3-Bill Amount
+		4-Type de facture (Prêt équipement, Vente équipement, [Nom du Service])
+		5-NoVisite
+		6-No Ligne dans le fichier
+		7-NoFacture
+
+	- Folders stats (File Location : Clients\NAM\Dossiers\stats)
+		[ACTION] [NoFolder]
+
+	- Folders dea.lst
+		Liste des De et À de communications.
+
+	- Folder analyse.txt
+		Contient le texte de l'analyse
+
+	- Folder but.txt
+		Contient le texte du but
+
+	- Folder evaluation.txt
+		Contient le texte de l'évaluation
+
+	- Folder notes.txt
+		Contient le texte des notes
+
+	- Folder plan.txt
+		Contient le texte du plan
+
+	- Folder visites.no
+		Numéro de la dernière visite
+
+	- Folder stats
+		Contient les statistiques par rapport à ce dossier et ses visites
+
+	- Folder basicinfo
+		0-Ligne non utilisée (Anciennement Titre)
+		1-Diagnostic
+		2-Région
+		3-TRP
+		4-Statut (Ouvert,Fermé)
+		5-Médecin (Numéro du KeyPeople)
+		6-Codification (TRP:Code)
+		7-No de référence
+		8-Service
+		9-Date de référence (yyyy/MM/dd)
+		10-Date d'accident (yyyy/MM/dd)
+		11-Date de rechute (yyyy/MM/dd)
+		12-Durée du traitement prévue (Approximatif)
+		13-Fréquence de traitement par semaine (1 à 5 fois/semaine)
+		14-Thérapeute demandé
+
+	- Folder prets (1 prêt / ligne séparé par §)
+		0-Nom de l'item
+		1-TRP
+		2-Date de transaction
+		3-Profit
+		4-Total
+		5-NoItem
+		6-Date de retour
+		7-Dépôt
+		8-Coût de prêt
+		9-Verified by TRP
+		10-Refunded
+		11-Returned
+		12-Montant payé
+
+	- Folder PretsData (1 remarque / fichier portant le numéro de ligne du prêt de la remarque)
+
+	- Folder ventes (1 vente / ligne séparée par §)
+		0-Nom de l'item
+		1-TRP
+		2-Date de transaction
+		3-Profit
+		4-Total
+		5-NoItem
+		6-Montant Payé
+
+	- Folder communications (1 communication / ligne séparée par §)
+		0-Type (Envoie,Réception)
+		1-De | À (Provenance ou Destination) (Soit Client ou le numéro du KeyPeople)
+		2-Sujet
+		3-Date
+		4-Utilisateur
+		5-Remarques (Les enters ont été remplacés par des <br>)
+		6-Chemin pour l'accès au fichier (Soit dans le répertoire Comm du dossier ou un lien pour un fichier dans la banque de données)
+
+	- Folder Comm (Chaque fichier est lié à une communication. Il s'agit d'une importation externe)
+
+	- Folder settings (Settings pour 1 utilisateur / ligne séparés par §)
+		0-UserName (Nom,Prénom)
+		1-Positionnement du curseur de Évaluation
+		2-Positionnement du curseur de Analyse
+		3-Positionnement du curseur de But
+		4-Positionnement du curseur de Plan de traitement
+		5-Positionnement du curseur de Notes d'évolution
+
+	- Visite basicinfo
+		0-Date & Time (d/M/yyyy hh:mm)
+		1-Période (15 à 120 minutes)
+		2-Diagnostic
+		3-Région
+		4-TRP
+		5-Statut (Présent,Absent - Motivé,Absent - Non-motivé,(""|RENDEZ-VOUS)
+		6-Service
+
+	- Visite comptabilite
+		1st line : (Séparé par §)
+			0-Date
+			1-Montant Facturé
+			2-Montant payé
+
+-Fichier Agenda -> (1 visite / ligne séparée par §)
+	0-Time (hh:mm)
+	1-Période
+	2-InfoCompte (NAM/NoFolder/NoVisite) OU "RESERVED " + Texte pour la plage réservée (Les Enters ont été remplacés par des <br>)
+	3-TRP
+
+	- attente.lst (1 visite en attente / ligne séparée par §)
+		0-Numéro d'assurance maladie
+		1-NoFolder
+		2-NoVisite
+	
+	- QL (1 fichier nommé d'un numéro unique / visite en attente)
+		-Ligne 0 = Info séparés par §
+			0-Numéro d'assurance maladie
+			1-NoFolder
+			2-NoVisite
+			3-Thérapeute (Tous ou TRP Spécifique)
+			4-Remarques (Les enters ont été remplacés par des <br>)
+			5-Date d'appel (yyyy-MM-dd)
+			6-Disponibilités
+			7-Période du traitement (Traitement, Évaluation, 15 à 120 minutes)
+			8-Codification dossier
+			9-Service
+			10-Currently in used by who (If no one then "")
+
+-Fichiers Data ->
+	- antecedants.txt
+		Contient les antécédants du logiciel (Ceux que le logiciel utilise par défaut)
+
+	- basicinfo
+		0-Date de première utilisation du logiciel
+		1-Sauvegarde du chemin entré ds TextBox1 de AdminBox ds MainWin.
+		2-Chemin pour la boîte de dialogue Importer un fichier in DB.
+		3-Chemin pour la boîte de dialogue Importer un fichier in Communications.
+		4-Nom de la clinique
+		5-Adresse de la clinique
+		6-Ville de la clinique
+		7-Code postal de la clinique
+		8-Téléphone de la clinique
+		9-Fax de la clinique
+		10-Numéro d'établissement
+		11-Numéro de taxe 1 (Provinciale)
+		12-Numéro de taxe 2 (Fédérale)
+		13-Chemin pour la boîte de dialogue Importer un fichier in Compte client.
+		14-Courriel de la clinique
+		15-URL de la clinique
+		16-No DAS (Déduction à la source) de la clinique
+		17-NEQ (Numéro d'entreprise du Québec)
+
+	- clinique.hor
+		Horaire de la clinique par défaut
+		-(Random) 1-504:(0=Plage fermée,1=Plage ouverte) ; 505:Currently in used by who (If no one then "")
+
+	- pref.sav
+		Préférences cliniques
+
+	- prets.stats (1 prêt / ligne)
+		Prêt de l'item [NomItem] [NoItem] au client [Prénom du client] [Nom du client] ([NAM])
+		Retour du prêt de l'item [NomItem] [NoItem] au client [Prénom du client] [Nom du client] ([NAM])
+
+	- unique.no
+		Dernier numéro unique donné
+
+	- userfile.con
+		Configuration du fichier info pour un client (Utiliser pour la recherche de compte client)
+
+	- users.typ (1 type / ligne séparé par §)
+		0-Nom du type
+		1-"2" + Droits & Accès
+
+	- usersdel.path
+		Contient les dossiers, fichiers et liste à supprimer lors de la suppression d'un utilisateur
+
+	- ventes.stats
+		Vente de l'item [NomItem] [NoItem] au client [Prénom du client] [Nom du client] ([NAM])
+
+	- Email
+		- accounts.param (1 compte / ligne séparé par §)
+			0-Nom du compte
+			1-Nom lors de l'envoie
+			2-Adresse de courriel
+			3-POPServer:POPPort:(0=Non-sécurisé|1=Sécurisé)
+			4-SMTPServer:SMTPPort:(0=Non-sécurisé|1=Sécurisé)
+			5-Nom d'usager
+			6-Clé (Pour crypté le mot de passe)
+			7-Mot de passe encrypté
+			8-Options (Séparé par :)
+				0-Mémoriser le mot de passe
+				1-Laisser les messages sur le serveur
+				2-Inclure ce compte lors de la réception
+				3-Compte commun
+			9-Télécharger les messages dans le dossier
+			10-Numéro unique du compte
+
+		- AddressBook
+			Dossier contenant tous les contacts publics (Sous-divisé en dossier) (1 contact / fichier portant un numéro assigné)
+				0-Nom
+				1-Prénom
+				2-Surnom
+				3-Afficher (Ce qui sera affiché pour l'envoi) (Liste offrant les différentes possibilités Nom, Prénom, Surnom)
+				4-Adresses de courriel (1 courriel & param / emplacement séparé par §)
+					0-Courriel
+					1-Courriel utilisé (Vrai/Faux)
+				5-Envoyer des messages en texte brute uniquement
+				6-Adresse
+				7-Ville
+				8-Code postal
+				9-Pays
+				10-Téléphones (1 téléphone & titre / emplacement séparé par §)
+					0-Téléphone
+					1-Titre
+				11-Site internet
+				12-Référence au compte client
+				13-Référence à la liste de KeyPeople
+				14-Currently in used by who (If no one then "")
+
+		- Mail
+			La structure des dossiers interne et externe doit être identique (En terme de dossier)
+			- Interne
+				Ce dossier représente la boîte de réception.
+				Il contient, ainsi que ses sous-dossiers, (1 message / dossier portant un numéro unique & ".msg")
+					- info
+						0-Nom de l'utilisateur ayant envoyé le message
+						1-Date d'affichage du message (yyyy/MM/dd ou "" (=Immédiatement))
+						2-Compte lié (NAM ou "")
+						3-Alerter l'utilisateur (True|False)
+						4-Sujet
+					- message.rtf
+						Contient le message en tant que tel
+					- attachs
+						Dossier contenant tous les fichiers attachés au message
+			- Externe
+				Ce dossier représente la boîte de réception.
+				Il contient, ainsi que ses sous-dossiers, (1 message / dossier portant un numéro unique & ".msg")
+					- info
+						0-De
+						1-À
+						2-CC
+						3-Sujet
+					- message.html
+					- attachs
+						Dossier contenant tous les fichiers attachés au message
+
+	- Equipement (1 item / fichier portant le nom de l'item)
+		0-Type d'item (Prêt,Vente,Prêt & Vente,Inventaire)
+		1-Numéros des items (Séparés par §)
+		2-Montant remboursé (Dépôt,Coût de prêt, [10-100]%)
+		3-Montant de la vente
+		4-Montant du dépôt
+		5-Montant du Coût de prêt
+		6-Répétion du Coût de prêt (Une fois, par jour, par semaine)
+		7-Description (Où les Enter ont été remplacés par des <br>)
+		8-Nombre d'item au total restant dans l'inventaire
+		9-Nombre d'item vendu
+		10-Nombre d'item actuellement prêté
+		11-Montant de l'achat
+		12-Items présentement prêtés
+		13-Currently in used by who (If no one then "")
+
+	- GenWinModif
+		Contient les fichiers des fenêtres générales qui sont en cours de modification
+		1 fichier (Random) = 1:UserModifying,2:DateTemps de la modification
+
+	- Horaires (1 horaire / fichier portant le nom de la date de l'horaire) (yyyy-MM-dd)
+		Chaque fichier contient l'horaire de la semaine spécifique
+		-(Random) 1-504:(0=Plage fermée,1=Plage ouverte) ; 505:Currently in used by who (If no one then "")
+
+	- Images
+		Contient toutes les images utilisées dans le logiciel
+
+	- Lists
+		- KeyPeople (1 KeyPeople / fichier portant le numéro du KeyPeople)
+			0-Nom
+			1-Catégorie
+			2-Adresse
+			3-Ville
+			4-Code postal
+			5-Numéro de téléphone (###-###-####)
+			6-Numéro de référence
+			7-Courriel
+			8-Adresse URL
+			9-NAM de référence
+			10-Currently in used by who (If no one then "")
+			11-Autre informations (Inclut les lignes sous-jacentes)
+
+		- kpindex.lst (1 index / ligne séparé par §)
+			0-Numéro
+			1-Nom du KeyPeople
+
+		- listcode.lst (1 code / ligne séparé par |)
+			Contient la codification de dossier par défaut
+			0-Nom du code
+			1-Reçu (True/False)
+			2-Paiement (True/False) Utilisé pour savoir lors du chargement de la fenêtre paiement ce code sera coché par défaut pour être payé
+			3-Montant d'une évaluation
+			4-Montant d'une présence
+			5-Montant gardé en cas d'absence non-motivé (%)
+			6-(True/False) Indique un msg si le numéro de référence n'a pas été entré lors de la création d'un dossier
+			7-Temps d'un traitement
+			8-Temps d'une évaluation
+			9-(True/False) Indique un msg si le diagnostic n'a pas ét entré lors de la création d'un dossier
+			10-Activation de la Date d'accident
+			11-Activation de la Date de rechute
+			12-Ouverture automatique du paiement
+
+		- employeurs.lst
+			Liste de tous les employeurs déjà entrés
+
+		- metiers.lst
+			Liste de tous les métiers déjà entrés
+
+		- keypeoplecat.lst
+			Liste de toutes les catégories pour KeyPeople
+
+		- pays.lst
+			Liste de tous les pays entrés
+
+		- regions.lst
+			Liste de tous les sites de lésion déjà entrés
+
+		- search.lst
+			Éléments pouvant être dans la recherche d'un compte client
+
+		- sujet.lst
+			Liste de tous les sujets entrés dans les communications d'un dossier
+
+		- therapist.lst
+			Liste de tous les types d'utilisateurs considérés comme TRP
+
+		- updates.lst
+			Liste de tous les updates à effectuer par le logiciel
+
+		- Modeles
+			Dossier contenant tous les modèles généraux
+
+		- UniqueNoQueue
+			File d'attente pour avoir un numéro unique
+
+-Fichiers Users ->
+	(1 User / fichier portant le nom du user) - Random Access
+	1-Nom
+	2-Clé (Pour crypté le mot de passe)
+	3-Mot de passe encrypté
+	4-Type d'utilisateur
+	5-DALine (Droit & accès)
+	6-Adresse URL
+	7-Adresse
+	8-Ville
+	9-Code Postal
+	10-Tel - Domicile
+	11-Tel - Autre 1
+	12-Tel - Autre 2
+	13-Courriel
+	14-Titre du thérapeute
+	15-Numéro du permis
+	16-Date de début de travail
+	17-Date de fin de travail
+	18-Type d'employé
+	19-Services offerts par le thérapeute
+	20-Currently in used by who (If no one then "")
+
+	- AddressBook
+		- Dossier portant le nom de l'utilisateur
+			Dossier contenant tous les contacts de cet utilisateur (Sous-divisé en dossier) (1 contact / fichier portant un numéro assigné)
+				0-Nom
+				1-Prénom
+				2-Surnom
+				3-Afficher (Ce qui sera affiché pour l'envoi) (Liste offrant les différentes possibilités Nom, Prénom, Surnom)
+				4-Adresses de courriels (1 courriel & param / emplacement séparé par §)
+					0-Courriel
+					1-Courriel utilisé (Vrai/Faux)
+				5-Envoyer des messages en texte brute uniquement
+				6-Adresse
+				7-Ville
+				8-Code postal
+				9-Pays
+				10-Téléphones (1 téléphone & titre / emplacement séparé par §)
+					0-Téléphone
+					1-Titre
+				11-Site internet
+				12-Référence au compte client
+				13-Référence à la liste de KeyPeople
+				14-Currently in used by who (If no one then "")
+	- Alert
+		- Dossier portant le nom de l'utilisateur (1 message / fichier portant un nom unique)
+			0-Commande à effectuer (OpenMailSystem = 0)
+			1-Message (Lignes subséquentes également)
+	- CodeClient (1 fichier portant le nom de l'utilisateur = Codifications dossier personnalisées)
+			0-Nom du code
+			1-Reçu (True/False)
+			2-Paiement (True/False) Utilisé pour savoir lors du chargement de la fenêtre paiement ce code sera coché par défaut pour être payé
+			3-Montant d'une évaluation
+			4-Montant d'une présence
+			5-Montant gardé en cas d'absence non-motivé (%)
+			6-(True/False) Indique un msg si le numéro de référence n'a pas été entré lors de la création d'un dossier
+			7-Temps d'un traitement
+			8-Temps d'une évaluation
+			9-(True/False) Indique un msg si le diagnostic n'a pas ét entré lors de la création d'un dossier
+			10-Activation de la Date d'accident
+			11-Activation de la Date de rechute
+			12-Ouverture automatique du paiement
+	- Connected (1 fichier nommé "USERNAME-COMPUTERNAME" = Indique que tel utilisateur est connecté sur tel machine)
+		0-List updates.lst LastLineRead
+	- Horaires
+		- Dossier portant le nom de l'utilisateur (1 horaire / fichier portant le nom de la semaine de l'horaire)
+			-(Random) 1-504:(0=Plage fermée,1=Plage ouverte) ; 505:Currently in used by who (If no one then "")
+	- Lists
+		- Dossier portant le nom de l'utilisateur
+			Contient toutes les listes spécifiques à chaque utilisateur
+			- mailsujets.lst
+			- mailexterneas.lst
+			- mailccs.lst
+			- mailbccs.lst
+	- Mail
+		- Dossier portant le nom de l'utilisateur
+			La structure des dossiers interne et externe doit être identique (En terme de dossier)
+			- Interne
+				Ce dossier représente la boîte de réception.
+				Il contient, ainsi que ses sous-dossiers, (1 message / dossier portant un numéro unique & ".msg")
+					- info
+						0-Nom de l'utilisateur ayant envoyé le message
+						1-Date d'affichage du message (yyyy/MM/dd ou "" (=Immédiatement))
+						2-Compte lié (NAM ou "")
+						3-Alerter l'utilisateur (True|False)
+						4-Sujet
+					- message.rtf
+						Contient le message en tant que tel
+					- attachs
+						Dossier contenant tous les fichiers attachés au message
+			- Externe
+				Ce dossier représente la boîte de réception.
+				Il contient, ainsi que ses sous-dossiers, (1 message / dossier portant un numéro unique & ".msg")
+					- info
+						0-De
+						1-À
+						2-CC
+						3-Sujet
+					- message.html
+					- attachs
+						Dossier contenant tous les fichiers attachés au message
+	- Modeles
+		- Dossier portant le nom de l'utilisateur
+			Contient tous les modèles de notes personnalisés
+	- Pref (1 fichier portant le nom de l'utilisateur = Préférences utilisateur)
+	- Search
+		- Dossier portant le nom de l'utilisateur
+			- db.lst
+				Contient les 15 dernières expressions de recherche dans la banque de données
+	- Settings (1 fichier portant le nom de l'utilisateur = Diff paramètres personnalisés sauvegardés)
+		0- Style de la banque de données à sa fermeture (Séparé par §)
+			0-Hauteur
+			1-Largeur
+			2-Type d'affichage de la FileListView (Détails, etc.)
+			3-Largeur de la colonne Titre
+			4-Largeur de la colonne Taille
+			5-Largeur de la colonne Mots-clés
+			6-Largeur de la colonne Description
+			7-Largeur de la colonne Modifié le...
+			8-Largeur de la colonne Caché
+			9-Type de tri (Ascendant, descendant)
+			10-Position du séparateur
+			11-Dernière catégorie affichée
+		1- Style de la recherche pour la banque de données à sa fermeture (Séparé par §)
+			0-Type d'affichage de la FileListView (Détails, etc.)
+			1-Largeur de la colonne Titre
+			2-Largeur de la colonne Catégorie
+			3-Largeur de la colonne Taille
+			4-Largeur de la colonne Mots-clés
+			5-Largeur de la colonne Description
+			6-Largeur de la colonne Modifié le...
+			7-Largeur de la colonne Caché
+			8-Type de tri (Ascendant, descendant)
+		2- Emplacement de l'objet des nouveaux RV (Séparé par §)
+			0-Position Top
+			1-Position Left
+			2-Déplacement bloqué (Vrai|Faux)
+		3- Derniers onglets accédés dans le compte client (Séparé par §)
+			0-Onglets du compte
+			1-Onglets du dossier
+		4- Paramètres de la fenêtre d'envoie d'un message
+			0-Dernier chemin utiliser pour ajouter un attachement
+			1-Hauteur de la liste avec crochets des utilisateurs
+		5- Emplacement de l'objet des messages instantannés (Séparé par §)
+			0-Position Top
+			1-Position Left
+			2-Déplacement bloqué (Vrai|Faux)
+	- Temp
+		- Dossier portant le nom de l'utilisateur
+			Contient les fichiers temporaires nécessaires de l'utilisateur. Ces fichiers sont détruits lors de la fermeture du logiciel.
+
+-Fichiers DB ->
+	0-Type
+	1-Mots-clés (Séparé par §)
+	2-Content File without path.
+	3-Currently in used by who (If no one then "")
+	4-Description (Ligne 4 et +)
+
+	- Types (1 type / fichier portant le nom du type)
+		0-Type général
+		1-Type d'ouverture (Externe/Interne)
+		2-Extensions (Séparé par ;)
+		3-Fichier caché
+		4-Fichier en lecture seule
+		5-Rechercher dans le contenu du fichier
+
+	- mots-cles.db
+		Contient tous les mots-clés existant
+
+-Lorsqu'il n'y pas d'horaire thérapeute, l'agenda apparaît vide.
+
+-Lorsque le logiciel est démarré avec /admin Administrateur apparaît dans la liste indépendamment des préférences
+
+-Dossiers nécessaires lors de l'installation :
+ -Agenda
+ -Agenda\QL
+ -Clients
+ -Users
+ -Users\Connected
+ -Data
+ -Data\Images
+ -Data\Queues
+ -DB
+ -DB\DB
+ -DB\Content
+ -DB\Types
+
+-Fichiers nécessaires lors de l'installation :
+ -Data\users.typ (Il faut le sauvegarder incluant uniquement le type par Défaut)
+ -Data\Images\*.*
+ -Data\userfile.con
+ -Data\usersdel.path
+ -Data\empty.html

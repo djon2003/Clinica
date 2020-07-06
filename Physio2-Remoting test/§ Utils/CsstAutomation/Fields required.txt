@@ -1,0 +1,181 @@
+No d'enregistrement au service des échan- ges électroniques
+FIELD-1
+Champ manquant
+
+Code postal de la clinique
+FIELD-2
+InfoClinique.CodePostal
+
+Nom  de  la clinique
+FIELD-3
+InfoClinique.Nom
+
+Type d'enregistrement
+FIELD-4
+À déterminer !
+
+Code de traitement
+FIELD-5
+À déterminer ! (InfoFolders.Service)
+
+No dossier
+FIELD-6
+InfoFolders.NoFolder
+
+Nom du travailleur
+FIELD-7
+InfoClients.Nom
+
+Prénom du travailleur
+FIELD-8
+InfoClients.Prenom
+
+Province/État 
+FIELD-9
+Champ manquant
+
+Code postal
+FIELD-10
+InfoClients.CodePostal
+
+Zip-code ou autre
+FIELD-11
+Champ manquant
+
+Pays
+FIELD-12
+Champ manquant
+
+NAM
+FIELD-13
+InfoClients.NAM
+
+Date d'événement
+FIELD-14
+InfoFolders.DateAccident
+
+Date de rechute
+FIELD-15
+InfoFolders.DateRechute
+
+Date de l'ordonnance
+FIELD-16
+InfoFolders.DateReference ???
+
+No de l'établisse-
+ment de santé MÉDECIN
+FIELD-17
+À déterminer !
+
+Nom de l’établisse- ment de santé MÉDECIN
+FIELD-18
+À déterminer !
+
+No du médecin
+FIELD-19
+KeyPeople.NoRef
+
+Nom du médecin
+FIELD-20
+KeyPeople.Nom
+
+Prénom du médecin
+FIELD-21
+KeyPeople.Nom
+
+Diagnostic
+FIELD-22
+InfoFolders.Diagnostic
+
+Date de réception de l'ordonnance
+FIELD-23
+À déterminer ! ("Communication representing ORDONNANCE".DateHeure)
+
+Date de prise en charge
+FIELD-24
+"First RV of folder".DateHeure
+
+Date de début des traitements
+FIELD-25
+"Second RV of folder".DateHeure
+
+Fréquence des traitements
+FIELD-26
+InfoFolders.Frequence
+
+Problèmes identifiés, but et plan de traitement
+FIELD-27
+À déterminer !
+
+Numéro du physiothérapeute
+/ ergothérapeute ou du médecin
+FIELD-28
+Utilisateurs.NoRef
+
+Date de signature
+FIELD-29
+À déterminer ! FolderTextes.DateFinished
+
+Numéro d'étape
+FIELD-30
+FolderTextes.NoMultiple
+
+Évolution
+FIELD-31
+À déterminer !
+
+Les traitements ont-ils été suspendus?
+FIELD-32
+À déterminer !
+
+SOAP
+FIELD-33
+À déterminer !
+
+Date de la fin des traitements
+FIELD-34
+"Last RV of folder".DateHeure
+
+État du travailleur à son départ
+FIELD-35
+À déterminer !
+
+Période de présence « du »
+FIELD-36
+À déterminer !
+
+Période de présence « au »
+FIELD-37
+À déterminer !
+
+No de l'établissement de santé (du thérapeute)
+FIELD-38
+À déterminer !
+
+Nom de l'établisse-ment de santé
+FIELD-39
+InfoClinique.Nom
+
+Province /État (adres-
+Se de l'établissement)
+FIELD-40
+Champ manquant
+
+Code postal 
+(adresse de l'établissement)
+FIELD-41
+InfoClinique.CodePostal
+
+Zip-code ou autre
+(adresse de l'établissement)
+FIELD-42
+Champ manquant
+
+Pays (adresse de
+l'établissement)
+FIELD-43
+Champ manquant
+
+Code de présences
+FIELD-44
+À déterminer !

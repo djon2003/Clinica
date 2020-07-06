@@ -1,0 +1,299 @@
+---------- HEADER
+
+No d'enregistrement au service des échan- ges électroniques
+FIELD-1
+
+Code postal de la clinique
+FIELD-2
+
+Nom  de  la clinique
+FIELD-3
+
+
+
+---------- INITIAL
+
+Type d'enregistrement
+FIELD-4
+
+Code de traitement
+FIELD-5
+
+No dossier
+FIELD-6
+
+Nom du travailleur
+FIELD-7
+
+Prénom du travailleur
+FIELD-8
+
+Province/État 
+FIELD-9
+
+Code postal
+FIELD-10
+
+Zip-code ou autre
+FIELD-11
+
+Pays
+FIELD-12
+
+NAM
+FIELD-13
+
+Date d'événement
+FIELD-14
+
+Date de rechute
+FIELD-15
+
+Date de l'ordonnance
+FIELD-16
+
+No de l'établisse-
+ment de santé MÉDECIN
+FIELD-17
+
+Nom de l’établisse- ment de santé MÉDECIN
+FIELD-18
+
+No du médecin
+FIELD-19
+
+Nom du médecin
+FIELD-20
+
+Prénom du médecin
+FIELD-21
+
+Diagnostic
+FIELD-22
+
+Date de réception de l'ordonnance
+FIELD-23
+
+Date de prise en charge
+FIELD-24
+
+Date de début des traitements
+FIELD-25
+
+Fréquence des traitements
+FIELD-26
+
+Problèmes identifiés, but et plan de traitement
+FIELD-27
+
+Numéro du physiothérapeute
+/ ergothérapeute ou du médecin
+FIELD-28
+
+Date de signature
+FIELD-29
+
+
+
+---------- ÉTAPE
+Type d'enregistrement
+FIELD-4
+
+No dossier
+FIELD-6
+
+Nom du travailleur
+FIELD-7
+
+Prénom du travailleur
+FIELD-8
+
+Province/État
+FIELD-9
+
+Code postal
+FIELD-10
+
+Zip-code ou autre
+FIELD-11
+
+Pays
+FIELD-12
+
+NAM
+FIELD-13
+
+Date d'événement
+FIELD-14
+
+
+Date de début des traitements
+FIELD-25
+
+No de l'établissement
+de santé
+FIELD-17
+
+Nom de l’établisse-ment de santé
+FIELD-18
+
+No du médecin
+FIELD-19
+
+Nom du médecin
+FIELD-20
+
+Prénom du médecin
+FIELD-21
+
+Diagnostic
+FIELD-22
+
+Numéro d'étape
+FIELD-30
+
+Fréquence des traitements
+FIELD-26
+
+Évolution
+FIELD-31
+
+Les traitements ont-ils été suspendus?
+FIELD-32
+
+SOAP
+FIELD-33
+
+Numéro du physiothérapeute /  ergothérapeute ou du médecin
+FIELD-28
+
+Date de signature
+FIELD-29
+
+
+
+
+---------- FINAL
+Type d'enregistrement
+FIELD-4
+
+No dossier
+FIELD-6
+
+Nom du travailleur
+FIELD-7
+
+Prénom du travailleur
+FIELD-8
+
+Province/État
+FIELD-9
+
+Code postal
+FIELD-10
+
+Zip-code ou autre
+FIELD-11
+
+Pays
+FIELD-12
+
+App., Suite, C.P.
+
+NAM
+FIELD-13
+
+Date d'événement
+FIELD-14
+
+No de l'établissement de santé
+FIELD-17
+
+Nom de l'établisse-
+ment de santé
+FIELD-18
+
+No du médecin
+FIELD-19
+
+Nom du médecin
+FIELD-20
+
+Prénom du médecin
+FIELD-21
+
+Diagnostic
+FIELD-22
+
+Date de la fin des traitements
+FIELD-34
+
+État du travailleur à son départ
+FIELD-35
+
+Numéro du physiothérapeute
+ / ergothérapeute
+ou du médecin
+FIELD-28
+
+Date de signature
+FIELD-29
+
+
+
+---------- PRÉSENCE
+Type d'enregistrement
+FIELD-4
+
+Période de présence « du »
+FIELD-36
+
+Période de présence « au »
+FIELD-37
+
+No de l'établissement de santé
+FIELD-38
+
+Nom de l'établisse-ment de santé
+FIELD-39
+
+Province /État (adres-
+Se de l'établissement)
+FIELD-40
+
+Code postal 
+(adresse de l'établissement)
+FIELD-41
+
+Zip-code ou autre
+(adresse de l'établissement)
+FIELD-42
+
+Pays (adresse de
+l'établissement)
+FIELD-43
+
+Nom du travailleur
+FIELD-7
+
+Prénom du travailleur
+FIELD-8
+
+NAM
+FIELD-13
+
+Date d'événement
+FIELD-14
+
+Date de réception de l'ordonnance
+FIELD-23
+
+Date de début des traitements
+FIELD-25
+
+Code de présences
+FIELD-44
+
+
+No dossier
+FIELD-6

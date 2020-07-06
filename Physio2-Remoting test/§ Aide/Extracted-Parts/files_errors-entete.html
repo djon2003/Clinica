@@ -1,0 +1,55 @@
+<html>
+<head>
+
+<script language=javascript>
+
+var originalWidth=0;
+var originalHeight=0;
+var maxObj = "null";
+var n = 0;
+
+function linkBoxes() {
+   var closeButton = document.getElementById('closeButton');
+   closeButton.style.left = document.body.offsetWidth-50;
+
+for(var i = 0; i < document.all.length; i++) {
+  if (document.all[i].tagName.toUpperCase() == "TEXTAREA") {document.all[i].onclick = function() {maximise(this);};}
+}
+}
+
+function maximise(obj) {
+   if (typeof(maxObj) == "String") minizime();
+
+   maxObj = obj;
+   var closeButton = document.getElementById('closeButton');
+   closeButton.style.display = "";
+   if (originalWidth == 0) originalWidth = obj.offsetWidth;
+   if (originalHeight == 0) originalHeight = obj.offsetHeight;
+   obj.style.position = "absolute";
+   obj.style.height = document.body.offsetHeight;
+   obj.style.width = document.body.offsetWidth-50;
+   obj.style.top=0;
+   obj.style.left=0;
+   obj.style.zIndex = 1000 + n;
+   n++;
+}
+function minimize() {
+   var closeButton = document.getElementById('closeButton');
+   closeButton.style.display = "none";
+   maxObj.style.position = "relative";
+   maxObj.style.width = originalWidth;
+   maxObj.style.height = originalHeight;
+   maxObj.style.zIndex = 0;
+   
+   maxObj = "null";
+}
+</script>
+
+</head>
+<body onload="linkBoxes();">
+
+<span style="display:none;position:absolute;" id=closeButton ><input type=button onclick="minimize();" value=X></span>
+
+<table>
+<tr><th colspan=4>Articles ayant des liens non fonctionnels</th></tr>
+<tr><th>Article</th><th>Fichier</th><th>Contenu du lien</th><th>HTML</th></tr>

@@ -1,0 +1,5 @@
+Questions internes :
+
+- Certains médecins ont no de permis > à 6 caractères (en comptant juste les chiffres).
+  Que faire ? La CSST n'en prend que 6.
+  --> 

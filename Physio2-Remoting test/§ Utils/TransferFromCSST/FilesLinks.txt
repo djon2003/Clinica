@@ -1,0 +1,24 @@
+Init = 02
+Step = 03
+Final = 04
+Presence = 05
+
+InfoFolders.NoRef (step + final = 4 à 12)
+
+InfoFolders.NoTRPTraitant (init = 1474 à 1481, step = 1148 à 1155, final = 1034 à 1041)
+InfoFolders.NoKP (Doctor) (init = 283 à 288, step = 283 à 288, final = 283 à 288)
+InfoFolders.Diagnostic (init = 339 à 654, step = 339 à 654, final = 339 à 654)
+InfoFolders.DateRechute (init = 219 à 226, final = 219 à 226)
+
+Final.Text
+Final's creation date (final [last treatment] = 655 à 662)
+
+Init.Text
+Init.CreationDate = EvalDate
+
+Step.Number = 
+Step.Text
+Step.CreationDate = TreatmentDate + 21 * Step.Number - 1
+
+
+Set StatutOuvert to 0 when final report is created

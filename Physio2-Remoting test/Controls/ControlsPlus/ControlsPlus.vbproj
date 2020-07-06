@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{918B31B6-C182-4379-B6B1-4D91E149512D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CyberInternautes.Controls</RootNamespace>
+    <AssemblyName>ControlsPlus</AssemblyName>
+    <MyType>Windows</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ControlsPlus.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ControlsPlus.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Temp|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Temp\</OutputPath>
+    <DocumentationFile>ControlsPlus.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chaines.vb" />
+    <Compile Include="ControlsBuilt\Feux.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsBuilt\InvisibleControlBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsBuilt\Legendes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsBuilt\ListCombo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\ContextMenuItem.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\DataGridPlus.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\ManagedCombo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\ManagedText.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\PanelPlus.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\TexteControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\TransparentControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\TransparentControlBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\TreeViewComboPlus.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsRebuilt\TreeViewPlus.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ControlsBuilt\Feux.resx">
+      <DependentUpon>Feux.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsBuilt\InvisibleControlBox.resx">
+      <DependentUpon>InvisibleControlBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsBuilt\Legendes.resx">
+      <DependentUpon>Legendes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsBuilt\ListCombo.resx">
+      <DependentUpon>ListCombo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsRebuilt\DataGridPlus.resx">
+      <DependentUpon>DataGridPlus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsRebuilt\ManagedCombo.resx">
+      <DependentUpon>ManagedCombo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsRebuilt\ManagedText.resx">
+      <DependentUpon>ManagedText.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsRebuilt\TexteControl.resx">
+      <DependentUpon>TexteControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsRebuilt\TransparentControl.resx">
+      <DependentUpon>TransparentControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsRebuilt\TransparentControlBox.resx">
+      <DependentUpon>TransparentControlBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsRebuilt\TreeViewComboPlus.resx">
+      <DependentUpon>TreeViewComboPlus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsRebuilt\TreeViewPlus.resx">
+      <DependentUpon>TreeViewPlus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\List\List.vbproj">
+      <Project>{78417E06-993C-48AE-9532-69822251A55A}</Project>
+      <Name>List</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

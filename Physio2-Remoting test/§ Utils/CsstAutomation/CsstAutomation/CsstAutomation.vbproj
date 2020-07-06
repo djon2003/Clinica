@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A2C9D1EF-B9FE-4D62-805F-944AB643525E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>CI.CsstAutomation</RootNamespace>
+    <AssemblyName>CI.CsstAutomation</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CI.CsstAutomation.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CI.CsstAutomation.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>CI.CsstAutomation.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>CI.CsstAutomation.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SHDocVw, Version=1.1.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLLs\AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw, Version=1.1.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLLs\Interop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLLs\Microsoft.mshtml.dll.1\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="MsHtmHstInterop, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLLs\MsHtmHstInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chaines.vb" />
+    <Compile Include="Config.vb" />
+    <Compile Include="CsstTask\Controllers\FilesReturnator.vb" />
+    <Compile Include="CsstTask\Controllers\FilesWebException.vb" />
+    <Compile Include="CsstTask\CsstTask.vb" />
+    <Compile Include="CsstTask\Controllers\WebHelper\CSSTBrowser.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CsstTask\Controllers\DataSelector.vb" />
+    <Compile Include="CsstTask\Files\Creation\FieldValidationException.vb" />
+    <Compile Include="CsstTask\Controllers\FilesWebInteractor.vb" />
+    <Compile Include="CsstTask\Files\Creation\FilesCreationSkippingException.vb" />
+    <Compile Include="CsstTask\Files\Return\CSSTResponseError.vb" />
+    <Compile Include="CsstTask\Files\Return\CSSTResponseErrors.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorInput.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Final\Final_FirstAfterLastPresence.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Final\Final_PresenceAfter.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\ErrorCorrectedByCode.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\BadTRP.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\NotAuthorized.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\FolderRefused.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\FinalDateOverRefuseDate.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\EvalAlreadySubmitted.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\TryAgain.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\PresencesOver51Days.vb" />
+    <Compile Include="CsstTask\Files\Return\FileResponseLine.vb" />
+    <Compile Include="CsstTask\Files\Return\FileResponseOutput.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorsLinks.vb" />
+    <Compile Include="CsstTask\Files\Creation\FileFinalReports.vb" />
+    <Compile Include="CsstTask\Files\Creation\FileInitialReports.vb" />
+    <Compile Include="CsstTask\Files\Creation\FilePresences.vb" />
+    <Compile Include="CsstTask\Files\Creation\FileReports.vb" />
+    <Compile Include="CsstTask\Files\Creation\FilesCreationException.vb" />
+    <Compile Include="CsstTask\Controllers\FilesCreator.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\BadCsstNumber.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\BadDoctorRef.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\BadEventDate.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\BadNAM.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\BadOrdonnanceDate.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\FolderInactive.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\ErrorType.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Final\Final_AlreadyExists.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Final\Final_NoPresence.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\FirstTreatmentBeforeEval.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\FolderTemporaryInactive.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Initial\Initial_AlreadyExists.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Initial\Initial_Error.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Initial\Initial_ManuallyEntered.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\NoPresenceForEvaluation.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\NoPresenceForFirstTreatment.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\PeriodToAnotherClinic.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\PresenceEntryRemoved.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\PresencesOverlap.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\Presence_AfterRefusedDate.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Presences\Presence_ErrorDueToInitialManuallyEntered.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\ReclamationRefusedForLesion.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\BadEventDate2.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Step\Step_AlreadyExists.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Step\Step_MaximumReached.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\TrpNotRegisteredAtCsst.vb" />
+    <Compile Include="CsstTask\Files\Return\ErrorTypes\Folder\BadNAMVsCsstNumber.vb" />
+    <Compile Include="CsstTask\Files\Return\FileResponse.vb" />
+    <Compile Include="CsstTask\Files\FileResult.vb" />
+    <Compile Include="CsstTask\Files\Creation\FileStepReports.vb" />
+    <Compile Include="CsstTask\Files\File.vb" />
+    <Compile Include="CsstTask\Controllers\WebHelper\frmCSSTBrowser.Designer.vb">
+      <DependentUpon>frmCSSTBrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CsstTask\Controllers\WebHelper\frmCSSTBrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CsstTask\Files\DataSelection\HtmlValue.vb" />
+    <Compile Include="CsstTask\Files\DataSelection\HtmlValuesExtractor.vb" />
+    <Compile Include="CsstTask\Files\Return\FileSave.vb" />
+    <Compile Include="CsstTask\Files\Return\FolderVerifications.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Params.vb" />
+    <Compile Include="Plugin.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CsstTask\Controllers\WebHelper\frmCSSTBrowser.resx">
+      <DependentUpon>frmCSSTBrowser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="§ DataNeededByTables.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\BaseLib\BaseLib.vbproj">
+      <Project>{9E3A6FA5-AC4D-4851-B01C-DD1D43E6B737}</Project>
+      <Name>BaseLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "C:\DropBox\CI\Projects\Physio2-Remoting test\Serveur\LastVersion\Plugins"
+copy /Y "$(TargetPath)" "C:\DropBox\CI\Projects\Physio2-Remoting test\Serveur\LastVersion\Plugins"
+copy /Y "$(TargetDir)$(TargetName).pdb" "C:\DropBox\CI\Projects\Physio2-Remoting test\Serveur\LastVersion\Plugins"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

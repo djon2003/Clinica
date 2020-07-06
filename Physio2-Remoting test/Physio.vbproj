@@ -1,0 +1,1346 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46CE4988-367A-4673-8D1F-A2365AEC5C7A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>Clinica.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Clinica</AssemblyName>
+    <AssemblyOriginatorKeyFile>Physio_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Text</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>CI.Clinica</RootNamespace>
+    <StartupObject>Sub Main</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ManifestCertificateThumbprint>E16BCFEBE05A32AC4C021DFE82EEB6F666786A06</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Physio_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignAssembly>false</SignAssembly>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <PublishUrl>C:\Documents and Settings\All Users\Documents\Temp\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://clinica.cints.net</SupportUrl>
+    <TargetCulture>fr-CA</TargetCulture>
+    <ProductName>Clinica</ProductName>
+    <PublisherName>CyberInternautes</PublisherName>
+    <ApplicationRevision>58</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+    <DocumentationFile>Clinica.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>full</DebugType>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42026,42029,42031</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+    <DocumentationFile>Clinica.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42026,42029,42031</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Temp|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>.\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>Clinica.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42026,42029,42031</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>.\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>Clinica.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42026,42029,42031</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>Clinica.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42026,42029,42031</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Temp|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Temp\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>Clinica.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42026,42029,42031</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SHDocVw, Version=1.1.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw, Version=1.1.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\Interop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\Microsoft.mshtml.dll.1\Microsoft.mshtml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+    </Reference>
+    <Reference Include="MsHtmHstInterop, Version=0.0.0.0, Culture=neutral" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="CI.Base" />
+    <Import Include="CI.Base.Windows.Forms" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\APIs.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\Fichiers.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\PrintingJobs.Designer.vb">
+      <DependentUpon>PrintingJobs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\PrintingJobs.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\BaseSearchResult.Designer.vb">
+      <DependentUpon>BaseSearchResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\BaseSearchResult.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\BaseUpdatedControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\ClientSearchResult.Designer.vb">
+      <DependentUpon>ClientSearchResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\ClientSearchResult.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\InternalDBSearchResult.Designer.vb">
+      <DependentUpon>InternalDBSearchResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\InternalDBSearchResult.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\KPSearchResult.Designer.vb">
+      <DependentUpon>KPSearchResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\KPSearchResult.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\UserSearchResult.Designer.vb">
+      <DependentUpon>UserSearchResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\UserSearchResult.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\TimeGrid.Designer.vb">
+      <DependentUpon>TimeGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\TimeGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\Loading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\BaseSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\ClientSearch2.Designer.vb">
+      <DependentUpon>ClientSearch2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\ClientSearch2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\FolderClosing.Designer.vb">
+      <DependentUpon>FolderClosing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\FolderClosing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\FolderExportation.Designer.vb">
+      <DependentUpon>FolderExportation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\FolderExportation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Reports\ReportGenerationInGroup.Designer.vb">
+      <DependentUpon>ReportGenerationInGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Reports\ReportGenerationInGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\SingleWindowSaveEventArgs.vb" />
+    <Compile Include="Layer 1 - Presentation\Windows\WindowInternalUpdate.vb" />
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\DelTables.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\RemoteTasksManagerWin.Designer.vb">
+      <DependentUpon>RemoteTasksManagerWin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\RemoteTasksManagerWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ Uniques\Access2%28Try to change transparency method%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\AccountBase.vb" />
+    <Compile Include="Layer 2 - Software\Agenda\AgendaEntry.vb" />
+    <Compile Include="Layer 2 - Software\Agenda\AgendaEntryBlocked.vb" />
+    <Compile Include="Layer 2 - Software\Agenda\AgendaEntryReserved.vb" />
+    <Compile Include="Layer 2 - Software\Agenda\AgendaManager.vb" />
+    <Compile Include="Layer 2 - Software\Agenda\AgendaPlace.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\Alarms\AlarmOfClientAccount.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\Alarms\AlarmOfKPAccount.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\Alerts\Alert.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\AlertsManager.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\Alerts\AlertOfKPAccount.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\Alerts\AlertOfMailSystem.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\Alerts\AlertOfPersoNote.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\Alerts\AlertOfQueueList.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\Alerts\AlertOfReportGenerator.vb" />
+    <Compile Include="Layer 2 - Software\Alerts\Alerts\AlertOfClientAccount.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Client.vb" />
+    <Compile Include="Layer 2 - Software\Clients\ClientCopied.vb" />
+    <Compile Include="Layer 2 - Software\Clients\ClientsManager.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\ClientFolder.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\Codifications\ExternalStatus.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\Codifications\ExternalStatuses.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\Codifications\FolderCodesManager.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\FolderStatus\FoldersStatus.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\FolderStatus\FolderStatusChange.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\FolderStatus\FolderStatus.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\FolderStatus\FolderStatusActive.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\FolderStatus\FolderStatusApplier.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\FolderStatus\FolderStatusInactive.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\FolderStatus\FolderStatusException.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\Texts\FolderTextTypesManager.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RendezVous.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RendezVousAcceptor.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RendezVousManager.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVs.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVPossibleStatuses.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVStatusChangeExtraInfos.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVStatusException.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVStatusChange.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVsStatus.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVStatus.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVStatusApplier.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVStatusNormal.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVStatusNotPresentMotivated.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVStatusNotPresentNotMotivated.vb" />
+    <Compile Include="Layer 2 - Software\Clients\RVs\RVStatus\RVStatusPresent.vb" />
+    <Compile Include="Layer 2 - Software\Dates\ClinicaDyn.vb" />
+    <Compile Include="Layer 2 - Software\Dates\DateInterval.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\InexistantInternalDBItemException.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\TypesFilesOpener.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\InternalTypes\InternalType_Browser.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\InternalTypes\InternalType_InternalDBItem.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\InternalTypes\InternalType_Report.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\InternalTypes\InternalType_Text.vb" />
+    <Compile Include="Layer 2 - Software\KeyPeople\KeyPeople.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportGroup.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportGroupsManager.vb" />
+    <Compile Include="Layer 2 - Software\Users\Connections\UserConnection.vb" />
+    <Compile Include="Layer 2 - Software\Users\Connections\UserConnectionsManager.vb" />
+    <Compile Include="Layer 2 - Software\Users\GeneralUsers\UserAdmin.vb" />
+    <Compile Include="Layer 2 - Software\Users\GeneralUsers\UserGeneral.vb" />
+    <Compile Include="Layer 2 - Software\Users\Connections\UserConnectionException.vb" />
+    <Compile Include="Layer 2 - Software\Users\UserSettings.vb" />
+    <Compile Include="Layer 2 - Software\FolderChangedEventArgs.vb" />
+    <Compile Include="Layer 2 - Software\Scheduling\SchedulesManager.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\InternalDBFoldersList.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\ContactFoldersList.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\ContentType.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\Mail.vb" />
+    <Compile Include="Layer 2 - Software\Users\GeneralUsers\UserDefault.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\MailFoldersList.vb" />
+    <Compile Include="Layer 2 - Software\Users\UserActions.vb" />
+    <Compile Include="Layer 2 - Software\Users\UserAlreadyUsingException.vb" />
+    <Compile Include="Layer 2 - Software\Users\UserCancelledException.vb" />
+    <Compile Include="Layer 2 - Software\Users\UserRightException.vb" />
+    <Compile Include="Layer 1 - Presentation\Windows\WindowsUpdateDispatcher.vb" />
+    <Compile Include="Layer 1 - Presentation\BaseObjArray.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\Chaines.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\Comptes.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\CommonAgenda.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\CommonProc.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\Comptabilites.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\Fenetres.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\Internet.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommProc\ListeAttente.vb" />
+    <Compile Include="CommProc\Tests.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\§ Main\SoftwareUpdater.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Externals\BaseLibExternal.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Config.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Externals\ExternalUpdateServer.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Externals\ExternalUpdatesExternal.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Printing\PrintingForm.Designer.vb">
+      <DependentUpon>PrintingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 3 - Basic functionnalities\Printing\PrintingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 3 - Basic functionnalities\Printing\PrintingInfos.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Printing\PrintingHelper.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\ConfigPrinters.vb" />
+    <Compile Include="Layer 3 - Basic functionnalities\Printing\PrintingJob.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 2 - Software\Clients\Folders\Alerts\FolderAlert.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\Alerts\FolderAlertTypesManager.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\Alerts\FolderAlertType.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\Texts\FolderText.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\Texts\FolderTextType.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\FolderInfos.Designer.vb">
+      <DependentUpon>FolderInfos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\FolderInfos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\PanelPlus.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\Equipment\Equipment.vb" />
+    <Compile Include="Layer 2 - Software\Equipment\EquipmentsManager.vb" />
+    <Compile Include="Layer 2 - Software\Equipment\Item.vb" />
+    <Compile Include="Layer 2 - Software\Equipment\ItemBorrowed.vb" />
+    <Compile Include="Layer 2 - Software\Equipment\ItemSold.vb" />
+    <Compile Include="Layer 2 - Software\KeyPeople\KeyPeopleManager.vb" />
+    <Compile Include="Layer 2 - Software\Dates\DateSynchronizer.vb" />
+    <Compile Include="Layer 2 - Software\Preferences\Preferences.vb" />
+    <Compile Include="Layer 2 - Software\Preferences\PreferencesManager.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\EmailValidator.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\MailAccount.vb" />
+    <Compile Include="Layer 2 - Software\ModelOfText\ModelCategory.vb" />
+    <Compile Include="Layer 2 - Software\ModelOfText\ModelsManager.vb" />
+    <Compile Include="Layer 2 - Software\Dates\DateComparer.vb" />
+    <Compile Include="Layer 2 - Software\Dates\SpecialDate.vb" />
+    <Compile Include="Layer 2 - Software\Dates\SpecialDatesManager.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\InternalDBItem.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\TypeFile.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\InternalDBManager.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\InternalDBFolder.vb" />
+    <Compile Include="Layer 2 - Software\InternalDB\TypesFilesManager.vb" />
+    <Compile Include="Layer 2 - Software\Billing\BillsManager.vb" />
+    <Compile Include="Layer 2 - Software\Clients\Folders\Codifications\FolderCode.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\ContactsManager.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\Email.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\MailsManager.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\MainCommands\SearchClientCommand.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\ContextMenuItem.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\AccountLegend.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\LightSignals.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\Legend.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\ListCombo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\SearchConditions.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\TreeViewComboPlus.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\DirectoryTreeView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\FileListView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\ManagedCombo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\TextControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\DirectoryTreeViewCombo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\TreeViewPlus.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\Dates\DateFormat.vb" />
+    <Compile Include="Layer 1 - Presentation\DayListArray.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\Billing\FacturationBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\Billing\FacturationBoxMoreInfos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\Billing\Bill.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\Billing\PaymentBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\Scheduling\Schedule.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\MainCommands\CommandsHolder.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\MainCommands\ReportCommand.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\MainCommands\QuitChangeCommand.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\MainCommands\QueueListCommand.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\MainCommands\FuturVisitesCommand.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\MainCommands\NewClientCommand.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\MainCommands\SearchDBCommand.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\MainCommands\NewAgendaCommand.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\Alerts\Alarms\Alarm.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\Alerts\Alarms\AlarmManager.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\Alerts\Alarms\AlarmOfPersoNote.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\EnumWindows.vb" />
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\Toolbar controls\ClientCopyBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\Toolbar controls\ClientCopyBoxStrip.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\Toolbar controls\ctlWorkPlace.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\Toolbar controls\ToolStripButtonPlus.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\TransparentControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 2 - Software\§ Main\DrawingManager.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\FutureVisites.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\InstantMessages.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\InvisibleControlBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\PersoNote.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsBuilt\Punch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\SingleWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\ControlsRebuilt\TransparentControlBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\WindowsManager.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\ContactFolder.vb" />
+    <Compile Include="Layer 2 - Software\Messaging\MailFolder.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Types\BodyPropertiesConverter.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Interfaces\ReportBody.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Interfaces\ReportFilter.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Interfaces\ReportFooter.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringInputFieldData.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\FilterResultComposite.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterNoFacture.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\ReportHeader.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Body\ReportBodyAgenda.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Body\ReportBodyVisites.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringNoKP.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\BasicFilter.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\BasicFiltering.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringComposite.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringCreator.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringFromTo.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringListFieldData.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringMonth.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringNoClient.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringPassive.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringRefererType.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\FilteringElements\FilteringUser.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterInputFieldData.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterNoKP.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterPassive.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterRefererType.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterMonth.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\FilterResult.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\FilterComposite.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\FilterCreator.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterFromTo.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterListFieldData.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterNoClient.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Filters\Specifics\FilterUser.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Interfaces\FilteringElement.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Footer\ReportBasicFooter.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Report.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Interfaces\ReportElement.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Body\ReportBasicBody.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Footer\ReportFooterSimple.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Header\ReportHeaderSimple.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Header\ReportBasicHeader.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Body\ReportBodySimple.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Body\ReportBodyStats.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Body\ReportBodyTable.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\SelectorReturns\BasicSelectorReturn.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\SelectorReturns\ClientSelectorReturn.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\SelectorReturns\KPSelectorReturn.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\SelectorReturns\RefererSelectorReturn.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\SelectorReturns\DateSelectorReturn.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\SelectorReturns\MonthSelectorReturn.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\SelectorReturns\PersoSelectorReturn.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\SelectorReturns\UserSelectorReturn.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportGenerator.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportElements\Footer\ReportFooterTotal.vb" />
+    <Compile Include="Layer 2 - Software\Reports\ReportsManager.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Types\HeaderPropertiesConverter.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Types\ReportType.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Types\ReportTypeBodysList.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Types\ReportTypeFootersList.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Types\ReportTypeHeadersList.vb" />
+    <Compile Include="Layer 2 - Software\Reports\Types\ReportTypePrinterConverter.vb" />
+    <Compile Include="Layer 2 - Software\§ Main\Software.vb" />
+    <Compile Include="Layer 2 - Software\Users\Types\UserType.vb" />
+    <Compile Include="Layer 2 - Software\Users\Types\UserTypeManager.vb" />
+    <Compile Include="Layer 2 - Software\Users\GeneralUsers\UserAll.vb" />
+    <Compile Include="Layer 2 - Software\Users\UsersManager.vb" />
+    <Compile Include="Layer 2 - Software\Users\User.vb" />
+    <Compile Include="Layer 1 - Presentation\WindowObjects\DateChoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\Disponibilities.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\InputBoxPlus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\MsgBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\multichoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\ReservedAsk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\SelectDBCat.Designer.vb">
+      <DependentUpon>SelectDBCat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\SelectDBCat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\TextWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\WindowObjects\TopDialogWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ Others\About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ Others\Browser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ Others\logo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ Others\testWin.Designer.vb">
+      <DependentUpon>testWin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ Others\testWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\addclient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\FolderTextsAnalysis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\FolderAlertTypesWin.Designer.vb">
+      <DependentUpon>FolderAlertTypesWin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\FolderAlertTypesWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\FolderTexteTypesWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\addvisite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\clientSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\viewmodifclients.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\InternalDB\AddModifDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\InternalDB\DB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\InternalDB\SearchDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\InternalDB\TypeDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Billing\addBill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Billing\codifications.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Billing\modiffacturation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Billing\Payment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\specialDates.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Reports\ReportCreator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Users\connectedUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\EndOfMonth.Designer.vb">
+      <DependentUpon>EndOfMonth.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\EndOfMonth.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Messaging\msgMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Reports\ReportGeneration.Designer.vb">
+      <DependentUpon>ReportGeneration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Reports\ReportGeneration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Users\showpaye.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Billing\viewmodifBills.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\workHours.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\Clinic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\EquipmentWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\ModelOfTextWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ UniqueManaging\preferencesWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\KeyPeople\addkeypeople.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\KeyPeople\keypeopleSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\KeyPeople\viewmodifKeyPeople.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Messaging\msgAddressBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Messaging\msgContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Messaging\msgParam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Messaging\MassMailing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Messaging\msgSending.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Messaging\msgSystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ Uniques\Access.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ Uniques\Agenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\§ Uniques\MainWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Clients\QueueList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Users\addmodifusers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Users\modifhoraire.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Users\modifusers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layer 1 - Presentation\Windows\Users\typesuser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Content Include="Clinica.ico" />
+    <Content Include="CommProc\%24%24Droits&amp;Acces%24%24.txt" />
+    <Content Include="CommProc\%24CommProc.txt" />
+    <Content Include="CommProc\%24%24Préférences%24%24.txt" />
+    <Content Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\PrintingJobs.resx">
+      <DependentUpon>PrintingJobs.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\BaseSearchResult.resx">
+      <DependentUpon>BaseSearchResult.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\FutureVisites.resx">
+      <DependentUpon>FutureVisites.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\SearchResults\ClientSearchResult.resx">
+      <DependentUpon>ClientSearchResult.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\TimeGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TimeGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Billing\codifications.resx">
+      <DependentUpon>codifications.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\BaseSearch.resX">
+      <DependentUpon>BaseSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\ClientSearch2.resx">
+      <DependentUpon>ClientSearch2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\FolderAlertTypesWin.resx">
+      <DependentUpon>FolderAlertTypesWin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\FolderClosing.resx">
+      <DependentUpon>FolderClosing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\FolderExportation.resx">
+      <DependentUpon>FolderExportation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\FolderTexteTypesWin.resx">
+      <DependentUpon>FolderTexteTypesWin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\viewmodifclients.resx">
+      <DependentUpon>viewmodifclients.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\InternalDB\TypeDB.resx">
+      <DependentUpon>TypeDB.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\KeyPeople\viewmodifKeyPeople.resx">
+      <DependentUpon>viewmodifKeyPeople.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Messaging\msgParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>msgParam.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Messaging\msgSending.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>msgSending.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Reports\ReportGenerationInGroup.resx">
+      <DependentUpon>ReportGenerationInGroup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ UniqueManaging\DelTables.resx">
+      <DependentUpon>DelTables.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ UniqueManaging\EquipmentWin.resx">
+      <DependentUpon>EquipmentWin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ UniqueManaging\RemoteTasksManagerWin.resx">
+      <DependentUpon>RemoteTasksManagerWin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ Uniques\Agenda.resx">
+      <DependentUpon>Agenda.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ Uniques\Access2%28Try to change transparency method%29.resX">
+      <DependentUpon>Access2%28Try to change transparency method%29.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 3 - Basic functionnalities\Printing\PrintingForm.resx">
+      <DependentUpon>PrintingForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\AccountLegend.resx">
+      <DependentUpon>AccountLegend.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\LightSignals.resx">
+      <DependentUpon>LightSignals.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\FolderInfos.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FolderInfos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\Legend.resx">
+      <DependentUpon>Legend.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\ListCombo.resx">
+      <DependentUpon>ListCombo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\SearchConditions.resx">
+      <DependentUpon>SearchConditions.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\WebTextControl.resx">
+      <DependentUpon>WebTextControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\TreeViewComboPlus.resx">
+      <DependentUpon>TreeViewComboPlus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\FileListView.resx">
+      <DependentUpon>FileListView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\ManagedCombo.resx">
+      <DependentUpon>ManagedCombo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\TextControl.resx">
+      <DependentUpon>TextControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\DirectoryTreeViewCombo.resx">
+      <DependentUpon>DirectoryTreeViewCombo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\TreeViewPlus.resx">
+      <DependentUpon>TreeViewPlus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\Billing\FacturationBox.resx">
+      <DependentUpon>FacturationBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\Billing\FacturationBoxMoreInfos.resx">
+      <DependentUpon>FacturationBoxMoreInfos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\Billing\PaymentBox.resx">
+      <DependentUpon>PaymentBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\Toolbar controls\ctlWorkPlace.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ctlWorkPlace.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\TransparentControl.resx">
+      <DependentUpon>TransparentControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\InvisibleControlBox.resx">
+      <DependentUpon>InvisibleControlBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\PersoNote.resx">
+      <DependentUpon>PersoNote.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsBuilt\Punch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Punch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\ControlsRebuilt\TransparentControlBox.resx">
+      <DependentUpon>TransparentControlBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowObjects\DateChoice.resX">
+      <DependentUpon>DateChoice.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowObjects\Disponibilities.resx">
+      <DependentUpon>Disponibilities.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowObjects\InputBoxPlus.resx">
+      <DependentUpon>InputBoxPlus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowObjects\MsgBox1.resX">
+      <DependentUpon>MsgBox1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowObjects\multichoice.resX">
+      <DependentUpon>multichoice.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowObjects\ReservedAsk.resX">
+      <DependentUpon>ReservedAsk.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowObjects\SelectDBCat.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectDBCat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\WindowObjects\TextWindow.resX">
+      <DependentUpon>TextWindow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ Others\About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ Others\Browser.resx">
+      <DependentUpon>Browser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ Others\logo.resX">
+      <DependentUpon>logo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ Others\testWin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>testWin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\addclient.resX">
+      <DependentUpon>addclient.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\FolderTextsAnalysis.resx">
+      <DependentUpon>FolderTextsAnalysis.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\addvisite.resX">
+      <DependentUpon>addvisite.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\clientSearch.resX">
+      <DependentUpon>clientSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\InternalDB\AddModifDB.resx">
+      <DependentUpon>AddModifDB.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\InternalDB\DB.resx">
+      <DependentUpon>DB.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\InternalDB\SearchDB.resx">
+      <DependentUpon>SearchDB.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Billing\addBill.resx">
+      <DependentUpon>addBill.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Billing\modiffacturation.resX">
+      <DependentUpon>modiffacturation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Billing\Payment.resx">
+      <DependentUpon>Payment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ UniqueManaging\specialDates.resx">
+      <DependentUpon>specialDates.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Reports\ReportCreator.resx">
+      <DependentUpon>ReportCreator.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Users\connectedUsers.resx">
+      <DependentUpon>connectedUsers.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ UniqueManaging\EndOfMonth.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EndOfMonth.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Messaging\msgMessage.resx">
+      <DependentUpon>msgMessage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Reports\ReportGeneration.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportGeneration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Users\showpaye.resX">
+      <DependentUpon>showpaye.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Billing\viewmodifBills.resx">
+      <DependentUpon>viewmodifBills.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ UniqueManaging\workHours.resX">
+      <DependentUpon>workHours.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ UniqueManaging\Clinic.resx">
+      <DependentUpon>Clinic.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ UniqueManaging\ModelOfTextWin.resX">
+      <DependentUpon>ModelOfTextWin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ UniqueManaging\preferencesWin.resX">
+      <DependentUpon>preferencesWin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\KeyPeople\addkeypeople.resX">
+      <DependentUpon>addkeypeople.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\KeyPeople\keypeopleSearch.resX">
+      <DependentUpon>keypeopleSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Messaging\msgAddressBook.resx">
+      <DependentUpon>msgAddressBook.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Messaging\msgContact.resx">
+      <DependentUpon>msgContact.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Messaging\MassMailing.resx">
+      <DependentUpon>MassMailing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Messaging\msgSystem.resx">
+      <DependentUpon>msgSystem.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ Uniques\Access.resX">
+      <DependentUpon>Access.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\§ Uniques\MainWin.resX">
+      <DependentUpon>MainWin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Clients\QueueList.resx">
+      <DependentUpon>QueueList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Users\addmodifusers.resX">
+      <DependentUpon>addmodifusers.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Users\modifhoraire.resX">
+      <DependentUpon>modifhoraire.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Users\modifusers.resX">
+      <DependentUpon>modifusers.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layer 1 - Presentation\Windows\Users\typesuser.resX">
+      <DependentUpon>typesuser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <BaseApplicationManifest Include="My Project\app.manifest" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Physio_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.1.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CommProc\%24CommProc.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="CommProc\Préférences.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.mshtml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseLib\BaseLib.vbproj">
+      <Project>{9E3A6FA5-AC4D-4851-B01C-DD1D43E6B737}</Project>
+      <Name>BaseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectUpdates\ProjectUpdateLibrary\ProjectUpdateLibrary\ProjectUpdateLibrary.vbproj">
+      <Project>{8FBDD5E7-68D5-4F42-8B1A-50EDAD15E8A6}</Project>
+      <Name>ProjectUpdateLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\List\List.vbproj">
+      <Project>{78417E06-993C-48AE-9532-69822251A55A}</Project>
+      <Name>List</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>copy /y current.version "c:\ClinicaData\Data"
+copy /y CI.ProjectUpdates.ProjectUpdateLibrary.dll "Updates\"
+copy /y CI.ProjectUpdates.ProjectUpdateLibrary.pdb "Updates\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

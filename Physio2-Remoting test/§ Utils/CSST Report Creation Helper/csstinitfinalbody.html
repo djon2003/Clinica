@@ -1,0 +1,518 @@
+<html>
+<head>
+<title>Test</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script>
+$(document).ready(function() {
+
+/*
+var curElement = undefined;
+
+$('div').mousedown(function() {curElement = this;});
+$('div').mouseup(function() {curElement = undefined;});
+
+$('div').mousemove(function() {
+
+if (curElement != undefined) {
+
+}
+
+});
+
+*/
+
+$('div').draggable();
+
+
+});
+</script>
+</head>
+<body>
+
+<style>
+BODY {padding : 0; margin:0;width:100%;}
+
+IMG {
+position:absolute;
+top:0;
+left:0;
+z-index:1;
+}
+
+SPAN {
+position:absolute;
+left:0px;
+}
+
+DIV {
+position:absolute;
+height:28px;
+font-size:24px;
+text-overflow:ellipsis;
+overflow:hidden;
+z-index:2;
+}
+
+.r {
+font-size:16px;
+}
+
+.s {
+letter-spacing:12px;
+font-family:monospace;
+}
+
+.n {
+padding-left:33px;
+}
+
+#analysis {
+left:80px;
+top:783px;
+width:1100px;
+height:120px;
+}
+
+#goal {
+left:80px;
+top:929px;
+width:1100px;
+height:70px;
+}
+
+#plan {
+left:80px;
+top:1021px;
+width:1100px;
+height:100px;
+}
+
+#ergo {
+left:370px;
+top:200px;
+}
+
+#physio {
+left:180px;
+top:200px;
+}
+
+#nocsst {
+left:840px;
+top:195px;
+}
+
+#clientname {
+left:80px;
+top:279px;
+}
+
+#clientphone {
+left:485px;
+top:279px;
+width:136px;
+}
+
+#nam1 {
+left:837px;
+top:275px;
+}
+
+#nam2 {
+left:954px;
+top:275px;
+}
+
+#nam3 {
+left:1068px;
+top:275px;
+}
+
+#clientaddress {
+left:80px;
+top:327px;
+width:550px;
+}
+
+#eventdate1 {
+left:840px;
+top:322px;
+}
+#eventdate2 {
+left:953px;
+top:322px;
+}
+#eventdate3 {
+left:1012px;
+top:322px;
+}
+
+#clientcity {
+left:80px;
+top:375px;
+width:275px;
+}
+
+#clientprovince {
+left:357px;
+top:375px;
+width:125px;
+}
+
+#clientpostalcode {
+left:485px;
+top:375px;
+width:140px;
+}
+
+#backdate1 {
+left:840px;
+top:371px;
+}
+#backdate2 {
+left:953px;
+top:371px;
+}
+#backdate3 {
+left:1012px;
+top:371px;
+}
+
+
+#clinicname {
+left:80px;
+top:425px;
+width:400px;
+}
+#clinicphone {
+left:485px;
+top:425px;
+width:136px;
+}
+#clinicid {
+left:660px;
+top:425px;
+}
+
+
+#medecinname {
+left:80px;
+top:470px;
+width:540px;
+}
+#medecinid {
+left:660px;
+top:470px;
+}
+
+
+#refdate {
+left:892px;
+top:470px;
+width:150px;
+}
+#diagnostic {
+left:80px;
+top:517px;
+width:540px;
+}
+
+
+
+#frequency {
+left:722px;
+top:641px;
+}
+#frequencyreason1 {
+left:889px;
+top:634px;
+}
+#frequencyreason2 {
+left:987px;
+top:634px;
+}
+#frequencyreason3 {
+left:987px;
+top:702px;
+}
+#frequencyreason4 {
+left:889px;
+top:667px;
+}
+#frequencyreason5 {
+left:987px;
+top:667px;
+}
+
+
+
+#soap {
+font-size:12px;
+left:80px;
+top:1334px;
+height:260px;
+width:1100px;
+}
+
+
+
+#presencesyear2 {
+left:80px;
+top:1726px;
+}
+#presencesmonth2 {
+left:218px;
+top:1726px;
+}
+#presences2 {
+left:321px;
+top:1726px;
+letter-spacing:14px;
+}
+
+
+#presencesyear1 {
+left:80px;
+top:1751px;
+}
+#presencesmonth1 {
+left:218px;
+top:1751px;
+}
+#presences1 {
+left:321px;
+top:1751px;
+letter-spacing:14px;
+}
+
+#trpname1 {
+left:81px;
+top:1177px;
+width:520px;
+border-top:solid 1px black;
+font-size:12px;
+height:16px;
+}
+
+#trpid1 {
+left:652px;
+top:1158px;
+}
+
+#signingdate11 {
+left:957px;
+top:1158px;
+}
+#signingdate12 {
+left:1069px;
+top:1158px;
+}
+#signingdate13 {
+left:1129px;
+top:1158px;
+}
+
+#trpname2 {
+left:81px;
+top:1644px;
+width:520px;
+border-top:solid 1px black;
+font-size:12px;
+height:16px;
+}
+
+#trpid2 {
+left:652px;
+top:1627px;
+}
+
+#signingdate21 {
+left:957px;
+top:1627px;
+}
+#signingdate22 {
+left:1069px;
+top:1627px;
+}
+#signingdate23 {
+left:1129px;
+top:1627px;
+}
+
+
+
+
+
+#firsttreatmentdate1 {
+left:412px;
+top:722px;
+}
+#firsttreatmentdate2 {
+left:524px;
+top:722px;
+}
+#firsttreatmentdate3 {
+left:585px;
+top:722px;
+}
+
+
+#firstevaldate1 {
+left:95px;
+top:722px;
+}
+#firstevaldate2 {
+left:208px;
+top:722px;
+}
+#firstevaldate3 {
+left:269px;
+top:722px;
+}
+
+
+#recrefdate1 {
+left:95px;
+top:633px;
+}
+#recrefdate2 {
+left:208px;
+top:633px;
+}
+#recrefdate3 {
+left:269px;
+top:633px;
+}
+
+#lasttreatmentdate1 {
+left:95px;
+top:1265px;
+}
+#lasttreatmentdate2 {
+left:208px;
+top:1265px;
+}
+#lasttreatmentdate3 {
+left:269px;
+top:1265px;
+}
+
+
+#totaltreatments {
+left:838px;
+top:1266px;
+}
+</style>
+
+
+
+<span>
+
+<img src=csst-init-final.png>
+
+<div id=physio class=r>X</div>
+<div id=ergo class=r>X</div>
+
+<div id=nocsst class=s>123456789</div>
+
+<div id=clientname>LastName,FirstName</div>
+<div id=clientphone>514-555-5555</div>
+
+<div id=nam1 class=s>LASF</div>
+<div id=nam2 class=s>0000</div>
+<div id=nam3 class=s>0000</div>
+
+
+
+<div id=clientaddress>123 road MyStreet</div>
+
+<div id=eventdate1 class=s>2000</div>
+<div id=eventdate2 class=s>08</div>
+<div id=eventdate3 class=s>08</div>
+
+<div id=clientcity>MyCity</div>
+<div id=clientprovince>Québec</div>
+<div id=clientpostalcode>X0X0X0</div>
+
+<div id=backdate1 class=s>2000</div>
+<div id=backdate2 class=s>08</div>
+<div id=backdate3 class=s>08</div>
+
+
+<div id=clinicname>ClinicName</div>
+<div id=clinicphone>514-555-5551</div>
+<div id=clinicid>0000000</div>
+
+
+<div id=firsttreatmentdate1 class=s>2002</div>
+<div id=firsttreatmentdate2 class=s>02</div>
+<div id=firsttreatmentdate3 class=s>02</div>
+
+<div id=firstevaldate1 class=s>2003</div>
+<div id=firstevaldate2 class=s>03</div>
+<div id=firstevaldate3 class=s>03</div>
+
+<div id=recrefdate1 class=s>2004</div>
+<div id=recrefdate2 class=s>04</div>
+<div id=recrefdate3 class=s>04</div>
+
+<div id=lasttreatmentdate1 class=s>2005</div>
+<div id=lasttreatmentdate2 class=s>05</div>
+<div id=lasttreatmentdate3 class=s>05</div>
+
+<div id=totaltreatments>77</div>
+
+
+<div id=medecinname>Médecin 1</div>
+<div id=medecinid>123456</div>
+
+
+<div id=refdate>2011-06-06</div>
+
+<div id=diagnostic>Diagnostic</div>
+
+
+<div id=frequency>7</div>
+
+<div id=frequencyreason1 class=r>X</div>
+<div id=frequencyreason2 class=r>X</div>
+<div id=frequencyreason3 class=r>X</div>
+<div id=frequencyreason4 class=r>X</div>
+<div id=frequencyreason5 class=r>X</div>
+
+
+<div id=analysis>Analyse</div>
+<div id=goal>Buts</div>
+<div id=plan>Plan</div>
+
+<div id=soap>SOAP<br>SOAP<br>SOAP<br>SOAP<br>SOAP<br>SOAP<br>SOAP<br>SOAP</div>
+
+
+<div id=presencesyear1>2013</div>
+<div id=presencesmonth1>01</div>
+<div id=presences1 class=s>&nbsp;&nbsp;&nbsp;I&nbsp;PPPPPPPPPPPPPPPPPPPPPPPPPP</div>
+
+
+<div id=presencesyear2>2012</div>
+<div id=presencesmonth2>12</div>
+<div id=presences2 class=s>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</div>
+
+<div id=trpname1>###trpname1###</div>
+<div id=trpid1>###trpid1###</div>
+
+<div id=signingdate11 class=s>2000</div>
+<div id=signingdate12 class=s>08</div>
+<div id=signingdate13 class=s>08</div>
+
+<div id=trpname2>###trpname2###</div>
+<div id=trpid2>###trpid2###</div>
+
+<div id=signingdate21 class=s>2000</div>
+<div id=signingdate22 class=s>08</div>
+<div id=signingdate23 class=s>08</div>
+
+</span>
+
+</body>
+</html>

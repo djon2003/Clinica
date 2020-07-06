@@ -1,0 +1,145 @@
+--Tables with NoClinique
+!Factures.ParNoClinique null -> Is handling null ? Yes (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!FinMoisTypesRapports.NoClinique not null
+!StatFactures.ParNoClinique null -> Is handling null ? Yes (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!StatPaiements.ParNoClinique null -> Is handling null ? Yes (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+
+--Tables with NoFolder
+!Communications.NoFolder not null
+!DemandesAuthorisations.NoFolder not null
+!Factures.NoFolder null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!FolderTextes.NoFolder not null
+!FolderTextesFuturs.NoFolder not null
+!InfoVisites.NoFolder not null
+!ListeAttente.NoFolder null -> Is handling null ? Yes (Can be none.. On list without RV)
+!Prets.NoFolder not null
+!StatFactures.NoFolder null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatFolders.NoFolder not null
+!StatPaiements.NoFolder null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatVisites.NoFolder not null
+!Ventes.NoFolder not null
+
+--Tables with NoVisite
+!Factures.NoVisite null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!ListeAttente.NoVisite not null -> null .. adjust software (Can be none.. On list without RV)
+!StatFactures.NoVisite null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatPaiements.NoVisite null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatVisites.NoVisite not null
+
+--Tables with NoEquipement
+!Prets.NoEquipement not null
+!Ventes.NoEquipement not null
+
+--Tables with NoPret
+!Factures.NoPret null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatFactures.NoPret null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatPaiements.NoPret null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+
+--Tables with NoVente
+!Factures.NoVente null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatFactures.NoVente null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatPaiements.NoVente null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+
+--Tables with NoTypeUser
+!DBItemsDroitsAcces.NoTypeUser null -> Is handling null ? Yes (Switch between NoUser,NoTypeUser)
+!FileTypesDroitsAcces.NoTypeUser null -> Is handling null ? Yes (Switch between NoUser,NoTypeUser)
+!Utilisateurs.NoType null -> Is handling null ? Yes (Null represent Personnalized choice)
+
+--Tables with NoCodification
+!InfoFolders.NoCodification not null
+!ListeAttente.NoCodification not null
+
+--Tables with NoFacture
+!InfoVisites.NoFacture null -> Is handling null ? Yes (If NoStatut=1,4 Then not null Else null)
+!Prets.NoFacture null -> Is handling null ? Yes (When bill is not created)
+!StatFactures.NoFacture not null
+!StatFactures.NoFactureTransfere null -> Is handling null ? Yes (Null = Not transfered)
+!StatPaiements.NoFacture not null
+!Ventes.NoFacture null -> Is handling null ? Yes (When bill is not created)
+
+--Tables with NoClient
+!ClientsAntecedents.NoClient not null
+!CommDeA.NoClient null -> not null
+!Communications.NoClient null -> not null
+!Contacts.NoClient null -> Is handling null ? Yes (Can be none)
+!DemandesAuthorisations.NoClient not null
+!Factures.NoClient null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!Factures.ParNoClient null -> Is handling null ? Yes (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!InfoFolders.NoClient null -> not null
+!InfoVisites.NoClient null -> not null
+!KeyPeople.NoClient null -> Is handling null ? Yes (Can be none)
+!ListeAttente.NoClient not null
+!Mails.NoClient not null -> null .. adjust software .. done (Can be none)
+!Prets.NoClient not null
+!StatFactures.NoClient null -> Is handling null ? Yes (Switch between NoClient,NoKP,NoUserFacture)
+!StatFactures.ParNoClient not null -> null .. adjust software.. Done (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!StatFolders.NoClient null -> not null
+!StatPaiements.NoClient null -> Is handling null ? Yes (Switch between NoClient,NoKP,NoUserFacture)
+!StatPaiements.ParNoClient null -> Is handling null ? Yes (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!StatVisites.NoClient null -> not null
+!Ventes.NoClient not null
+
+--Tables with NoKP
+!CodesDossiersPeriodes.NoKP null -> Is handling null ? Yes (Can be without a second Payeur)
+!CommDeA.NoKP null -> not null
+!CommDeAKP.NoKP null -> not null
+!CommDeAKP.NoKPDeA null -> not null
+!Communications.NoKP null -> Is handling null ? Yes (Null = Client selected, Not = a KP)
+!CommunicationsKP.NoKP null -> not null
+!CommunicationsKP.NoKPFrom null -> Is handling null ? Yes (Null = Owning KP selected, Not = another KP)
+!Contacts.NoKP null -> Is handling null ? Yes (Can be none)
+!Factures.NoKP null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!Factures.ParNoKP null -> Is handling null ? Yes (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!InfoFolders.NoKP null -> Is handling null ? Yes (Can be none)
+!StatFactures.ParNoKP not null -> null .. adjust software ..done (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!StatFactures.NoKP not null -> null .. adjust software .. done (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatPaiements.NoKP null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatPaiements.ParNoKP null -> Is handling null ? Yes (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+
+--Tables with NoUser
+!Agenda.NoTRP null -> not null
+!BrowserUrls.NoUser null -> not null
+!CodificationsDossiers.NoUser null -> Is handling null ? Yes (Null = Default TRP)
+!CodificationsPayes.NoUser null -> Is handling null ? Yes (Null = Default TRP)
+!Communications.NoUser null -> not null
+!CommunicationsKP.NoUser null -> not null
+!ContactFolders.NoUser null -> Is handling null ? Yes (Null = Generic folder)
+!DBFolders.NoUser null -> Is handling null ? Yes (Null = Generic folder)
+!DBItemsDroitsAcces.NoUser null -> Is handling null ? Yes (Switch between NoUser,NoTypeUser)
+!DBSearchList.NoUser null -> not null
+!DemandesAuthorisations.NoUser not null
+!Factures.NoUser null -> not null
+!Factures.NoUserFacture null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!Factures.ParNoUser null -> Is handling null ? Yes (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!FileTypesDroitsAcces.NoUser null -> Is handling null ? Yes (Switch between NoUser,NoTypeUser)
+!Horaires.NoUser null -> Is handling null ? Yes (Null = Clinique Horaire)
+!InfoClients.NoUser null -> not null
+!InfoFolders.NoTRPTraitant null -> not null
+!InfoFolders.NoTRPDemande null -> Is handling null ? (Can be none)
+!InfoFolders.NoTRPToTransfer null -> Is handling null ? (Can be none)
+!InfoVisites.NoTRP null -> not null
+!KeyPeople.NoUser null -> not null
+!KPSearchList.NoUser null -> not null
+!ListeAttente.NoTRP not null
+#MailAccounts.InboxFolderName not null (String with fullname & number.. not only number)
+!MailFolders.NoUser null -> Is handling null ? (Null = Generic folder)
+!Mails.NoUserFrom null -> Is handling null ? (Can be none, if external mail)
+!Mails.NoUserTo null -> Is handling null ? (Can be none, if external mail)
+!Modeles.NoUser not null -> null .. adjust software (Null = Generic Modeles)
+!NotesTitles.NoUser null -> not null
+!PayesUtilisateurs.NoUser not null
+!Prets.NoTRP null -> not null
+!SearchList.NoUser null -> not null
+!SettingsUser.NoUser not null 
+!SoftwareNewsUsers.NoUser not null
+!StatFactures.NoUser null -> not null
+!StatFactures.ParNoUser not null -> null .. adjust software .. done (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!StatFactures.NoUserFacture not null -> null .. adjust software .. done (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatFolders.NoUser null -> not null
+!StatPaiements.NoUser null -> not null
+!StatPaiements.ParNoUser null -> Is handling null ? Yes (Switch between ParNoClient,ParNoKP,ParNoUser,ParNoClinique)
+!StatPaiements.NoUserFacture null -> Is handling null ? Yes (Switch between NoClient-NoFolder-(NoVisite|NoPret|NoVente),NoKP,NoUserFacture)
+!StatVisites.NoUser null -> not null
+!UsersAlerts.NoUser not null
+!Ventes.NoTRP null -> not null
+!WorkHours.NoUser not null

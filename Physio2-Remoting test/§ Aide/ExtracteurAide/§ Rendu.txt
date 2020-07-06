@@ -1,0 +1,11 @@
+CHROME :
+On selecting in TOC :
+Scrollbar position is not always good (mostly horizontal) + Background is not always under the whole text
+ 
+FIREFOX :
+On selecting in TOC :
+Nothing works.
+
+
+
+- Generalize the tool (extract all config and optional functionnalities)

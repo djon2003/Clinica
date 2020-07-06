@@ -1,0 +1,213 @@
+##################
+IMAGES À FAIRE :
+##################
+ 
+##################
+Aide Clinica :
+##################
+-Créer un document pour la procédure "d'installation", "du 1er démarrage"
+-Rapport Charge de travail (both) : Body doesn't show ----> AUCUNE PAIE N'AVAIT ÉTÉ GÉNÉRÉE
+
+-LEG-Client #585 : Discuss with client the reason why the new reçu for the bill #178162 is at zero. (Look at Paiements history)
+   --> Create a document to explain how to adjust for this case (print a reçu for the -45 and another for the +45)
+
+##################
+Logiciel Clinica :
+##################
+http://www.devarticles.com/c/a/PHP/Building-A-Document-Request-Protocol-Part-1/2/
+
+-FolderCodeAlert : When saving code and just added one FolderCodeAlert, should ask to create Timed alert for current folders.
+-FolderCodeAlert : Should have a WhenToBeStopped parameter (like OnFolderClosing)
+-Update : Add news about new subsector FolderCodeAlerts
+-codification : Unblock access to FolderCodeAlerts
+
+
+-SQL DB : Add all missing links between tables and review all of them (Has to ensure all modif is supported by software)
+
+-Agenda : It is possible to add an RV to one TRP at 10:00 and had another TRP at 10:00 with the same client (Client with two TRP at same time ??)
+
+-Pref : All duration for expiry of InstantMessages.
+
+
+-Changed rapport properties to RapportProperties... should change the prefs about rapports.
+ -> Creation of Créateur de rapport
+ --> http://msdn.microsoft.com/en-us/library/aa302334.aspx
+ -- Generating Liste des revenus after changing IsGrouped to False and removing all GroupColumnAlias and changing NbGroupedColumn to 0 -> Give a report which the date filter didnot seems to be taken.
+
+### UPDATE
+### UPDATE
+
+-Vérifier comment des sauts de pages pourrait améliorer certains rapports à l'impression (Au minimum s'assurer qu'une même ligne n'est pas séparée sur deux pages)
+-Rapport Présences/absences d'un mois : Si imprimé en Portrait, manque une colonne. (Cette colonne n'a pas été imprimée sur des pages à part)
+
+-Rapport-Charge de travail : Ajuster le ratio en utilisant le nombre de WorkHours et non le nombre d'heure thérapeutique (confirmer le calcul) 
+	-->	--> Not sure about reserved plage ? Should they be removed or not ? Is the answer partially?
+
+-Vérifier les termes comptables de Facturation (ex : Facturation de la clinique --> "Factures à payer pour la clinique")
+
+### UPDATE
+### UPDATE
+
+-Test Clinica Agenda Remote.
+
+### UPDATE
+### UPDATE
+
+
+-WebTextBox : Using Toolbar buttons which modifies the text, doesn't fire the PageModified event --> TEST, but I think it is fixed
+	      Found another one.. csEXWB (search this dir) would release the need of IIS server.
+-Ajout de diff types de filtrage pour les factures ds le compte : Code dossier, # facture, ordre par montant facture, montant du, payé complètement
+-Browser window : Continue
+
+
+-Rechercher "REM CODE BLOQUÉ" & "REM"
+-ListCombo in Account under Comptability : Disable mouse click & 3D+
+ 
+#########
+Notes :
+#########
+
+-IN ALL DB:
+ -Ensure String type is changed using Replace from ' to ''
+ -Money Type is not able to been saved with comma. Got to change comma to dot.
+ -IF required to be accent sensitive THEN should use : COLLATE French_CI_AS
+
+-------------
+-Rapport Liste des médécins référents : Should a column Diagnostic be there ?
+-------------
+-Est-ce que les petites imprimantes ont été commandées ? --> Plutôt utiliser du papier au format A6
+-Dossier-Pret Équipement : Que faire avec la signature ? (Tjs non fonctionnel)
+-CodeDossier : Devrait-on pouvoir choisir si lorsqu'on enlève un RV de l'agenda, alors la liste d'attente est vérifié ou non?
+-Agenda-Case d'une plage réservée ou client : Si la plage est sur plus qu'une case (plus de 15 min) et que l'entrée (texte affiché) est sur plusieurs lignes, devront-on afficher les autres lignes sur les heures subséquentes (si trop de lignes par rapport au nombre de case, alors affiché les lignes restantes dans la dernière case)
+-Rapports : Lors d'un choix de date, il faudrait avoir quelque chose d'explicite indiquant que fermer = Toutes les dates.
+-L'ancien logiciel avait une donnée sur la date du début d'année fiscale pour la clinique (doit-on avoir ce champ ?)
+-Rapport Liste des ajustements détaillées --> Présentation des montants bidon (valide, mais dur à suivre).
+-Imprimantes sélectionnés ds les préfs. Qu'arrive-t-il si sélectionné via un ordi et utiliser via un autre dont le nom pour la même imprimante diffère ?
+-------------
+-Dossier-Demande d'authorisation:Discuter de quel action à entreprendre lors d'un changement de statut pour Refusée pour la version 2.
+------------- 
+-Compte client - Equipement : Change "Profit transaction" to "Coût". (Ensure changing name) (Vérifier utilité)
+-------------
+-Look where could be useful SelectedClickAllowed of the ListOcx
+-FileListView : Look out if this line is useful -> System.Threading.Monitor.Enter(Me)
+ 
+Fenêtres utilisés pour la sélection  ou modale : 
+-AddModifDB - Only modal
+-addmodifusers - Only modal
+-addvisite - Only normal -> (Vérifier ce qui se passe lorsque la fenêtre est ouverte normalement et on veut l'ouvrir en mode sélection)
+-codifications - Both
+-DateChoice - Only modal
+-Disponibilites - Only modal
+-InputBoxPlus - Only modal
+-KeyPeople - Both
+-MsgBox1 - Only modal
+-msgContact - Only modal
+-multichoice - Only modal
+-QueueList - Both
+-recherche - Both
+-ReservedAsk - Only modal
+-SearchDB - Both
+-textemodif - Only modal
+-SelectDBCat - Only modal
+ 
+--Dernier décompte : (2013-03-06)
+-Backup			: 736  lignes de codes
+-BaseLib		: 8905 lignes de codes
+-CommonProc		: 4725 lignes de codes
+-Controls (Only List)   : 4564 lignes de codes
+-CSSTAutomation		: 2560 lignes de codes
+-Layer 1		: 89816 lignes de codes
+-Layer 2		: 20443 lignes de codes
+-Layer 3		: 532 lignes de codes
+-UpdateLib  		: 1822 lignes de codes
+-ProjectUpdater		: 212 lignes de codes
+-Updater		: 196 lignes de codes
+-Serveur		: 851 lignes de codes
+--Total			: 135362 lignes de codes
+
+
+DEADLOCK RESOLUTION FOR SQL 2005 :
+http://www.nwsummit.com/tech/mssql.html
+  
+#############
+References :
+############# 
+-- IMPROVING PERFORMANCES -- with the Garbage collector
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Framework - Understanding the Garbage Collector\ReadMe.htm
+ 
+Chat
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Advanced .NET Framework (Networking) - Use Sockets
+ 
+Dial-up networking connection
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\WinInet
+ 
+Drap & Drop
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Windows Forms - How-To Use Drag and Drop
+ 
+Drawing
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\DSGraphicsTutorials
+ 
+Email
+C:\Mes Créations\POPCOM4.NET
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exchange
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\NET Framework - How-To Send Mail
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\BKSimpleMail Sample v0[1].1.2.0
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Use CDO to send email
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\CS_POP3_Email_Deleter
+ 
+FileCopyDelete
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\SHFile\SHFile
+ 
+FileNotification
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\File - How-To File Notifications
+ 
+FileExplorer
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\File - How-To File 
+ 
+System
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Windows Forms - Create an Explorer Style Application
+ 
+Help
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Windows Forms - Associating Help with an Application
+ 
+Internet Explorer
+http://msdn.microsoft.com/library/default.asp?url=/workshop/browser/webbrowser/browser_control_node_entry.asp
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Interop - Automate IE Media Playing
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\XPlayer
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\playgifHardCoding
+WebBrowser Customization
+http://www.codeproject.com/internet/CustomBrowser.asp --> C++
+HTMLEditor -> http://www.itwriting.com/htmleditor/
+http://www.codeproject.com/csharp/winformiehost.asp --> C#
+http://www.codeproject.com/dotnet/dwebapp.asp
+http://www.codeproject.com/csharp/advhost.asp
+
+Menu
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Windows Forms -- Owner Drawn Menus
+ 
+Office
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Windows Forms - How-To Automate Office
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\VMS(EXCEL)\VMS
+ 
+Printing
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Windows Forms - Simple Printing
+http://msdn2.microsoft.com/en-us/library/xdt36c58(vs.80).aspx
+ 
+Regular Expressions
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Windows Forms - Use Regular Expressions
+ 
+RichTextBox
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\RTFHS
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\ColorRichTextBox
+ 
+ToolTip
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\ToolTipClass\ToolTipClassProj
+ 
+Systray
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\Exemples\Windows Forms -  How-To System Tray Icon
+ 
+Window Gestion
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\dFreeze
+ 
+WinSock
+C:\Documents and Settings\Admin\Bureau\Downloads\§Visual Basic Downloads\WinSock
